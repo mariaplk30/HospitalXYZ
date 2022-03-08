@@ -9,5 +9,5 @@ package Modelo.Entidades;
  * @author Hogar
  */
 public class Paciente {
-    
+    int a; //mira maria paula que es esto
 }
