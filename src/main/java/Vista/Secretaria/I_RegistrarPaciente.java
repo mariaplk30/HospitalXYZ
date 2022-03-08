@@ -26,21 +26,234 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        registrarPaciente_names__label = new javax.swing.JLabel();
+        registrarPaciente_id__label = new javax.swing.JLabel();
+        registrarPaciente_lastNames__label = new javax.swing.JLabel();
+        registrarPaciente_gender__label = new javax.swing.JLabel();
+        registrarPaciente_birthPlace__label = new javax.swing.JLabel();
+        registrarPaciente_names__field = new javax.swing.JTextField();
+        registrarPaciente_lastNames__field = new javax.swing.JTextField();
+        registrarPaciente_id__field = new javax.swing.JTextField();
+        registrarPaciente_gender__field = new javax.swing.JTextField();
+        registrarPaciente_birthPlace__field = new javax.swing.JTextField();
+        registrarPaciente_civilStatus__label = new javax.swing.JLabel();
+        registrarPaciente_civilStatus__field = new javax.swing.JTextField();
+        registrarPaciente_homeAddress__label = new javax.swing.JLabel();
+        registrarPaciente_homeAddress__field = new javax.swing.JTextField();
+        registrarPaciente_phone__label = new javax.swing.JLabel();
+        registrarPaciente_phone__field = new javax.swing.JTextField();
+        registrarPaciente_job__field = new javax.swing.JTextField();
+        registrarPaciente_job__label = new javax.swing.JLabel();
+        registrarPaciente_occupation__label = new javax.swing.JLabel();
+        registrarPaciente_occupation__field = new javax.swing.JTextField();
+        registrarPaciente_relativePhone__label = new javax.swing.JLabel();
+        registrarPaciente_relativePhone__field = new javax.swing.JTextField();
+        cancel__btn = new javax.swing.JButton();
+        confirm__btn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Registrar Paciente");
+
+        registrarPaciente_names__label.setText("Nombres:");
+
+        registrarPaciente_id__label.setText("Cédula:");
+
+        registrarPaciente_lastNames__label.setText("Apellidos:");
+
+        registrarPaciente_gender__label.setText("Sexo:");
+
+        registrarPaciente_birthPlace__label.setText("Lugar de Nacimiento:");
+
+        registrarPaciente_names__field.setText("jTextField1");
+        registrarPaciente_names__field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarPaciente_names__fieldActionPerformed(evt);
+            }
+        });
+
+        registrarPaciente_lastNames__field.setText("jTextField1");
+        registrarPaciente_lastNames__field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarPaciente_lastNames__fieldActionPerformed(evt);
+            }
+        });
+
+        registrarPaciente_id__field.setText("jTextField3");
+
+        registrarPaciente_gender__field.setText("jTextField3");
+        registrarPaciente_gender__field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarPaciente_gender__fieldActionPerformed(evt);
+            }
+        });
+
+        registrarPaciente_birthPlace__field.setText("jTextField5");
+
+        registrarPaciente_civilStatus__label.setText("Estado Civil:");
+
+        registrarPaciente_civilStatus__field.setText("jTextField5");
+
+        registrarPaciente_homeAddress__label.setText("Dirección de Habitación:");
+
+        registrarPaciente_homeAddress__field.setText("jTextField5");
+
+        registrarPaciente_phone__label.setText("Teléfono:");
+
+        registrarPaciente_phone__field.setText("jTextField5");
+
+        registrarPaciente_job__field.setText("jTextField5");
+
+        registrarPaciente_job__label.setText("Profesión:");
+
+        registrarPaciente_occupation__label.setText("Ocupación:");
+
+        registrarPaciente_occupation__field.setText("jTextField5");
+
+        registrarPaciente_relativePhone__label.setText("Teléfono de Relativo:");
+
+        registrarPaciente_relativePhone__field.setText("jTextField5");
+
+        cancel__btn.setText("Cancelar");
+        cancel__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancel__btnActionPerformed(evt);
+            }
+        });
+
+        confirm__btn.setText("Aceptar");
+        confirm__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm__btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(registrarPaciente_names__label, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarPaciente_names__field)
+                            .addComponent(registrarPaciente_lastNames__label, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarPaciente_lastNames__field)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(registrarPaciente_id__label, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(registrarPaciente_id__field, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(registrarPaciente_gender__field, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(registrarPaciente_gender__label, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(registrarPaciente_birthPlace__field, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarPaciente_civilStatus__field, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(registrarPaciente_birthPlace__label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registrarPaciente_civilStatus__label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registrarPaciente_homeAddress__label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registrarPaciente_phone__label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registrarPaciente_job__label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registrarPaciente_occupation__label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registrarPaciente_relativePhone__label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(287, 287, 287))
+                            .addComponent(registrarPaciente_homeAddress__field, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarPaciente_phone__field, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarPaciente_job__field, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarPaciente_occupation__field, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarPaciente_relativePhone__field, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cancel__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(confirm__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(registrarPaciente_names__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_names__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(registrarPaciente_lastNames__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_lastNames__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registrarPaciente_id__label)
+                    .addComponent(registrarPaciente_gender__label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registrarPaciente_id__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(registrarPaciente_gender__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addComponent(registrarPaciente_birthPlace__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_birthPlace__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(registrarPaciente_civilStatus__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_civilStatus__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(registrarPaciente_homeAddress__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_homeAddress__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(registrarPaciente_phone__label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_phone__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(registrarPaciente_job__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_job__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(registrarPaciente_occupation__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_occupation__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(registrarPaciente_relativePhone__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarPaciente_relativePhone__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancel__btn)
+                    .addComponent(confirm__btn))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void registrarPaciente_names__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPaciente_names__fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrarPaciente_names__fieldActionPerformed
+
+    private void registrarPaciente_lastNames__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPaciente_lastNames__fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrarPaciente_lastNames__fieldActionPerformed
+
+    private void registrarPaciente_gender__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPaciente_gender__fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrarPaciente_gender__fieldActionPerformed
+
+    private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancel__btnActionPerformed
+
+    private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +291,30 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancel__btn;
+    private javax.swing.JButton confirm__btn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField registrarPaciente_birthPlace__field;
+    private javax.swing.JLabel registrarPaciente_birthPlace__label;
+    private javax.swing.JTextField registrarPaciente_civilStatus__field;
+    private javax.swing.JLabel registrarPaciente_civilStatus__label;
+    private javax.swing.JTextField registrarPaciente_gender__field;
+    private javax.swing.JLabel registrarPaciente_gender__label;
+    private javax.swing.JTextField registrarPaciente_homeAddress__field;
+    private javax.swing.JLabel registrarPaciente_homeAddress__label;
+    private javax.swing.JTextField registrarPaciente_id__field;
+    private javax.swing.JLabel registrarPaciente_id__label;
+    private javax.swing.JTextField registrarPaciente_job__field;
+    private javax.swing.JLabel registrarPaciente_job__label;
+    private javax.swing.JTextField registrarPaciente_lastNames__field;
+    private javax.swing.JLabel registrarPaciente_lastNames__label;
+    private javax.swing.JTextField registrarPaciente_names__field;
+    private javax.swing.JLabel registrarPaciente_names__label;
+    private javax.swing.JTextField registrarPaciente_occupation__field;
+    private javax.swing.JLabel registrarPaciente_occupation__label;
+    private javax.swing.JTextField registrarPaciente_phone__field;
+    private javax.swing.JLabel registrarPaciente_phone__label;
+    private javax.swing.JTextField registrarPaciente_relativePhone__field;
+    private javax.swing.JLabel registrarPaciente_relativePhone__label;
     // End of variables declaration//GEN-END:variables
 }

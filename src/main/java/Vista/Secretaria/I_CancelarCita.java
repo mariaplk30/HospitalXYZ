@@ -26,21 +26,108 @@ public class I_CancelarCita extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cancelarCita_title__label = new javax.swing.JLabel();
+        cancelarCita_patient__label = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cancelarCita_appointment__list = new javax.swing.JList<>();
+        cancelarCita_patient__textField = new javax.swing.JTextField();
+        cancelarCita_appointment__label = new javax.swing.JLabel();
+        confirm__btn = new javax.swing.JButton();
+        cancel__btn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        cancelarCita_title__label.setText("Cancelar Cita");
+
+        cancelarCita_patient__label.setText("Paciente:");
+
+        cancelarCita_appointment__list.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(cancelarCita_appointment__list);
+
+        cancelarCita_patient__textField.setText("Nombre del paciente");
+        cancelarCita_patient__textField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarCita_patient__textFieldActionPerformed(evt);
+            }
+        });
+
+        cancelarCita_appointment__label.setText("Cita:");
+
+        confirm__btn.setText("Aceptar");
+        confirm__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm__btnActionPerformed(evt);
+            }
+        });
+
+        cancel__btn.setText("Cancelar");
+        cancel__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancel__btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(cancelarCita_title__label))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cancelarCita_patient__label, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelarCita_patient__textField, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelarCita_appointment__label, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(cancel__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(confirm__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(cancelarCita_title__label)
+                .addGap(18, 18, 18)
+                .addComponent(cancelarCita_patient__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cancelarCita_patient__textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(cancelarCita_appointment__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancel__btn)
+                    .addComponent(confirm__btn))
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cancelarCita_patient__textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarCita_patient__textFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarCita_patient__textFieldActionPerformed
+
+    private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirm__btnActionPerformed
+
+    private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancel__btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +165,13 @@ public class I_CancelarCita extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancel__btn;
+    private javax.swing.JLabel cancelarCita_appointment__label;
+    private javax.swing.JList<String> cancelarCita_appointment__list;
+    private javax.swing.JLabel cancelarCita_patient__label;
+    private javax.swing.JTextField cancelarCita_patient__textField;
+    private javax.swing.JLabel cancelarCita_title__label;
+    private javax.swing.JButton confirm__btn;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
