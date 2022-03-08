@@ -26,16 +26,12 @@ public class I_Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Medico = new javax.swing.JButton();
-        JuntaDirectiva = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Secretaria = new javax.swing.JButton();
+        Medico = new javax.swing.JButton();
+        JuntaDirectiva = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Medico.setText("Medico");
-
-        JuntaDirectiva.setText("Junta Directiva");
 
         jLabel1.setText("Bienvenido");
 
@@ -46,34 +42,40 @@ public class I_Inicio extends javax.swing.JFrame {
             }
         });
 
+        Medico.setText("Médico");
+        Medico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MedicoActionPerformed(evt);
+            }
+        });
+
+        JuntaDirectiva.setText("Junta Directiva");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(176, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(157, 157, 157))
             .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(JuntaDirectiva, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                    .addComponent(Medico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Secretaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(140, 140, 140)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JuntaDirectiva)
+                    .addComponent(Medico)
+                    .addComponent(Secretaria)
+                    .addComponent(jLabel1))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
+                .addGap(28, 28, 28)
                 .addComponent(Secretaria)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(Medico)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(JuntaDirectiva)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,6 +84,10 @@ public class I_Inicio extends javax.swing.JFrame {
     private void SecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecretariaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SecretariaActionPerformed
+
+    private void MedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MedicoActionPerformed
 
     /**
      * @param args the command line arguments
