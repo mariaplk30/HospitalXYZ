@@ -1,13 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo.Entidades;
 
-/**
- *
- * @author Hogar
- */
 public class Medico {
+    private String Especialidad;
     
+    public Medico(){
+        Especialidad="";
+    }
+    
+    public void setEspecialidad(String esp){
+        Especialidad=esp;
+    }
+            
+    public String getEspecialidad(){
+        return Especialidad;
+    }
 }

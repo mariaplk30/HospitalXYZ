@@ -1,13 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo.Entidades;
+import java.util.*;
 
-/**
- *
- * @author Hogar
- */
-public class JuntaDirectiva {
+/*PacientesAnuales, y los registros son arreglos*/
+
+public class JuntaDirectiva{
+    private int CantidadPacientes;
+    private ArrayList<Paciente> PacientesAnuales;
+    private int CantidadMedicos;
+    private ArrayList<Medico> RegistroMedicos;
+    private ArrayList<Sucursal> RegistroSucursales;
     
+    public JuntaDirectiva(){
+        CantidadPacientes = 0;
+        PacientesAnuales = new ArrayList();
+        CantidadMedicos = 0;
+        RegistroMedicos = new ArrayList();
+        RegistroSucursales = new ArrayList();
+    }
+    
+    public void setCantidadPacientes(int cant){
+        CantidadPacientes = cant;
+    }
+    
+    public int getCantidadMedicos(){
+        return CantidadPacientes;
+    }
+
+    public void setCantidadMedicos(int cant){
+        CantidadPacientes = cant;
+    }
+    
+    public int getCantidadPacientes(){
+        return CantidadPacientes;
+    }
 }
