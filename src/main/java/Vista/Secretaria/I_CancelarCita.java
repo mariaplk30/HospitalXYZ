@@ -48,7 +48,6 @@ public class I_CancelarCita extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(cancelarCita_appointment__list);
 
-        cancelarCita_patient__textField.setText("Nombre del paciente");
         cancelarCita_patient__textField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarCita_patient__textFieldActionPerformed(evt);

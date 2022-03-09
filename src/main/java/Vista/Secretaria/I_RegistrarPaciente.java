@@ -66,54 +66,35 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
 
         registrarPaciente_birthPlace__label.setText("Lugar de Nacimiento:");
 
-        registrarPaciente_names__field.setText("jTextField1");
         registrarPaciente_names__field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarPaciente_names__fieldActionPerformed(evt);
             }
         });
 
-        registrarPaciente_lastNames__field.setText("jTextField1");
         registrarPaciente_lastNames__field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarPaciente_lastNames__fieldActionPerformed(evt);
             }
         });
 
-        registrarPaciente_id__field.setText("jTextField3");
-
-        registrarPaciente_gender__field.setText("jTextField3");
         registrarPaciente_gender__field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarPaciente_gender__fieldActionPerformed(evt);
             }
         });
 
-        registrarPaciente_birthPlace__field.setText("jTextField5");
-
         registrarPaciente_civilStatus__label.setText("Estado Civil:");
-
-        registrarPaciente_civilStatus__field.setText("jTextField5");
 
         registrarPaciente_homeAddress__label.setText("Dirección de Habitación:");
 
-        registrarPaciente_homeAddress__field.setText("jTextField5");
-
         registrarPaciente_phone__label.setText("Teléfono:");
-
-        registrarPaciente_phone__field.setText("jTextField5");
-
-        registrarPaciente_job__field.setText("jTextField5");
 
         registrarPaciente_job__label.setText("Profesión:");
 
         registrarPaciente_occupation__label.setText("Ocupación:");
 
-        registrarPaciente_occupation__field.setText("jTextField5");
-
         registrarPaciente_relativePhone__label.setText("Teléfono de Relativo:");
-
-        registrarPaciente_relativePhone__field.setText("jTextField5");
 
         cancel__btn.setText("Cancelar");
         cancel__btn.addActionListener(new java.awt.event.ActionListener() {

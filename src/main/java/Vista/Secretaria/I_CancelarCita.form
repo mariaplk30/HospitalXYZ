@@ -110,9 +110,6 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="cancelarCita_patient__textField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre del paciente"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarCita_patient__textFieldActionPerformed"/>
       </Events>

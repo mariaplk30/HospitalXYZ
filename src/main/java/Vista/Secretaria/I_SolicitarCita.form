@@ -23,10 +23,32 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
-              <EmptySpace pref="250" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                      <Component id="solicitarCita_title__label" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                              <EmptySpace pref="186" max="32767" attributes="0"/>
+                              <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="solicitarCita_branch__field" alignment="0" max="32767" attributes="0"/>
+                          <Component id="solicitarCita_doctor__field" alignment="0" max="32767" attributes="0"/>
+                          <Component id="solicitarCita_date__field" alignment="0" max="32767" attributes="0"/>
+                          <Component id="solicitarCita_patient__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="solicitarCita_date__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="solicitarCita_doctor__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="solicitarCita_branch__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="solicitarCita_patient__field" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -34,17 +56,82 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="266" max="32767" attributes="0"/>
+              <Component id="solicitarCita_title__label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="solicitarCita_patient__label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="solicitarCita_patient__field" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="solicitarCita_date__label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="solicitarCita_date__field" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="solicitarCita_doctor__label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="solicitarCita_doctor__field" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="solicitarCita_branch__label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="solicitarCita_branch__field" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="88" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancel__btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="confirm__btn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="solicitarCita_title__label">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="Solicitar Cita"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="solicitarCita_patient__label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Paciente:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="solicitarCita_patient__field">
+    </Component>
+    <Component class="javax.swing.JButton" name="cancel__btn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancelar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancel__btnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="confirm__btn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Aceptar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirm__btnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="solicitarCita_date__label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="solicitarCita_date__field">
+    </Component>
+    <Component class="javax.swing.JLabel" name="solicitarCita_doctor__label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xe9;dico:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="solicitarCita_doctor__field">
+    </Component>
+    <Component class="javax.swing.JLabel" name="solicitarCita_branch__label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sucursal:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="solicitarCita_branch__field">
     </Component>
   </SubComponents>
 </Form>
