@@ -26,7 +26,7 @@ public class IDB_Secretaria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        secretariaDashboard_title__label = new javax.swing.JLabel();
         registrarPaciente__btn = new javax.swing.JButton();
         crearCita__btn = new javax.swing.JButton();
         modificarCita__btn = new javax.swing.JButton();
@@ -35,7 +35,7 @@ public class IDB_Secretaria extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel1.setText("Dashboard");
+        secretariaDashboard_title__label.setText("Dashboard");
 
         registrarPaciente__btn.setText("Registrar Paciente");
 
@@ -58,7 +58,7 @@ public class IDB_Secretaria extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(214, 214, 214)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(secretariaDashboard_title__label, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(167, 167, 167)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,7 +72,7 @@ public class IDB_Secretaria extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabel1)
+                .addComponent(secretariaDashboard_title__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(registrarPaciente__btn)
                 .addGap(26, 26, 26)
@@ -129,8 +129,8 @@ public class IDB_Secretaria extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarCita__btn;
     private javax.swing.JButton crearCita__btn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton modificarCita__btn;
     private javax.swing.JButton registrarPaciente__btn;
+    private javax.swing.JLabel secretariaDashboard_title__label;
     // End of variables declaration//GEN-END:variables
 }
