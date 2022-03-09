@@ -26,17 +26,76 @@ public class I_AbrirSucursal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        abrirSucursal_title__label = new javax.swing.JLabel();
+        abrirSucursal_name__label = new javax.swing.JLabel();
+        abrirSucursal_name__field = new javax.swing.JTextField();
+        abrirSucursal_location__label = new javax.swing.JLabel();
+        abrirSucursal_location__field = new javax.swing.JTextField();
+        abrirSucursal_phone__label = new javax.swing.JLabel();
+        abrirSucursal_phone__field = new javax.swing.JTextField();
+        cancel__btn = new javax.swing.JButton();
+        confirm__btn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        abrirSucursal_title__label.setText("Abrir Sucursal");
+
+        abrirSucursal_name__label.setText("Nombre:");
+
+        abrirSucursal_location__label.setText("Ubicación:");
+
+        abrirSucursal_phone__label.setText("Teléfono:");
+
+        cancel__btn.setText("Cancelar");
+
+        confirm__btn.setText("Aceptar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(abrirSucursal_title__label)
+                .addGap(213, 213, 213))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(abrirSucursal_name__label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(abrirSucursal_name__field, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(abrirSucursal_location__label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(abrirSucursal_location__field, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(abrirSucursal_phone__label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(cancel__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(confirm__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(abrirSucursal_phone__field, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(abrirSucursal_title__label)
+                .addGap(18, 18, 18)
+                .addComponent(abrirSucursal_name__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(abrirSucursal_name__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(abrirSucursal_location__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(abrirSucursal_location__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(abrirSucursal_phone__label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(abrirSucursal_phone__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancel__btn)
+                    .addComponent(confirm__btn))
+                .addGap(56, 56, 56))
         );
 
         pack();
@@ -78,5 +137,14 @@ public class I_AbrirSucursal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField abrirSucursal_location__field;
+    private javax.swing.JLabel abrirSucursal_location__label;
+    private javax.swing.JTextField abrirSucursal_name__field;
+    private javax.swing.JLabel abrirSucursal_name__label;
+    private javax.swing.JTextField abrirSucursal_phone__field;
+    private javax.swing.JLabel abrirSucursal_phone__label;
+    private javax.swing.JLabel abrirSucursal_title__label;
+    private javax.swing.JButton cancel__btn;
+    private javax.swing.JButton confirm__btn;
     // End of variables declaration//GEN-END:variables
 }
