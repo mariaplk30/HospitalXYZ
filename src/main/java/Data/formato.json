@@ -12,7 +12,7 @@
       "nombre": "sucursal uno",
       "medicos": [
         {
-          "id": "M00000000",
+          "id":"M00000000",
           "nombre": "Jhon doe",
           "especialidad": "internista"
         }
@@ -23,32 +23,32 @@
           "nombre": "luis lopes",
           "citas": [
             {
-              "id": "00000000",
-              "medico": "M00000000",
+              "id":"00000000",
+              "medico":"M00000000",
               "fecha": "01-01-2022"
             },
             {
-              "id": "00000001",
-              "medico": "M00000000",
+              "id":"00000001",
+              "medico":"M00000000",
               "fecha": "30-03-2022"
             }
           ],
           "historial": [
             {
-              "id": "H00000000",
-              "paciente": "1234567",
-              "citas": [
+              "id":"H00000000",
+              "paciente":"1234567",
+              "citas":[
                 {
-                  "cita": "00000000",
-                  "valores": {
-                    "peso": "80",
-                    "talla": "85",
-                    "peso/talla": "0.9",
-                    "tension": {
-                      "maxima": "200",
-                      "minima": "180"
-                    },
-                    "pulso": "50"
+                  "cita":"00000000",
+                  "Valores":{
+                      "peso": "80", 
+                      "talla": "1.85", 
+                      "peso/talla": "23.37", 
+                      "tension":{
+                          "maxima": "200", 
+                          "minima": "180"
+                      },
+                      "pulso":"50"
                   }
                 }
               ]
@@ -63,7 +63,7 @@
         
       ],
       "pacientes": [
-        
+    
       ]
     },
     {
