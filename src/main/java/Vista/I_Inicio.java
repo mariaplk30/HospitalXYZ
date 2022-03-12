@@ -83,6 +83,9 @@ public class I_Inicio extends javax.swing.JFrame {
 
     private void SecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecretariaActionPerformed
         // TODO add your handling code here:
+        IDB_Secretaria Inicio = new IDB_Secretaria(); //No me agarra porque no están en la misma carpeta las interfaces
+
+    
     }//GEN-LAST:event_SecretariaActionPerformed
 
     private void MedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicoActionPerformed

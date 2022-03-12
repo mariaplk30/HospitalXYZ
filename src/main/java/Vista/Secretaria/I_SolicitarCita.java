@@ -32,11 +32,11 @@ public class I_SolicitarCita extends javax.swing.JFrame {
         cancel__btn = new javax.swing.JButton();
         confirm__btn = new javax.swing.JButton();
         solicitarCita_date__label = new javax.swing.JLabel();
-        solicitarCita_date__field = new javax.swing.JTextField();
         solicitarCita_doctor__label = new javax.swing.JLabel();
         solicitarCita_doctor__field = new javax.swing.JTextField();
         solicitarCita_branch__label = new javax.swing.JLabel();
         solicitarCita_branch__field = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,12 +82,12 @@ public class I_SolicitarCita extends javax.swing.JFrame {
                                 .addComponent(confirm__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(solicitarCita_branch__field)
                             .addComponent(solicitarCita_doctor__field)
-                            .addComponent(solicitarCita_date__field)
                             .addComponent(solicitarCita_patient__label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(solicitarCita_date__label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(solicitarCita_doctor__label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(solicitarCita_branch__label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(solicitarCita_patient__field))))
+                            .addComponent(solicitarCita_patient__field)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -102,7 +102,7 @@ public class I_SolicitarCita extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(solicitarCita_date__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(solicitarCita_date__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(solicitarCita_doctor__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -127,6 +127,8 @@ public class I_SolicitarCita extends javax.swing.JFrame {
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         // TODO add your handling code here:
+        solicitarCita_branch__field.setText(solicitarCita_patient__field.getText()); // Probando agarrar input del usuario y 
+                                                                                     // mostrarlo
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**
@@ -167,9 +169,9 @@ public class I_SolicitarCita extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel__btn;
     private javax.swing.JButton confirm__btn;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JTextField solicitarCita_branch__field;
     private javax.swing.JLabel solicitarCita_branch__label;
-    private javax.swing.JTextField solicitarCita_date__field;
     private javax.swing.JLabel solicitarCita_date__label;
     private javax.swing.JTextField solicitarCita_doctor__field;
     private javax.swing.JLabel solicitarCita_doctor__label;
