@@ -4,6 +4,7 @@
  */
 package Vista.JuntaDirectiva;
 
+
 /**
  *
  * @author Hogar
@@ -112,6 +113,9 @@ public class I_AbrirSucursal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        String nombre = abrirSucursal_name__field.getText();
+        String ubicacion = abrirSucursal_location__field.getText();
+
         // Si datos válidos
         IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);

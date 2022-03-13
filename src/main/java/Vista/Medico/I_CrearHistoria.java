@@ -260,6 +260,16 @@ public class I_CrearHistoria extends javax.swing.JFrame {
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         //Si datos válidos
+        String paciente = crearHistoria_patient__field.getText();
+        String peso = crearHistoria_weight__field.getText();
+        String talla = crearHistoria_height__field.getText();
+        String IMC = crearHistoria_bmi__field.getText();
+        String PPM = crearHistoria_bpm__field.getText();
+        String tensionMax = crearHistoria_tMax__field.getText();
+        String tensionMin = crearHistoria_tMin__field.getText();
+        String evolucion = crearHistoria_evolution__textArea.getText();
+        String control = crearHistoria_apptControl__textArea.getText();
+
         IDB_Medico MedicoDB = new IDB_Medico();
         MedicoDB.setVisible(true);
         I_CrearHistoria.this.setVisible(false);

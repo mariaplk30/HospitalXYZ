@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista.Secretaria;
-
+import Controlador.Ctrl_Citas;
+import Vista.Errores.I_Error1;
 
 /**
  *
@@ -237,11 +238,29 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        //Si datos válidos
-        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
-        SecretariaDB.setVisible(true);
-        I_RegistrarPaciente.this.setVisible(false);
-        dispose();
+        String nombres = registrarPaciente_names__field.getText();
+        String apellidos = registrarPaciente_lastNames__field.getText();
+        String cedula = registrarPaciente_id__field.getText();
+        String sexo = registrarPaciente_gender__field.getText();
+        String lugarN = registrarPaciente_birthPlace__field.getText();
+        String civil = registrarPaciente_civilStatus__field.getText();
+        String direccion = registrarPaciente_homeAddress__field.getText();
+        String telefono = registrarPaciente_phone__field.getText();
+        String profesion = registrarPaciente_job__field.getText();
+        String ocupacion = registrarPaciente_occupation__field.getText();
+        String relativo = registrarPaciente_relativePhone__field.getText();
+        //Falta SUCURSAL
+
+        if(Ctrl_Citas.ValidarDatos() == true){
+            RegistrarPaciente();
+            IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+            SecretariaDB.setVisible(true);
+            I_RegistrarPaciente.this.setVisible(false);
+            dispose();
+        }else{
+            I_Error1 DatosInvalidos = new I_Error1();
+            DatosInvalidos.setVisible(true);
+        }
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**

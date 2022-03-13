@@ -38,7 +38,7 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
         modificarHistoria_bpm__label = new javax.swing.JLabel();
         modificarHistoria_bpm__field = new javax.swing.JTextField();
         modificarHistoria_tMax__label = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        modificarHistoria_tMax__field = new javax.swing.JTextField();
         modificarHistoria_tMin__label = new javax.swing.JLabel();
         modificarHistoria_tMin__field = new javax.swing.JTextField();
         modificarHistoria_evolution__label = new javax.swing.JLabel();
@@ -84,9 +84,9 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
 
         modificarHistoria_tMax__label.setText("Tensión Max:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        modificarHistoria_tMax__field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                modificarHistoria_tMax__fieldActionPerformed(evt);
             }
         });
 
@@ -163,7 +163,7 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
                                             .addGap(78, 78, 78))))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(modificarHistoria_tMax__field, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(modificarHistoria_tMax__label, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(78, 78, 78)))
@@ -218,7 +218,7 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(modificarHistoria_tMax__label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(modificarHistoria_tMax__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(modificarHistoria_evolution__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -249,9 +249,9 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_modificarHistoria_bmi__fieldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void modificarHistoria_tMax__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarHistoria_tMax__fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_modificarHistoria_tMax__fieldActionPerformed
 
     private void modificarHistoria_tMin__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarHistoria_tMin__fieldActionPerformed
         // TODO add your handling code here:
@@ -266,6 +266,15 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         // Si datos válidos
+        String paciente = modificarHistoria_patient__field.getText();
+        String peso = modificarHistoria_weight__field.getText();
+        String talla = modificarHistoria_height__field.getText();
+        String IMC = modificarHistoria_bmi__field.getText();
+        String PPM = modificarHistoria_bpm__field.getText();
+        String tensionMax = modificarHistoria_tMax__field.getText();
+        String tensionMin = modificarHistoria_tMin__field.getText();
+        String evolucion = modificarHistoria_evolution__textArea.getText();
+        String control = modificarHistoria_apptControl__textArea.getText();
         IDB_Medico MedicoDB = new IDB_Medico();
         MedicoDB.setVisible(true);
         I_ModificarHistoria.this.setVisible(false);
@@ -312,7 +321,6 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
     private javax.swing.JButton confirm__btn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel modificarHistoria_apptControl__label;
     private javax.swing.JTextArea modificarHistoria_apptControl__textArea;
     private javax.swing.JTextField modificarHistoria_bmi__field;
@@ -325,6 +333,7 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
     private javax.swing.JLabel modificarHistoria_height__label;
     private javax.swing.JTextField modificarHistoria_patient__field;
     private javax.swing.JLabel modificarHistoria_patient__label;
+    private javax.swing.JTextField modificarHistoria_tMax__field;
     private javax.swing.JLabel modificarHistoria_tMax__label;
     private javax.swing.JTextField modificarHistoria_tMin__field;
     private javax.swing.JLabel modificarHistoria_tMin__label;

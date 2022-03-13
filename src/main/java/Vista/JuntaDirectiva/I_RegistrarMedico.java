@@ -216,6 +216,16 @@ public class I_RegistrarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        String nombres = registrarMedico_names__field.getText();
+        String apellidos = registrarMedico_lastNames__field.getText();
+        String cedula = registrarMedico_id__field.getText();
+        String sexo = registrarMedico_gender__field.getText();
+        String lugarN = registrarMedico_birthPlace__field.getText();
+        String civil = registrarMedico_civilStatus__field.getText();
+        String direccion = registrarMedico_homeAddress__field.getText();
+        String telefono = registrarMedico_phone__field.getText();
+        String especialidad = registrarMedico_job__field.getText();
+        
         // Si datos válidos     
         IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);

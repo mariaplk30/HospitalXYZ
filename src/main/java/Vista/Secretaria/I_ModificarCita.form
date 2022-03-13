@@ -35,7 +35,7 @@
                               <Component id="modificarCita_doctor__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="modificarCita_branch__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="modificarCita_patient__field" min="-2" pref="446" max="-2" attributes="0"/>
-                              <Component id="jDateChooser1" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
+                              <Component id="modificarCita_date__field" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
@@ -68,7 +68,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="modificarCita_date__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jDateChooser1" min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="modificarCita_date__field" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Component id="modificarCita_doctor__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -135,7 +135,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirm__btnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+    <Component class="com.toedter.calendar.JDateChooser" name="modificarCita_date__field">
     </Component>
   </SubComponents>
 </Form>

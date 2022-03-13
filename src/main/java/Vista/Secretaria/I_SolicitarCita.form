@@ -44,7 +44,7 @@
                           <Component id="solicitarCita_doctor__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                           <Component id="solicitarCita_branch__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                           <Component id="solicitarCita_patient__field" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jDateChooser1" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="solicitarCita_date__field" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -64,7 +64,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="solicitarCita_date__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jDateChooser1" min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="solicitarCita_date__field" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="solicitarCita_doctor__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -131,7 +131,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="solicitarCita_branch__field">
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+    <Component class="com.toedter.calendar.JDateChooser" name="solicitarCita_date__field">
     </Component>
   </SubComponents>
 </Form>

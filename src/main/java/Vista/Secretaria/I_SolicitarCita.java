@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista.Secretaria;
-
+import java.util.Date;
 /**
  *
  * @author Hogar
@@ -36,7 +36,7 @@ public class I_SolicitarCita extends javax.swing.JFrame {
         solicitarCita_doctor__field = new javax.swing.JTextField();
         solicitarCita_branch__label = new javax.swing.JLabel();
         solicitarCita_branch__field = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        solicitarCita_date__field = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,7 +87,7 @@ public class I_SolicitarCita extends javax.swing.JFrame {
                             .addComponent(solicitarCita_doctor__label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(solicitarCita_branch__label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(solicitarCita_patient__field)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(solicitarCita_date__field, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -102,7 +102,7 @@ public class I_SolicitarCita extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(solicitarCita_date__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(solicitarCita_date__field, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(solicitarCita_doctor__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -130,14 +130,18 @@ public class I_SolicitarCita extends javax.swing.JFrame {
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         //Recibir datos
-        String input= solicitarCita_branch__field;
-
+        String paciente = solicitarCita_patient__field.getText();
+        Date fecha = solicitarCita_date__field.getDate();
+        String medico = solicitarCita_doctor__field.getText();
+        String sucursal = solicitarCita_branch__field.getText();
         //Si datos válidos
-        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
-        SecretariaDB.setVisible(true);
-        I_SolicitarCita.this.setVisible(false);
-        dispose();
-        //solicitarCita_branch__field.setText(solicitarCita_patient__field.getText()); // Probando agarrar input del usuario y 
+//        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+//        SecretariaDB.setVisible(true);
+//        I_SolicitarCita.this.setVisible(false);
+//        dispose();
+
+
+        //solicitarCita_branch__field.setText(fecha.toLocaleString().substring(0, 10)); // Probando agarrar input del usuario y 
                                                                                      // mostrarlo
     }//GEN-LAST:event_confirm__btnActionPerformed
 
@@ -179,9 +183,9 @@ public class I_SolicitarCita extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel__btn;
     private javax.swing.JButton confirm__btn;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JTextField solicitarCita_branch__field;
     private javax.swing.JLabel solicitarCita_branch__label;
+    private com.toedter.calendar.JDateChooser solicitarCita_date__field;
     private javax.swing.JLabel solicitarCita_date__label;
     private javax.swing.JTextField solicitarCita_doctor__field;
     private javax.swing.JLabel solicitarCita_doctor__label;
