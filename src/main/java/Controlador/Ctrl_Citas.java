@@ -22,7 +22,6 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.Iterator;
 /**
  *
@@ -35,11 +34,14 @@ public class Ctrl_Citas {
     
     public static void main(String[] args){
 
-        JSONParser parser = new JSONParser();
+        JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("formato.json")) {
+        try {
+            FileReader reader = new FileReader("../Data/formato.json");
 
             Object obj = jsonParser.parse(reader);
+            JSONObject jsonObject =  (JSONObject) obj;
+            
             System.out.println(obj);
             
             JSONArray juntaDirectiva = (JSONArray) obj;
@@ -61,6 +63,8 @@ public class Ctrl_Citas {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
 
