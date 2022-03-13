@@ -23,6 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
+import java.io.File;
 /**
  *
  * @author Hogar
@@ -35,9 +36,11 @@ public class Ctrl_Citas {
     public static void main(String[] args){
 
         JSONParser jsonParser = new JSONParser();
+        String filePath = new File("").getAbsolutePath();
+        System.out.println (filePath);
 
         try {
-            FileReader reader = new FileReader("../Data/formato.json");
+            FileReader reader = new FileReader(filePath + "/src/main/java/Data/formato.json");
 
             Object obj = jsonParser.parse(reader);
             JSONObject jsonObject =  (JSONObject) obj;
