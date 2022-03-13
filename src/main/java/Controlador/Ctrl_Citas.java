@@ -37,10 +37,10 @@ public class Ctrl_Citas {
 
         JSONParser parser = new JSONParser();
 
-        try (FileReader reader = new FileReader("../Data/formato.json")) {
+        try (FileReader reader = new FileReader("formato.json")) {
 
             Object obj = jsonParser.parse(reader);
-            System.out.println(Object);
+            System.out.println(obj);
             
             JSONArray juntaDirectiva = (JSONArray) obj;
             System.out.println(juntaDirectiva);
@@ -58,9 +58,9 @@ public class Ctrl_Citas {
                 System.out.println(iterator.next());
             }
 
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
