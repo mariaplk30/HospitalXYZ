@@ -129,6 +129,9 @@ public class I_SolicitarCita extends javax.swing.JFrame {
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        //Recibir datos
+        String input= solicitarCita_branch__field;
+
         //Si datos válidos
         IDB_Secretaria SecretariaDB = new IDB_Secretaria();
         SecretariaDB.setVisible(true);
