@@ -102,8 +102,8 @@ public class I_SolicitarCita extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(solicitarCita_date__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(solicitarCita_doctor__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(solicitarCita_doctor__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,12 +122,19 @@ public class I_SolicitarCita extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        // TODO add your handling code here:
+        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+        SecretariaDB.setVisible(true);
+        I_SolicitarCita.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        // TODO add your handling code here:
-        solicitarCita_branch__field.setText(solicitarCita_patient__field.getText()); // Probando agarrar input del usuario y 
+        //Si datos válidos
+        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+        SecretariaDB.setVisible(true);
+        I_SolicitarCita.this.setVisible(false);
+        dispose();
+        //solicitarCita_branch__field.setText(solicitarCita_patient__field.getText()); // Probando agarrar input del usuario y 
                                                                                      // mostrarlo
     }//GEN-LAST:event_confirm__btnActionPerformed
 

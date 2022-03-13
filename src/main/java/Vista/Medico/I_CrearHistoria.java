@@ -4,6 +4,7 @@
  */
 package Vista.Medico;
 
+
 /**
  *
  * @author Hogar
@@ -107,8 +108,18 @@ public class I_CrearHistoria extends javax.swing.JFrame {
         crearHistoria_apptControl__label.setText("Control de Cita:");
 
         cancel__btn.setText("Cancelar");
+        cancel__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancel__btnActionPerformed(evt);
+            }
+        });
 
         confirm__btn.setText("Aceptar");
+        confirm__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm__btnActionPerformed(evt);
+            }
+        });
 
         crearHistoria_apptControl__textArea.setColumns(20);
         crearHistoria_apptControl__textArea.setRows(5);
@@ -246,6 +257,21 @@ public class I_CrearHistoria extends javax.swing.JFrame {
     private void crearHistoria_tMin__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearHistoria_tMin__fieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_crearHistoria_tMin__fieldActionPerformed
+
+    private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        //Si datos válidos
+        IDB_Medico MedicoDB = new IDB_Medico();
+        MedicoDB.setVisible(true);
+        I_CrearHistoria.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_confirm__btnActionPerformed
+
+    private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
+        IDB_Medico MedicoDB = new IDB_Medico();
+        MedicoDB.setVisible(true);
+        I_CrearHistoria.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_cancel__btnActionPerformed
 
     /**
      * @param args the command line arguments

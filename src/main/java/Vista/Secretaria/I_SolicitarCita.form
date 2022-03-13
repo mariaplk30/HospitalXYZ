@@ -64,8 +64,8 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="solicitarCita_date__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jDateChooser1" min="-2" pref="20" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jDateChooser1" min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="solicitarCita_doctor__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="solicitarCita_doctor__field" min="-2" max="-2" attributes="0"/>

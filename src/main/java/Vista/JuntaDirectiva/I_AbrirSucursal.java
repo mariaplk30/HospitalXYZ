@@ -47,8 +47,18 @@ public class I_AbrirSucursal extends javax.swing.JFrame {
         abrirSucursal_phone__label.setText("Teléfono:");
 
         cancel__btn.setText("Cancelar");
+        cancel__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancel__btnActionPerformed(evt);
+            }
+        });
 
         confirm__btn.setText("Aceptar");
+        confirm__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm__btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,6 +110,21 @@ public class I_AbrirSucursal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        // Si datos válidos
+        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+        JuntaDB.setVisible(true);
+        I_AbrirSucursal.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_confirm__btnActionPerformed
+
+    private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
+        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+        JuntaDB.setVisible(true);
+        I_AbrirSucursal.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_cancel__btnActionPerformed
 
     /**
      * @param args the command line arguments

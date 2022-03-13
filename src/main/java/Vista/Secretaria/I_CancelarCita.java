@@ -122,10 +122,18 @@ public class I_CancelarCita extends javax.swing.JFrame {
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         // TODO add your handling code here:
+        //Si datos válidos
+        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+        SecretariaDB.setVisible(true);
+        I_CancelarCita.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        // TODO add your handling code here:
+        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+        SecretariaDB.setVisible(true);
+        I_CancelarCita.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     /**

@@ -25,26 +25,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="modificarCita_doctor__field" alignment="1" min="-2" pref="446" max="-2" attributes="0"/>
-                      <Component id="modificarCita_date__field" alignment="1" min="-2" pref="446" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="modificarCita_doctor__field" alignment="1" min="-2" pref="446" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="modificarCita_patient__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="modificarCita_date__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="modificarCita_doctor__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="modificarCita_branch__label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="modificarCita_patient__field" min="-2" pref="446" max="-2" attributes="0"/>
+                              <Component id="jDateChooser1" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="modificarCita_branch__field" min="-2" pref="446" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="modificarCita_branch__field" min="-2" pref="446" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -68,8 +68,8 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="modificarCita_date__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="modificarCita_date__field" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jDateChooser1" min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Component id="modificarCita_doctor__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="modificarCita_doctor__field" min="-2" max="-2" attributes="0"/>
@@ -105,8 +105,6 @@
         <Property name="text" type="java.lang.String" value="Fecha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="modificarCita_date__field">
-    </Component>
     <Component class="javax.swing.JLabel" name="modificarCita_doctor__label">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xe9;dico:"/>
@@ -136,6 +134,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirm__btnActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
     </Component>
   </SubComponents>
 </Form>

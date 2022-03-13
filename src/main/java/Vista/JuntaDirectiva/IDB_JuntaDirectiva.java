@@ -4,6 +4,8 @@
  */
 package Vista.JuntaDirectiva;
 
+import Vista.I_Inicio;
+
 /**
  *
  * @author Hogar
@@ -30,6 +32,7 @@ public class IDB_JuntaDirectiva extends javax.swing.JFrame {
         abrirSucursal__btn = new javax.swing.JButton();
         registrarMedico__btn = new javax.swing.JButton();
         generarReporte__btn = new javax.swing.JButton();
+        inicio__btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,14 +59,17 @@ public class IDB_JuntaDirectiva extends javax.swing.JFrame {
             }
         });
 
+        inicio__btn.setText("Inicio");
+        inicio__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicio__btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(225, 225, 225)
-                .addComponent(juntaDashboard_title__label)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(166, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,6 +77,15 @@ public class IDB_JuntaDirectiva extends javax.swing.JFrame {
                     .addComponent(registrarMedico__btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(generarReporte__btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(164, 164, 164))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(juntaDashboard_title__label))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(inicio__btn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,7 +98,9 @@ public class IDB_JuntaDirectiva extends javax.swing.JFrame {
                 .addComponent(registrarMedico__btn)
                 .addGap(34, 34, 34)
                 .addComponent(generarReporte__btn)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(inicio__btn)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,15 +108,35 @@ public class IDB_JuntaDirectiva extends javax.swing.JFrame {
 
     private void abrirSucursal__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirSucursal__btnActionPerformed
         // TODO add your handling code here:
+        I_AbrirSucursal abrirSucursal = new I_AbrirSucursal();
+        abrirSucursal.setVisible(true);
+        IDB_JuntaDirectiva.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_abrirSucursal__btnActionPerformed
 
     private void registrarMedico__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarMedico__btnActionPerformed
         // TODO add your handling code here:
+        I_RegistrarMedico registarMedico = new I_RegistrarMedico();
+        registarMedico.setVisible(true);
+        IDB_JuntaDirectiva.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_registrarMedico__btnActionPerformed
 
     private void generarReporte__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporte__btnActionPerformed
         // TODO add your handling code here:
+        I_ReporteAnual reporteAnual = new I_ReporteAnual();
+        reporteAnual.setVisible(true);
+        IDB_JuntaDirectiva.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_generarReporte__btnActionPerformed
+
+    private void inicio__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicio__btnActionPerformed
+        // TODO add your handling code here:
+        I_Inicio inicio = new I_Inicio();
+        inicio.setVisible(true);
+        IDB_JuntaDirectiva.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_inicio__btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,6 +176,7 @@ public class IDB_JuntaDirectiva extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrirSucursal__btn;
     private javax.swing.JButton generarReporte__btn;
+    private javax.swing.JButton inicio__btn;
     private javax.swing.JLabel juntaDashboard_title__label;
     private javax.swing.JButton registrarMedico__btn;
     // End of variables declaration//GEN-END:variables

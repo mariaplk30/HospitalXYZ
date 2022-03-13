@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
+import Vista.Secretaria.IDB_Secretaria;
+import Vista.JuntaDirectiva.IDB_JuntaDirectiva;
+import Vista.Medico.IDB_Medico;
 
 /**
  *
@@ -32,6 +35,7 @@ public class I_Inicio extends javax.swing.JFrame {
         JuntaDirectiva = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setText("Bienvenido");
 
@@ -50,6 +54,11 @@ public class I_Inicio extends javax.swing.JFrame {
         });
 
         JuntaDirectiva.setText("Junta Directiva");
+        JuntaDirectiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JuntaDirectivaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,11 +66,13 @@ public class I_Inicio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(140, 140, 140)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JuntaDirectiva)
-                    .addComponent(Medico)
-                    .addComponent(Secretaria)
-                    .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JuntaDirectiva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Medico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Secretaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel1)))
                 .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,14 +94,27 @@ public class I_Inicio extends javax.swing.JFrame {
 
     private void SecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecretariaActionPerformed
         // TODO add your handling code here:
-        IDB_Secretaria Inicio = new IDB_Secretaria(); //No me agarra porque no están en la misma carpeta las interfaces
-
-    
+        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+        SecretariaDB.setVisible(true);
+        I_Inicio.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_SecretariaActionPerformed
 
     private void MedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicoActionPerformed
         // TODO add your handling code here:
+        IDB_Medico MedicoDB = new IDB_Medico();
+        MedicoDB.setVisible(true);
+        I_Inicio.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_MedicoActionPerformed
+
+    private void JuntaDirectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuntaDirectivaActionPerformed
+        // TODO add your handling code here:
+        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+        JuntaDB.setVisible(true);
+        I_Inicio.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_JuntaDirectivaActionPerformed
 
     /**
      * @param args the command line arguments

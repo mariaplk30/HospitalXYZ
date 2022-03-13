@@ -4,6 +4,8 @@
  */
 package Vista.Medico;
 
+import Vista.I_Inicio;
+
 /**
  *
  * @author Hogar
@@ -29,6 +31,7 @@ public class IDB_Medico extends javax.swing.JFrame {
         medicoDashboard_title__label = new javax.swing.JLabel();
         crearHistoria__btn = new javax.swing.JButton();
         modificarHistoria__btn = new javax.swing.JButton();
+        inicio__btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,20 +51,32 @@ public class IDB_Medico extends javax.swing.JFrame {
             }
         });
 
+        inicio__btn.setText("Inicio");
+        inicio__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicio__btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(225, 225, 225)
-                .addComponent(medicoDashboard_title__label)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(166, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(crearHistoria__btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modificarHistoria__btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(164, 164, 164))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(medicoDashboard_title__label))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(inicio__btn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,19 +87,34 @@ public class IDB_Medico extends javax.swing.JFrame {
                 .addComponent(crearHistoria__btn)
                 .addGap(54, 54, 54)
                 .addComponent(modificarHistoria__btn)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(inicio__btn)
+                .addGap(31, 31, 31))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void crearHistoria__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearHistoria__btnActionPerformed
-        // TODO add your handling code here:
+        I_CrearHistoria crearHistoria = new I_CrearHistoria();
+        crearHistoria.setVisible(true);
+        IDB_Medico.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_crearHistoria__btnActionPerformed
 
     private void modificarHistoria__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarHistoria__btnActionPerformed
-        // TODO add your handling code here:
+        I_ModificarHistoria modificarHistoria = new I_ModificarHistoria();
+        modificarHistoria.setVisible(true);
+        IDB_Medico.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_modificarHistoria__btnActionPerformed
+
+    private void inicio__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicio__btnActionPerformed
+        I_Inicio inicio = new I_Inicio();
+        inicio.setVisible(true);
+        IDB_Medico.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_inicio__btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +153,7 @@ public class IDB_Medico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton crearHistoria__btn;
+    private javax.swing.JButton inicio__btn;
     private javax.swing.JLabel medicoDashboard_title__label;
     private javax.swing.JButton modificarHistoria__btn;
     // End of variables declaration//GEN-END:variables

@@ -4,6 +4,7 @@
  */
 package Vista.Secretaria;
 
+
 /**
  *
  * @author Hogar
@@ -155,7 +156,7 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
                                 .addComponent(cancel__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(confirm__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,11 +207,11 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
                 .addComponent(registrarPaciente_relativePhone__label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registrarPaciente_relativePhone__field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancel__btn)
-                    .addComponent(confirm__btn))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(confirm__btn)
+                    .addComponent(cancel__btn))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -229,11 +230,18 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarPaciente_gender__fieldActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        // TODO add your handling code here:
+        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+        SecretariaDB.setVisible(true);
+        I_RegistrarPaciente.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        // TODO add your handling code here:
+        //Si datos válidos
+        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+        SecretariaDB.setVisible(true);
+        I_RegistrarPaciente.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**

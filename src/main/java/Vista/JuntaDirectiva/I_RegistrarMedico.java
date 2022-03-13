@@ -209,11 +209,18 @@ public class I_RegistrarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarMedico_gender__fieldActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        // TODO add your handling code here:
+        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+        JuntaDB.setVisible(true);
+        I_RegistrarMedico.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        // TODO add your handling code here:
+        // Si datos válidos     
+        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+        JuntaDB.setVisible(true);
+        I_RegistrarMedico.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**

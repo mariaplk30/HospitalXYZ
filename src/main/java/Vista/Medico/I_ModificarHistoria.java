@@ -111,8 +111,18 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
         jScrollPane2.setViewportView(modificarHistoria_apptControl__textArea);
 
         cancel__btn.setText("Cancelar");
+        cancel__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancel__btnActionPerformed(evt);
+            }
+        });
 
         confirm__btn.setText("Aceptar");
+        confirm__btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm__btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,6 +256,21 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
     private void modificarHistoria_tMin__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarHistoria_tMin__fieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_modificarHistoria_tMin__fieldActionPerformed
+
+    private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
+        IDB_Medico MedicoDB = new IDB_Medico();
+        MedicoDB.setVisible(true);
+        I_ModificarHistoria.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_cancel__btnActionPerformed
+
+    private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
+        // Si datos válidos
+        IDB_Medico MedicoDB = new IDB_Medico();
+        MedicoDB.setVisible(true);
+        I_ModificarHistoria.this.setVisible(false);
+        dispose();
+    }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**
      * @param args the command line arguments
