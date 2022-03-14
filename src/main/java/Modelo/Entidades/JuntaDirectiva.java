@@ -1,9 +1,8 @@
 package Modelo.Entidades;
 import java.util.*;
 
-/*PacientesAnuales, y los registros son arreglos*/
-
 public class JuntaDirectiva{
+    private ArrayList<String> Directivos;
     private int CantidadPacientes;
     private ArrayList<Paciente> PacientesAnuales;
     private int CantidadMedicos;
@@ -11,11 +10,16 @@ public class JuntaDirectiva{
     private ArrayList<Sucursal> RegistroSucursales;
     
     public JuntaDirectiva(){
+        Directivos = new ArrayList();
         CantidadPacientes = 0;
         PacientesAnuales = new ArrayList();
         CantidadMedicos = 0;
         RegistroMedicos = new ArrayList();
         RegistroSucursales = new ArrayList();
+    }
+    
+    public void setDirectivo(String nombre){
+        
     }
     
     public void setCantidadPacientes(int cant){
