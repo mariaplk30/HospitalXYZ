@@ -5,6 +5,7 @@
 package Vista.Errores;
 
 import Vista.Secretaria.I_RegistrarPaciente;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,6 +18,7 @@ public class I_Error1 extends javax.swing.JFrame {
      */
     public I_Error1() {
         initComponents();
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -33,6 +35,11 @@ public class I_Error1 extends javax.swing.JFrame {
         confirm__btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setText("¡ERROR!");
 
@@ -81,6 +88,10 @@ public class I_Error1 extends javax.swing.JFrame {
             I_Error1.this.setVisible(false);
             dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

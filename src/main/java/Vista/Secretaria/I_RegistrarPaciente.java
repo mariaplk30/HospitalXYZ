@@ -250,9 +250,10 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
         String ocupacion = registrarPaciente_occupation__field.getText();
         String relativo = registrarPaciente_relativePhone__field.getText();
         //Falta SUCURSAL
+        Ctrl_Citas ctrlCita = new Ctrl_Citas();
 
-        if(Ctrl_Citas.ValidarDatos() == true){
-            RegistrarPaciente();
+        if(ctrlCita.VerificarDatos(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo) == true){
+            //RegistrarPaciente();
             IDB_Secretaria SecretariaDB = new IDB_Secretaria();
             SecretariaDB.setVisible(true);
             I_RegistrarPaciente.this.setVisible(false);
