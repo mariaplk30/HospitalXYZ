@@ -44,7 +44,8 @@ public class Ctrl_Citas {
             FileReader reader = new FileReader(filePath + "/src/main/java/Data/formato.json");
 
             Object obj = jsonParser.parse(reader);
-            JSONObject jsonObject =  (JSONObject) obj;
+            JSONObject jsonObject = (JSONObject) obj;
+            System.out.println(obj);
             
             //System.out.println(obj);
             // recibiendo la junta directiva
@@ -55,9 +56,7 @@ public class Ctrl_Citas {
             // loop array
             
             while (itr1.hasNext()) {
-                
-                System.out.println( itr1.next().get("nombre"));
-                
+                System.out.println( itr1.next().get("nombre") );
             }
             
 //            String name = (String) jsonObject.get("juntaDirectiva");

@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controlador;
-
+import Modelo.Entidades.Medico;
 /**
  *
  * @author Hogar
  */
 public class Ctrl_JuntaDirectiva {
 
-    public Ctrl_Historia(){}
+    public Ctrl_JuntaDirectiva(){}
 
     private Medico RegistroMedicos;
 

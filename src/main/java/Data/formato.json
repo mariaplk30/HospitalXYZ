@@ -43,7 +43,7 @@
                   "Valores":{
                       "peso": "80", 
                       "talla": "1.85", 
-                      "peso/talla": "23.37", 
+                      "pesoTalla": "23.37", 
                       "tension":{
                           "maxima": "200", 
                           "minima": "180"
