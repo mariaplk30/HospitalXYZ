@@ -24,6 +24,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
 import java.io.File;
+import java.util.Map;
 /**
  *
  * @author Hogar
@@ -37,7 +38,7 @@ public class Ctrl_Citas {
 
         JSONParser jsonParser = new JSONParser();
         String filePath = new File("").getAbsolutePath();
-        System.out.println (filePath);
+        //System.out.println (filePath);
 
         try {
             FileReader reader = new FileReader(filePath + "/src/main/java/Data/formato.json");
@@ -45,23 +46,27 @@ public class Ctrl_Citas {
             Object obj = jsonParser.parse(reader);
             JSONObject jsonObject =  (JSONObject) obj;
             
-            System.out.println(obj);
+            //System.out.println(obj);
+            // recibiendo la junta directiva
+            JSONArray juntaD = (JSONArray) jsonObject.get("juntaDirectiva");
             
-            JSONArray juntaDirectiva = (JSONArray) obj;
-            System.out.println(juntaDirectiva);
-
+            // creando el iterador del dato
+            Iterator<JSONObject> itr1 = juntaD.iterator();
+            // loop array
+            
+            while (itr1.hasNext()) {
+                
+                System.out.println( itr1.next().get("nombre"));
+                
+            }
+            
 //            String name = (String) jsonObject.get("juntaDirectiva");
 //            System.out.println(name);
 //
 //            long age = (Long) jsonObject.get("nombre");
 //            System.out.println(age);
 
-            // loop array
-            JSONArray msg = (JSONArray) jsonObject.get("sucursales");
-            Iterator<String> iterator = msg.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
-            }
+            
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
