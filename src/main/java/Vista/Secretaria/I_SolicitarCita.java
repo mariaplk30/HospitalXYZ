@@ -141,7 +141,7 @@ public class I_SolicitarCita extends javax.swing.JFrame {
 //        dispose();
 
 
-        //solicitarCita_branch__field.setText(fecha.toLocaleString().substring(0, 10)); // Probando agarrar input del usuario y 
+        solicitarCita_branch__field.setText(fecha.toLocaleString().substring(0, 10)); // Probando agarrar input del usuario y 
                                                                                      // mostrarlo
     }//GEN-LAST:event_confirm__btnActionPerformed
 
