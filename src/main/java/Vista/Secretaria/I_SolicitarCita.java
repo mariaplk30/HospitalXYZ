@@ -4,6 +4,7 @@
  */
 package Vista.Secretaria;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author Hogar
@@ -130,8 +131,10 @@ public class I_SolicitarCita extends javax.swing.JFrame {
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         //Recibir datos
+        SimpleDateFormat dcn = new SimpleDateFormat("dd-MM-yyyy");
         String paciente = solicitarCita_patient__field.getText();
-        Date fecha = solicitarCita_date__field.getDate();
+        //Date date = solicitarCita_date__field.getDate();
+        String date = dcn.format(solicitarCita_date__field.getDate() );
         String medico = solicitarCita_doctor__field.getText();
         String sucursal = solicitarCita_branch__field.getText();
         //Si datos válidos
@@ -141,7 +144,7 @@ public class I_SolicitarCita extends javax.swing.JFrame {
 //        dispose();
 
 
-        solicitarCita_branch__field.setText(fecha.toLocaleString().substring(0, 10)); // Probando agarrar input del usuario y 
+        solicitarCita_branch__field.setText(date); // Probando agarrar input del usuario y 
                                                                                      // mostrarlo
     }//GEN-LAST:event_confirm__btnActionPerformed
 

@@ -13,27 +13,40 @@ package Controlador;
 //import org.json.simple.JSONObject;
 //import org.json.simple.parser.*;
 
+import Modelo.Entidades.*;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.*;
+import org.json.simple.JSONValue;    
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
 import java.io.File;
-import java.util.Map;
-/**
- *
- * @author Hogar
- */
+import java.util.*;
+
+
 public class Ctrl_Citas {
 
 
     public Ctrl_Citas(){}
     
+    public static ArrayList recorrerJSON(JSONArray arreglo, String xyz, ArrayList lista){
+        Iterator<JSONObject> itr = arreglo.iterator();
+        int i=0;
+            
+        while (itr.hasNext()) {
+            lista.add( itr.next().get(xyz) );
+            //System.out.println(arreglo.get(i));
+            i++;
+        }
+        return lista;
+    }
+
+
     public static void main(String[] args){
 
         JSONParser jsonParser = new JSONParser();
@@ -42,28 +55,31 @@ public class Ctrl_Citas {
 
         try {
             FileReader reader = new FileReader(filePath + "/src/main/java/Data/formato.json");
-
             Object obj = jsonParser.parse(reader);
             JSONObject jsonObject = (JSONObject) obj;
-            System.out.println(obj);
-            
-            //System.out.println(obj);
-            // recibiendo la junta directiva
-            JSONArray juntaD = (JSONArray) jsonObject.get("juntaDirectiva");
-            
-            // creando el iterador del dato
-            Iterator<JSONObject> itr1 = juntaD.iterator();
-            // loop array
-            
-            while (itr1.hasNext()) {
-                System.out.println( itr1.next().get("nombre") );
+
+            JSONArray sucursales = (JSONArray) jsonObject.get("sucursales");
+           // Añadiendo los datos del JSON en ArrayList
+            ArrayList<String> nombreSucursales = new ArrayList();
+            nombreSucursales = recorrerJSON(sucursales, "nombre", nombreSucursales);
+            ArrayList<Medico> medicos = new ArrayList();
+            medicos = recorrerJSON(sucursales, "medicos", medicos);
+
+            ArrayList<Object> pacientes = new ArrayList();
+            pacientes = recorrerJSON(sucursales, "pacientes", pacientes);
+
+//            //Una vez lo tengo en objetos no sé cómo acceder a cada cosa del objeto
+            for(Object i: nombreSucursales){
+               System.out.println(i); 
             }
-            
-//            String name = (String) jsonObject.get("juntaDirectiva");
-//            System.out.println(name);
 //
-//            long age = (Long) jsonObject.get("nombre");
-//            System.out.println(age);
+            for(Object i: medicos){
+               System.out.println(i.getClass()); 
+            }
+//
+            for(Object i: pacientes){
+               System.out.println(i); 
+            }
 
             
 
