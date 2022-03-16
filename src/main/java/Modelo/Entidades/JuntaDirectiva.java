@@ -25,10 +25,12 @@ public class JuntaDirectiva{
     }
     
     public void RegPacientes(int anio){
+        
         /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año ingresado*/
     }
     
     public void RegPacientes(){
+        
         /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año actual*/
     }
 }
