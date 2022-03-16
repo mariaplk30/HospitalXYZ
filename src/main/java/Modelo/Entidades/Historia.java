@@ -1,7 +1,7 @@
 package Modelo.Entidades;
-import java.util.*;
+import java.util.ArrayList;
 
-public class Historia {
+public class Historia{
     private int Frecuencia;
     private ArrayList<Cita> ControlDeCita;
     private ArrayList<String> Evolucion;

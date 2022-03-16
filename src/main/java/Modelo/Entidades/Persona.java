@@ -1,6 +1,6 @@
 package Modelo.Entidades;
 
-public abstract class Persona {
+public abstract class Persona{
     public String Nombres;
     public String Apellidos;
     public String Ci;
@@ -11,6 +11,18 @@ public abstract class Persona {
     public String DireccionHabitacion;
     public String Telefono;
 
+    public Persona(){
+        Nombres = "";
+        Apellidos = "";
+        Ci = "";
+        Sexo = Character.MIN_VALUE;
+        LugarNacimiento = "";
+        FechaNacimiento = "";
+        EstadoCivil = "";
+        DireccionHabitacion = "";
+        Telefono = "";
+    }
+    
     public void setNombres(String nombres){
         Nombres = nombres;
     }
