@@ -13,14 +13,15 @@ package Controlador;
 //import org.json.simple.JSONObject;
 //import org.json.simple.parser.*;
 
-import Modelo.Entidades.*;
+import Modelo.Entidades.Medico;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.*;
 import org.json.simple.JSONValue;    
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -83,8 +84,19 @@ public class Ctrl_Citas {
                System.out.println(i); 
             }
             
-            for(Object i: pacientes){
-               System.out.println(i); 
+            for(Object i: medicos){
+
+//               String prueba = (String) i.toString();
+//               prueba = prueba.substring(1, prueba.length()-1);
+               //ObjectMapper mapper = new ObjectMapper();
+               // mapper.configure(DeserializationConfig.Feature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+               //mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+                  //ObjectMapper mapper = new ObjectMapper()
+                  // .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+                  // .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+//               Medico medico = mapper.readValue(prueba, Medico.class);
+//               System.out.println(medico.getID_Medico()); 
+
             }
             
             Iterator<JSONObject> itr1 = sucursales.iterator();
@@ -96,7 +108,7 @@ public class Ctrl_Citas {
                     
             }
 
-            
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
