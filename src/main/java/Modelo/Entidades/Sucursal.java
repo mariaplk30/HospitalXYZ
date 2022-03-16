@@ -2,6 +2,7 @@ package Modelo.Entidades;
 import java.util.ArrayList;
 
 public class Sucursal{
+    private String ID;
     private String Nombre;
     private String Ubicacion;
     private String Telefono;
@@ -11,6 +12,7 @@ public class Sucursal{
     private ArrayList<Historia> Historias;
     
     public Sucursal(){
+        ID = "";
         Nombre = "";
         Ubicacion = "";
         Telefono = "";
@@ -18,6 +20,14 @@ public class Sucursal{
         Pacientes = new ArrayList();
         Citas = new ArrayList();
         Historias = new ArrayList();
+    }
+    
+    public void setID_Sucursal(String id){
+        ID = id;
+    }
+    
+    public String getID_Sucursal(){
+        return ID;
     }
     
     public void setNombre(String nombre){
@@ -47,8 +57,18 @@ public class Sucursal{
     public void addMedico(Medico medico){
         Medicos.add(medico);
     }
-            
+    
+    public void addMedico(String id, String nombre, String especialidad){
+        Medico medico = new Medico(id, nombre, especialidad);
+        addMedico(medico);
+    }
+    
     public void addPaciente(Paciente paciente){
         Pacientes.add(paciente);
+    }
+    
+    public void addPaciente(String ci, String nombre){
+        Paciente paciente = new Paciente(ci, nombre);
+        addPaciente(paciente);
     }
 }

@@ -27,6 +27,11 @@ public class Paciente extends Persona{
         Pulso = 0;
     }
     
+    public Paciente(String ci, String nombre){
+        Ci = ci;
+        Nombres = nombre;
+    }
+    
     public void setOcupacion(String ocupacion){
         Ocupacion = ocupacion;
     }

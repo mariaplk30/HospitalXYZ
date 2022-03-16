@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controlador;
 import Modelo.Entidades.Medico;
-/**
- *
- * @author Hogar
- */
+
 public class Ctrl_JuntaDirectiva {
 
     public Ctrl_JuntaDirectiva(){}
@@ -16,27 +9,21 @@ public class Ctrl_JuntaDirectiva {
 
     public void RegistrarMedico(){
     
-
     }
 
     public boolean ExisteSucursal(){
-    
-
+        return true;
     }
 
     public void AbrirSucursal(){
     
-
     }
 
     public boolean ExisteMedico(Medico datos){
-    
-
+        return true;
     }
 
     public boolean VerificarDatos(Medico datos){
-    
-
+        return true;
     }
-
 }

@@ -3,27 +3,23 @@ package Modelo.Entidades;
 public class Medico extends Persona{
     private String ID;
     private String Especialidad;
-    private String id;
 
     public Medico(){
         ID = "";
         Especialidad="";
-        id = "";
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public Medico(String id, String nombre, String especialidad){
+        ID = id;
+        Nombres = nombre;
+        Especialidad = especialidad;
     }
     
-    public void setID(String id){
+    public void setID_Medico(String id){
         ID = id;
     }
-            
-    public String getID(){
+    
+    public String getID_Medico() {
         return ID;
     }
     
