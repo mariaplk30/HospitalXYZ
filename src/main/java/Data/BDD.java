@@ -30,7 +30,7 @@ public class BDD{
         //8-j para delimitar con cuantos 0 rellenar el mensaje sin superar los 8 dígitos numéricos
         //y concatenar el número correspondiente al tamaño de la lista -1 para comenzar desde el S00000000.
         
-        for(int i=0; i<8-j; i++) mensaje += "0";
+        for(int i=1; i<=8-j; i++) mensaje += "0";
         
         return mensaje + Integer.toString(Sucursales.size() - 1);   
     }
@@ -61,7 +61,7 @@ public class BDD{
         if(Math.log10(Medicos.size())<1) j = 1;
         else j = (int) Math.log10(Medicos.size()) + 1;
         
-        for(int i=0; i<8-j; i++) mensaje += "0";
+        for(int i=1; i<=8-j; i++) mensaje += "0";
         
         return mensaje + Integer.toString(Medicos.size() - 1);  
     }
