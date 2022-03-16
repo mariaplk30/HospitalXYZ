@@ -1,10 +1,12 @@
 package Modelo.Entidades;
 
-public class Medico extends Persona {
+public class Medico extends Persona{
+    private String ID;
     private String Especialidad;
     private String id;
 
     public Medico(){
+        ID = "";
         Especialidad="";
         id = "";
     }
@@ -17,9 +19,16 @@ public class Medico extends Persona {
         this.id = id;
     }
     
-
+    public void setID(String id){
+        ID = id;
+    }
+            
+    public String getID(){
+        return ID;
+    }
+    
     public void setEspecialidad(String esp){
-        Especialidad=esp;
+        Especialidad = esp;
     }
             
     public String getEspecialidad(){

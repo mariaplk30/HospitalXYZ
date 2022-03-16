@@ -3,9 +3,6 @@ import java.util.*;
 
 public class JuntaDirectiva{
     private ArrayList<String> Directivos;
-    private int CantidadPacientes;
-    private ArrayList<Paciente> PacientesAnuales;
-    private int CantidadMedicos;
     private ArrayList<Medico> RegistroMedicos;
     private ArrayList<Sucursal> RegistroSucursales;
     
@@ -13,9 +10,6 @@ public class JuntaDirectiva{
     
     public JuntaDirectiva(FabricaSucursales fabricaSucursales){
         Directivos = new ArrayList();
-        CantidadPacientes = 0;
-        PacientesAnuales = new ArrayList();
-        CantidadMedicos = 0;
         RegistroMedicos = new ArrayList();
         RegistroSucursales = new ArrayList();
         this.fabricaSucursales = fabricaSucursales;
@@ -28,23 +22,23 @@ public class JuntaDirectiva{
         return;
     }
     
-    public void setDirectivo(String nombre){
-        
+    public void addDirectivo(String nombre){
+        Directivos.add(nombre);
     }
     
-    public void setCantidadPacientes(int cant){
-        CantidadPacientes = cant;
+    public void addMedico(Medico medico){
+        RegistroMedicos.add(medico);
+    }
+ 
+    public void addSucursal(Sucursal sucursal){
+        RegistroSucursales.add(sucursal);
     }
     
-    public int getCantidadMedicos(){
-        return CantidadPacientes;
-    }
-
-    public void setCantidadMedicos(int cant){
-        CantidadPacientes = cant;
+    public void RegPacientes(int anio){
+        /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año ingresado*/
     }
     
-    public int getCantidadPacientes(){
-        return CantidadPacientes;
+    public void RegPacientes(){
+        /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año actual*/
     }
 }

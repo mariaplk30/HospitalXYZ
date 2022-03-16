@@ -1,20 +1,34 @@
 package Modelo.Entidades;
 
-/*Paciente hereda de Persona*/
-
-public class Paciente {
+public class Paciente extends Persona{
     private String Ocupacion;
     private String Profesion;
     private String TelefonoRelacionado;
-    private float Peso;
-    private float Talla;
-    private float IMC; /*Se me olvidó quitar esto del diagrama de clases*/
-    private float TensionMax; /*Esto aparece como short en el diagrama de clases y no debería ser así x_x*/
-    private float TensionMin; /*Esto aparece como short en el diagrama de clases y no debería ser así x_x*/
-    private short Pulso;
+    private double Peso;
+    private double Talla;
+    private float IMC;
+    private int TensionMax;
+    private int TensionMin;
+    private int[] Tension;
+    private int Pulso;
+    
+    public Paciente(){
+        Ocupacion = "";
+        Profesion = "";
+        TelefonoRelacionado = "";
+        Peso = 0;
+        Talla = 0;
+        IMC = 0; 
+        TensionMax = 0;
+        TensionMin = 0;
+        Tension = new int[2];
+        Tension[0] = 0;
+        Tension[1] = 0;
+        Pulso = 0;
+    }
     
     public void setOcupacion(String ocupacion){
-        Ocupacion=ocupacion;
+        Ocupacion = ocupacion;
     }
     
     public String getOcupacion(){
@@ -22,7 +36,7 @@ public class Paciente {
     }
     
     public void setProfesion(String profesion){
-        Profesion=profesion;
+        Profesion = profesion;
     }
     
     public String getProfesion(){
@@ -30,50 +44,61 @@ public class Paciente {
     }
     
     public void setTelefonoRelacion(String tlf){
-        TelefonoRelacionado=tlf;
+        TelefonoRelacionado = tlf;
     }
     
     public String getTelefonoRelacion(){
         return TelefonoRelacionado;
     }
 
-    public void setPeso(float peso){
-        Peso=peso;
+    public void setPeso(double peso){
+        Peso = peso;
     }
     
-    public float getPeso(){
+    public double getPeso(){
         return Peso;
     }
     
-    public void setTalla(float talla){
-        Talla=talla;
+    public void setTalla(double talla){
+        Talla = talla;
     }
     
-    public float getTalla(){
+    public double getTalla(){
         return Talla;
     }
     
-    public void setTensionMax(float tmax){
-        TensionMax=tmax;
+    public float getIMC(){
+        double result = Math.round((int) Peso/Math.pow(Talla, 2) * 100d) /100d; // Sacar IMC limitando sus decimales a 2
+        return (float) result;
     }
     
-    public  float getTensionMax(){
+    public void setTensionMax(int tmax){
+        TensionMax = tmax;
+        Tension[0] = tmax;
+    }
+    
+    public  int getTensionMax(){
         return TensionMax;
     }
     
-    public void setTensionMin(float tmin){
-        TensionMin=tmin;
+    public void setTensionMin(int tmin){
+        TensionMin = tmin;
+        Tension[1] = tmin;
     }
     
-    public float getTensionMin(){
+    public int getTensionMin(){
         return TensionMin;
     }
     
-    public void setPulso(short pulso){
-        Pulso=pulso;
+    public int[] getTensiones(){
+        return Tension;
     }
     
-    public short getPulso(){
+    public void setPulso(int pulso){
+        Pulso = pulso;
+    }
+    
+    public int getPulso(){
         return Pulso;
     }
 }
