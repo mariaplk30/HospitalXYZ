@@ -9,9 +9,9 @@ package Modelo.Entidades;
  * @author e_pae
  */
 public class FabricaSucursales {
-    public Sucursal crearSucursal() {
+    public Sucursal crearSucursal(String nombre) {
         Sucursal sucursal = new Sucursal();
-        
+        sucursal.setNombre(nombre);
         return sucursal;
     }
 }
