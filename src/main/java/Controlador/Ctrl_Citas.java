@@ -34,16 +34,17 @@ public class Ctrl_Citas {
 
     public Ctrl_Citas(){}
     
-    public static ArrayList recorrerJSON(JSONArray arreglo, String xyz, ArrayList lista){
+    public static ArrayList recorrerJsonArray(JSONArray arreglo, String atributo){
+        ArrayList Alista = new ArrayList();
         Iterator<JSONObject> itr = arreglo.iterator();
         int i=0;
             
         while (itr.hasNext()) {
-            lista.add( itr.next().get(xyz) );
+            Alista.add( itr.next().get(atributo) );
             //System.out.println(arreglo.get(i));
             i++;
         }
-        return lista;
+        return Alista;
     }
 
 
@@ -59,26 +60,40 @@ public class Ctrl_Citas {
             JSONObject jsonObject = (JSONObject) obj;
 
             JSONArray sucursales = (JSONArray) jsonObject.get("sucursales");
-           // Añadiendo los datos del JSON en ArrayList
-            ArrayList<String> nombreSucursales = new ArrayList();
-            nombreSucursales = recorrerJSON(sucursales, "nombre", nombreSucursales);
-            ArrayList<Medico> medicos = new ArrayList();
-            medicos = recorrerJSON(sucursales, "medicos", medicos);
+            // creando el iterador del dato
 
-            ArrayList<Object> pacientes = new ArrayList();
-            pacientes = recorrerJSON(sucursales, "pacientes", pacientes);
+            // Añadiendo los datos del JSON en ArrayList
+            ArrayList nombreSucursal = recorrerJsonArray(sucursales, "nombre");
+            ArrayList medicos = recorrerJsonArray(sucursales, "medicos");
+            ArrayList pacientes = recorrerJsonArray(sucursales, "pacientes");
+            
+            //Una vez lo tengo en objetos no sé cómo acceder a cada cosa del objeto
 
-//            //Una vez lo tengo en objetos no sé cómo acceder a cada cosa del objeto
-            for(Object i: nombreSucursales){
+            Iterator itNombreS = nombreSucursal.iterator();
+            while (itNombreS.hasNext()){
+                System.out.println(itNombreS.next());
+            }
+            
+            Iterator itMedicos = medicos.iterator();
+            while (itMedicos.hasNext()){
+                System.out.println(itMedicos.next());
+            }
+            
+            for(Object i: nombreSucursal){
                System.out.println(i); 
             }
-//
-            for(Object i: medicos){
-               System.out.println(i.getClass()); 
-            }
-//
+            
             for(Object i: pacientes){
                System.out.println(i); 
+            }
+            
+            Iterator<JSONObject> itr1 = sucursales.iterator();
+            // loop array
+            
+            while (itr1.hasNext()) {
+                
+                itr1.next().get("nombre");
+                    
             }
 
             
