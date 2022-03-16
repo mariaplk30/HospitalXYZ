@@ -1,5 +1,5 @@
 package Modelo.Entidades;
-
+/**/
 public class Cita{
     private String ID;
     private String Fecha;

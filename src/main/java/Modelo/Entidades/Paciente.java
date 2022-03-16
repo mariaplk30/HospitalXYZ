@@ -1,16 +1,18 @@
 package Modelo.Entidades;
-
+import java.util.ArrayList;
+/**/
 public class Paciente extends Persona{
     private String Ocupacion;
     private String Profesion;
     private String TelefonoRelacionado;
     private double Peso;
     private double Talla;
-    private float IMC;
+    private double IMC;
     private int TensionMax;
     private int TensionMin;
     private int[] Tension;
     private int Pulso;
+    private Historia Historia;
     
     public Paciente(){
         Ocupacion = "";
@@ -25,11 +27,37 @@ public class Paciente extends Persona{
         Tension[0] = 0;
         Tension[1] = 0;
         Pulso = 0;
+        Sexo = Character.MIN_VALUE;
+        LugarNacimiento = "";
+        FechaNacimiento = "";
+        EstadoCivil = "";
+        DireccionHabitacion = "";
+        Telefono = "";
+        Historia = new Historia();
     }
     
     public Paciente(String ci, String nombre){
         Ci = ci;
         Nombres = nombre;
+        Ocupacion = "";
+        Profesion = "";
+        TelefonoRelacionado = "";
+        Peso = 0;
+        Talla = 0;
+        IMC = 0; 
+        TensionMax = 0;
+        TensionMin = 0;
+        Tension = new int[2];
+        Tension[0] = 0;
+        Tension[1] = 0;
+        Pulso = 0;
+        Sexo = Character.MIN_VALUE;
+        LugarNacimiento = "";
+        FechaNacimiento = "";
+        EstadoCivil = "";
+        DireccionHabitacion = "";
+        Telefono = "";
+        Historia = new Historia();
     }
     
     public void setOcupacion(String ocupacion){
@@ -73,8 +101,8 @@ public class Paciente extends Persona{
     }
     
     public float getIMC(){
-        double result = Math.round((int) Peso/Math.pow(Talla, 2) * 100d) /100d; // Sacar IMC limitando sus decimales a 2
-        return (float) result;
+        IMC = Math.round((int) Peso/Math.pow(Talla, 2) * 100d) /100d; // Sacar IMC limitando sus decimales a 2
+        return (float) IMC;
     }
     
     public void setTensionMax(int tmax){
@@ -105,5 +133,18 @@ public class Paciente extends Persona{
     
     public int getPulso(){
         return Pulso;
+    }
+    
+    public void crearHistoria(Historia historia){
+        Historia = historia;
+    }
+    
+    public void crearHistoria(String id){
+        Historia.setID(id);
+        Historia.setCI(Ci);
+    }
+    
+    public Historia getHistoria(){
+        return Historia;
     }
 }

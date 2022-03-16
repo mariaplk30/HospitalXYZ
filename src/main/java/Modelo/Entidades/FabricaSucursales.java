@@ -1,17 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo.Entidades;
 
-/**
- *
- * @author e_pae
- */
-public class FabricaSucursales {
-    public Sucursal crearSucursal(String nombre) {
-        Sucursal sucursal = new Sucursal();
-        sucursal.setNombre(nombre);
+public class FabricaSucursales{
+    public Sucursal crearSucursal(String nombre){
+        Sucursal sucursal = new Sucursal(nombre);
         return sucursal;
     }
 }

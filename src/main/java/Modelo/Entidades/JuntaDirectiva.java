@@ -1,6 +1,6 @@
 package Modelo.Entidades;
 import java.util.*;
-
+/**/
 public class JuntaDirectiva{
     private ArrayList<String> Directivos;
     private ArrayList<Medico> RegistroMedicos;
@@ -30,8 +30,18 @@ public class JuntaDirectiva{
         RegistroMedicos.add(medico);
     }
  
+    public void addMedico(String id, String nombre, String especialidad){
+        Medico medico = new Medico(id, nombre, especialidad);
+        addMedico(medico);
+    }
+    
     public void addSucursal(Sucursal sucursal){
         RegistroSucursales.add(sucursal);
+    }
+    
+    public void addSucursal(String nombre){
+        Sucursal sucursal = new Sucursal(nombre);
+        addSucursal(sucursal);
     }
     
     public void RegPacientes(int anio){

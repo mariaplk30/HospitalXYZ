@@ -1,6 +1,6 @@
 package Modelo.Entidades;
 import java.util.ArrayList;
-
+/**/
 public class Sucursal{
     private String ID;
     private String Nombre;
