@@ -1,5 +1,8 @@
 package Controlador;
 import Modelo.Entidades.Medico;
+import Modelo.Entidades.Sucursal;
+import Modelo.Entidades.FabricaSucursales;
+import Data.BDD;
 
 public class Ctrl_JuntaDirectiva {
 
@@ -15,8 +18,17 @@ public class Ctrl_JuntaDirectiva {
         return true;
     }
 
-    public void AbrirSucursal(){
-    
+    public boolean AbrirSucursal(String nombre){
+        if(!ExisteSucursal()) {
+            FabricaSucursales fabrica = new FabricaSucursales();
+            Sucursal sucursal = fabrica.crearSucursal(nombre);
+            BDD bdd = new BDD();
+            bdd.addSucursal(sucursal);
+            return true;
+        } else {
+            //console.log(marico);
+            return false;
+        }
     }
 
     public boolean ExisteMedico(Medico datos){

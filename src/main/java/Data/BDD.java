@@ -7,6 +7,7 @@ public class BDD{
     
     private ArrayList<Medico> Medicos; //Se guardan todos los medicos registrados para asignarles un ID único
                                        //para luego ingresarlos o no en una sucursal.
+    //y los pacientes por el recto anal?
     public BDD(){
         Sucursales = new ArrayList();
         Medicos = new ArrayList();

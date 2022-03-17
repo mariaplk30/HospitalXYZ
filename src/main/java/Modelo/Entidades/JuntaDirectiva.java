@@ -15,13 +15,6 @@ public class JuntaDirectiva{
         this.fabricaSucursales = fabricaSucursales;
     }
     
-    public void abrirSucursal(String nombre) {
-        Sucursal sucursal = fabricaSucursales.crearSucursal(nombre);
-        //Revisar si en sucursales hay otra con el mismo nombre, no logro que .contains sirva
-        //Si no, pushearla a la lista
-        return;
-    }
-    
     public void addDirectivo(String nombre){
         Directivos.add(nombre);
     }
