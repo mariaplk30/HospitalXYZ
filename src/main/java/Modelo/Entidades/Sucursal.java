@@ -8,10 +8,10 @@ public class Sucursal{
     private String Telefono;
     private ArrayList<Medico> Medicos;
     private ArrayList<Paciente> Pacientes;
-    private ArrayList<Cita> Citas; //Se guardan todas las citas solicitadas para asignarles un ID único y luego
+    //private ArrayList<Cita> Citas; //Se guardan todas las citas solicitadas para asignarles un ID único y luego
                                    //poder operar a gusto con las citas
     
-    private ArrayList<Historia> Historias; //Se guardan todas las historias registradas para asignarles un ID
+    //private ArrayList<Historia> Historias; //Se guardan todas las historias registradas para asignarles un ID
                                            //único y luego ingresarla en su paciente correspondiente.
     public Sucursal(){
         ID = "";
@@ -20,17 +20,15 @@ public class Sucursal{
         Telefono = "";
         Medicos = new ArrayList();
         Pacientes = new ArrayList();
-        Historias = new ArrayList();
     }
     
-    public Sucursal(String nombre){
+    public Sucursal(String nombre, ArrayList<Medico> medicos, ArrayList<Paciente> pacientes){
         Nombre = nombre;
         ID = "";
         Ubicacion = "";
         Telefono = "";
         Medicos = new ArrayList();
         Pacientes = new ArrayList();
-        Historias = new ArrayList();
     }
     
     public void setID(String id){

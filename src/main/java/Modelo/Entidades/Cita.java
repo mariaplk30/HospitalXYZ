@@ -3,6 +3,7 @@ package Modelo.Entidades;
 public class Cita{
     private String ID;
     private String Fecha;
+    private String ID_medico;
     
     public Cita(){
         ID = "";
@@ -14,9 +15,10 @@ public class Cita{
         Fecha = "";
     }
     
-    public Cita(String id, String fecha){
+    public Cita(String id, String fecha, String medico){
         ID = id;
         Fecha = fecha;
+        ID_medico = medico;
     }
     
     public void setID(String id){

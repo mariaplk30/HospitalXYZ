@@ -12,7 +12,9 @@ public class Paciente extends Persona{
     private int TensionMin;
     private int[] Tension;
     private int Pulso;
-    private Historia Historia;
+    private ArrayList<Historia> Historial;
+    private ArrayList<Cita> Citas;
+
     
     public Paciente(){
         Ocupacion = "";
@@ -33,31 +35,14 @@ public class Paciente extends Persona{
         EstadoCivil = "";
         DireccionHabitacion = "";
         Telefono = "";
-        Historia = new Historia();
+        Historial = new ArrayList();
     }
     
-    public Paciente(String ci, String nombre){
+    public Paciente(String ci, String nombre, ArrayList<Cita> citas, ArrayList<Historia> historial){
         Ci = ci;
         Nombres = nombre;
-        Ocupacion = "";
-        Profesion = "";
-        TelefonoRelacionado = "";
-        Peso = 0;
-        Talla = 0;
-        IMC = 0; 
-        TensionMax = 0;
-        TensionMin = 0;
-        Tension = new int[2];
-        Tension[0] = 0;
-        Tension[1] = 0;
-        Pulso = 0;
-        Sexo = Character.MIN_VALUE;
-        LugarNacimiento = "";
-        FechaNacimiento = "";
-        EstadoCivil = "";
-        DireccionHabitacion = "";
-        Telefono = "";
-        Historia = new Historia();
+        Citas = citas;
+        Historial = historial;
     }
     
     public void setOcupacion(String ocupacion){

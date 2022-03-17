@@ -30,22 +30,36 @@ import java.io.File;
 import java.util.*;
 
 
+
 public class Ctrl_Citas {
 
 
     public Ctrl_Citas(){}
     
-    private static void parseSucursales(JSONObject obj) {
+    private static Sucursal parseSucursales(JSONObject obj) {
 	String nombre = (String)obj.get("nombre");
 	JSONArray medicos = (JSONArray)obj.get("medicos");
 	JSONArray pacientes = (JSONArray)obj.get("pacientes");
         
-        ListArray<Sucursal> sucursales = new ListArray();
-        Sucursal sucursal = new Sucursal();
+        ArrayList<Medico> arregloMedicosSucursal = new ArrayList();
 
-	System.out.println("Nombre: "+nombre);
-	System.out.println("Medicos: "+medicos);
-	System.out.println("Pacientes: "+pacientes);
+        for(int i=0; i<medicos.size(); i++){
+            arregloMedicosSucursal.add(parseMedicos((JSONObject) medicos.get(i)));
+        }                
+
+        ArrayList<Paciente> arregloPacientesSucursal = new ArrayList();
+
+        for(int i=0; i<pacientes.size(); i++){
+            arregloPacientesSucursal.add(parsePacientes((JSONObject) pacientes.get(i)));
+        }          
+
+        Sucursal sucursal = new Sucursal(nombre, arregloMedicosSucursal, arregloPacientesSucursal);
+
+//	System.out.println("Nombre: "+nombre);
+//	System.out.println("Medicos: "+medicos);
+//	System.out.println("Pacientes: "+pacientes);
+
+        return sucursal;
         
     }
     
@@ -55,37 +69,60 @@ public class Ctrl_Citas {
 	String especialidad = (String)obj.get("especialidad");
         
         Medico medico = new Medico(id,nombre,especialidad);
-        return medico;
 
-	System.out.println("id: "+id);
-	System.out.println("nombre: "+nombre);
-	System.out.println("especialidad: "+especialidad);
+
+//	System.out.println("id: "+id);
+//	System.out.println("nombre: "+nombre);
+//	System.out.println("especialidad: "+especialidad);
+
+        return medico;
     }
     
-    private static void parsePacientes(JSONObject obj) {
+    private static Paciente parsePacientes(JSONObject obj) {
 	String cedula = (String)obj.get("cedula");
 	String nombre = (String)obj.get("nombre");
 	JSONArray citas = (JSONArray)obj.get("citas");
         JSONArray historial = (JSONArray)obj.get("historial");
 
-	System.out.println("cedula: "+cedula);
-	System.out.println("nombre: "+nombre);
-	System.out.println("citas: "+citas);
+//	System.out.println("cedula: "+cedula);
+//	System.out.println("nombre: "+nombre);
+//	System.out.println("citas: "+citas);
+
+        ArrayList<Cita> arregloCitasDePaciente = new ArrayList();
+        ArrayList<Historia> arregloHistoriasDePaciente = new ArrayList();
+
+        for(int i=0; i<citas.size(); i++){
+            arregloCitasDePaciente.add(parsePacienteCitas((JSONObject) citas.get(i)));
+        }        
+
+        for(int i=0; i<historial.size(); i++){
+            arregloHistoriasDePaciente.add(parsePacienteHistorial((JSONObject) historial.get(i)));
+        }    
+
+        Paciente paciente = new Paciente(cedula, nombre, arregloCitasDePaciente, arregloHistoriasDePaciente);
+        return paciente;
     }
     
-    private static void parsePacienteCitas(JSONObject obj) {
+    private static Cita parsePacienteCitas(JSONObject obj) {
 	String id = (String)obj.get("id");
 	String medico = (String)obj.get("medico");
         String fecha = (String)obj.get("fecha");
-
+        Cita cita = new Cita(id, fecha, medico);
+        return cita;
     }
     
-    private static void parsePacienteHistorial(JSONObject obj) {
+    private static Historia parsePacienteHistorial(JSONObject obj) {
 	String id = (String)obj.get("id");
 	String paciente = (String)obj.get("paciente");
         String fecha = (String)obj.get("fecha");
         JSONArray citas = (JSONArray)obj.get("citas");
 
+        //Falta aquí lo del JSON cITAS        
+
+
+
+        Historia historia = new Historia(id, paciente, fecha, arregloCitas);
+        return historia;
     }    
 
     public static void main(String[] args){
@@ -100,22 +137,20 @@ public class Ctrl_Citas {
             JSONObject jsonObject = (JSONObject) obj;
 
             JSONArray sucursales = (JSONArray) jsonObject.get("sucursales");
-            // creando el iterador del dato
 
-            // Añadiendo los datos del JSON en ArrayList
-            
-            //Una vez lo tengo en objetos no sé cómo acceder a cada cosa del objeto
-            //Traverse the list
-            System.out.println("comienza test de medicos");
-            JSONObject test2 =  (JSONObject)sucursales.get(0);
-            JSONObject test3 =  (JSONObject)sucursales.get(0);
-            System.out.println(test3);
-            JSONArray medicos2 = (JSONArray)test2.get("pacientes");
-            for(int i=0;i<medicos2.size();i++)
+            System.out.println("Empieza a iterar por cada sucursal");
+//            JSONObject test2 =  (JSONObject)sucursales.get(0);
+//            JSONObject test3 =  (JSONObject)sucursales.get(0);
+//            System.out.println(test3);
+//            JSONArray medicos2 = (JSONArray)test2.get("pacientes");
+            ArrayList<Sucursal> arregloSucursales = new ArrayList();
+            for(int i=0;i<sucursales.size();i++)
             {
-		JSONObject test =  (JSONObject)medicos2.get(i);
-                System.out.println("dentro del for");
-                parsePacientes(test);
+		JSONObject suc =  (JSONObject)sucursales.get(i);
+                System.out.println("Dentro del for");
+                arregloSucursales.add(parseSucursales(suc));
+                System.out.println(arregloSucursales.get(i));
+
             }
 //            
 //            for(int i=0;i<sucursales.size();i++)
@@ -125,35 +160,6 @@ public class Ctrl_Citas {
 //		System.out.println(test);
 //            }
 //            
-
-//            Iterator itNombreS = nombreSucursal.iterator();
-//            while (itNombreS.hasNext()){
-//                System.out.println(itNombreS.next());
-//            }
-//            
-//            Iterator itMedicos = medicos.iterator();
-//            while (itMedicos.hasNext()){
-//                System.out.println(itMedicos.next());
-//            }
-//            
-//            for(Object i: nombreSucursal){
-//               System.out.println(i); 
-//            }
-//            
-//            for(Object i: pacientes){
-//               System.out.println(i); 
-//            }
-//            
-//            Iterator<JSONObject> itr1 = sucursales.iterator();
-//            // loop array
-//            
-//            while (itr1.hasNext()) {
-//                
-//                itr1.next().get("nombre");
-//                    
-//            }
-
-            
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
