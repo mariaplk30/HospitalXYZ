@@ -1,4 +1,6 @@
 package Modelo.Entidades;
+import java.util.ArrayList;
+
 /**/
 public class Cita{
     private String ID;
@@ -20,7 +22,7 @@ public class Cita{
         Fecha = fecha;
         ID_medico = medico;
     }
-    
+
     public void setID(String id){
         ID = id;
     }

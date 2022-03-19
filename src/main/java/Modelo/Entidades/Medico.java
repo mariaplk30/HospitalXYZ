@@ -1,49 +1,23 @@
 package Modelo.Entidades;
 /**/
-public class Medico extends Persona{
+public class Medico{
     private String ID;
+    private String Nombres;
     private String Especialidad;
 
     public Medico(){
-        ID = "";
-        Especialidad="";
-        Nombres = "";
-        Apellidos = "";
-        Ci = "";
-        Sexo = Character.MIN_VALUE;
-        LugarNacimiento = "";
-        FechaNacimiento = "";
-        EstadoCivil = "";
-        DireccionHabitacion = "";
-        Telefono = "";
     }
 
     public Medico(String nombre, String especialidad){
         ID = "";
         Nombres = nombre;
         Especialidad = especialidad;
-        Apellidos = "";
-        Ci = "";
-        Sexo = Character.MIN_VALUE;
-        LugarNacimiento = "";
-        FechaNacimiento = "";
-        EstadoCivil = "";
-        DireccionHabitacion = "";
-        Telefono = "";
     }
     
     public Medico(String id, String nombre, String especialidad){
         ID = id;
         Nombres = nombre;
         Especialidad = especialidad;
-        Apellidos = "";
-        Ci = "";
-        Sexo = Character.MIN_VALUE;
-        LugarNacimiento = "";
-        FechaNacimiento = "";
-        EstadoCivil = "";
-        DireccionHabitacion = "";
-        Telefono = "";
     }
     
     public void setID(String id){

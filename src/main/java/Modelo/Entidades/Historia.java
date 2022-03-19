@@ -1,39 +1,33 @@
 package Modelo.Entidades;
 import java.util.ArrayList;
+import org.json.simple.JSONArray;
+
 /**/
 public class Historia{
     private String ID;
     private String Ci;
-    private int Frecuencia;
-    private ArrayList<Cita> ControlDeCita;
-    private ArrayList<String> Evolucion;
+    private int Pulso;
+    private ArrayList<String> Citas;
     private ArrayList<String> Tratamientos;
     
     public Historia(){
         ID = "";
         Ci = "";
-        Frecuencia = 0;
-        ControlDeCita = new ArrayList();
-        Evolucion = new ArrayList();
+        Pulso = 0;
         Tratamientos = new ArrayList();
     }
     
     public Historia(String ci){
         ID = "";
         Ci = ci;
-        Frecuencia = 0;
-        ControlDeCita = new ArrayList();
-        Evolucion = new ArrayList();
+        Pulso = 0;
         Tratamientos = new ArrayList();
     }
     
-    public Historia(String id, String ci){
+    public Historia(String id, String ci, ArrayList citas){
         ID = id;
         Ci = ci;
-        Frecuencia = 0;
-        ControlDeCita = new ArrayList();
-        Evolucion = new ArrayList();
-        Tratamientos = new ArrayList();
+        Citas = citas; 
     }
     
     public void setID(String id){
@@ -52,13 +46,13 @@ public class Historia{
         return Ci;
     }
     
-    public int getFrecuencia(){
-        return Frecuencia;
+    public int getPulso(){
+        return Pulso;
     }
     
     public void GuardarCita(Cita cita){
-        ControlDeCita.add(Frecuencia, cita);
-        Frecuencia++;
+        ControlDeCita.add(Pulso, cita);
+        Pulso++;
     }
     
     public void GuardarCita(String id, String fecha){
@@ -71,7 +65,7 @@ public class Historia{
     }
     
     public void setEvolucion(String valores){
-        Evolucion.add(Frecuencia,valores);
+        Evolucion.add(Pulso,valores);
     }
         
     public String getEvolucion(int nCita){
@@ -79,7 +73,7 @@ public class Historia{
     }
     
     public void setTratamientos(String recipe){
-        Tratamientos.add(Frecuencia, recipe);
+        Tratamientos.add(Pulso, recipe);
     }
        
     public String getTratamientos(int nCita){
