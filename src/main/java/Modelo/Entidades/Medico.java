@@ -1,8 +1,8 @@
 package Modelo.Entidades;
-/**/
+
 public class Medico{
     private String ID;
-    private String Nombres;
+    private String Nombre;
     private String Especialidad;
 
     public Medico(){
@@ -10,13 +10,13 @@ public class Medico{
 
     public Medico(String nombre, String especialidad){
         ID = "";
-        Nombres = nombre;
+        Nombre = nombre;
         Especialidad = especialidad;
     }
     
     public Medico(String id, String nombre, String especialidad){
         ID = id;
-        Nombres = nombre;
+        Nombre = nombre;
         Especialidad = especialidad;
     }
     
@@ -26,6 +26,14 @@ public class Medico{
     
     public String getID() {
         return ID;
+    }
+    
+    public void setNombre(String nombre){
+        Nombre = nombre;
+    }
+    
+    public String getNombre() {
+        return Nombre;
     }
     
     public void setEspecialidad(String esp){

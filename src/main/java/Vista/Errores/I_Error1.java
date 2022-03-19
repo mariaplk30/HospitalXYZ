@@ -1,16 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista.Errores;
-
 import Vista.Secretaria.I_RegistrarPaciente;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Hogar
- */
 public class I_Error1 extends javax.swing.JFrame {
 
     /**

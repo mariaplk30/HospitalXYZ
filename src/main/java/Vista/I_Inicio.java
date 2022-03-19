@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 import Vista.Secretaria.IDB_Secretaria;
 import Vista.JuntaDirectiva.IDB_JuntaDirectiva;
 import Vista.Medico.IDB_Medico;
 import Controlador.Ctrl_Citas;
 
-/**
- *
- * @author Hogar
- */
 public class I_Inicio extends javax.swing.JFrame {
 
     /**

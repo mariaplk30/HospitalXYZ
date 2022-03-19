@@ -2,32 +2,35 @@ package Modelo.Entidades;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
 
-/**/
 public class Historia{
     private String ID;
-    private String Ci;
-    private int Pulso;
-    private ArrayList<String> Citas;
+    private String Paciente;
+    private ArrayList<Cita> Citas;
     private ArrayList<String> Tratamientos;
+    private int Pulso;
     
     public Historia(){
         ID = "";
-        Ci = "";
-        Pulso = 0;
+        Paciente = "";
+        Citas = new ArrayList();
         Tratamientos = new ArrayList();
+        Pulso = 0;
     }
     
     public Historia(String ci){
         ID = "";
-        Ci = ci;
-        Pulso = 0;
+        Paciente = ci;
+        Citas = new ArrayList();
         Tratamientos = new ArrayList();
+        Pulso = 0;
     }
     
     public Historia(String id, String ci, ArrayList citas){
         ID = id;
-        Ci = ci;
+        Paciente = ci;
         Citas = citas; 
+        Tratamientos = new ArrayList();
+        Pulso = 0;
     }
     
     public void setID(String id){
@@ -38,12 +41,16 @@ public class Historia{
         return ID;
     }
     
-    public void setCI(String ci){
-        Ci = ci;
+    public void setPaciente(String ci){
+        Paciente = ci;
     }
     
-    public String getCI(){
-        return Ci;
+    public String getPaciente(){
+        return Paciente;
+    }
+    
+    public void setPulso(int pulso){
+        Pulso = pulso;
     }
     
     public int getPulso(){
@@ -51,7 +58,7 @@ public class Historia{
     }
     
     public void GuardarCita(Cita cita){
-        ControlDeCita.add(Pulso, cita);
+        Citas.add(Pulso, cita);
         Pulso++;
     }
     
@@ -61,15 +68,7 @@ public class Historia{
     }
     
     public Cita getCita(int nCita){
-        return ControlDeCita.get(nCita);
-    }
-    
-    public void setEvolucion(String valores){
-        Evolucion.add(Pulso,valores);
-    }
-        
-    public String getEvolucion(int nCita){
-        return Evolucion.get(nCita);
+        return Citas.get(nCita);
     }
     
     public void setTratamientos(String recipe){

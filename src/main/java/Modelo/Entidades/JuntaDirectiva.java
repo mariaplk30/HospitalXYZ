@@ -1,14 +1,13 @@
 package Modelo.Entidades;
 import java.util.*;
-/**/
+
 public class JuntaDirectiva{
     private ArrayList<String> Directivos;
     private ArrayList<Medico> RegistroMedicos;
     private ArrayList<Sucursal> RegistroSucursales;
     
-    private static JuntaDirectiva juntaDirectivaSimpleton;
     private static FabricaSucursales fabricaSucursales; 
-    
+    private static JuntaDirectiva juntaDirectivaSimpleton;
     
     private JuntaDirectiva(FabricaSucursales fabricaSucursales2){        
         Directivos = new ArrayList();
@@ -17,7 +16,7 @@ public class JuntaDirectiva{
         fabricaSucursales = fabricaSucursales2;
     }
     
-    public JuntaDirectiva getJuntaDirectiva() {
+    public JuntaDirectiva getJuntaDirectiva(FabricaSucursales fabricaSucursales2) {
         if(juntaDirectivaSimpleton == null) {
             juntaDirectivaSimpleton = new JuntaDirectiva(fabricaSucursales);
         }

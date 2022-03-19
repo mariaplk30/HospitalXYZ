@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista.Medico;
-
 import Vista.I_Inicio;
 
-/**
- *
- * @author Hogar
- */
 public class IDB_Medico extends javax.swing.JFrame {
 
     /**

@@ -1,5 +1,5 @@
 package Modelo.Entidades;
-/**/
+
 public abstract class Persona{
     public String Nombres;
     public String Apellidos;

@@ -1,58 +1,58 @@
 package Modelo.Entidades;
 import java.util.ArrayList;
-/**/
+
 public class Paciente{
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombres(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public String getCi() {
-        return cedula;
-    }
-
-    public void setCi(String Ci) {
-        this.cedula = Ci;
-    }
-
-    public ArrayList<Historia> getHistorial() {
-        return Historial;
-    }
-
-    public void setHistorial(ArrayList<Historia> Historial) {
-        this.Historial = Historial;
-    }
-
-    public ArrayList<Cita> getCitas() {
-        return Citas;
-    }
-
-    public void setCitas(ArrayList<Cita> Citas) {
-        this.Citas = Citas;
-    }
+    private String Cedula;
     private String Nombre;
-    private String cedula;
-
-    private ArrayList<Historia> Historial;
     private ArrayList<Cita> Citas;
-
+    private ArrayList<Historia> Historial;
+    
     public Paciente(){
-        cedula = "";
+        Cedula = "";
         Nombre = "";
         Citas = new ArrayList();
         Historial = new ArrayList();
 }
     
     public Paciente(String ci, String nombre, ArrayList<Cita> citas, ArrayList<Historia> historial){
-        cedula = ci;
+        Cedula = ci;
         Nombre = nombre;
         Citas = citas;
         Historial = historial;
     }
+    
+    public void setCedula(String Ci) {
+        Cedula = Ci;
+    }
+    
+    public String getCedula() {
+        return Cedula;
+    }
+    
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+    
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setCitas(ArrayList<Cita> citas) {
+        Citas = citas;
+    }
+    
+    public ArrayList<Cita> getCitas() {
+        return Citas;
+    }
+    
+    public void setHistorial(ArrayList<Historia> historial) {
+        Historial = historial;
+    }
+    
+    public ArrayList<Historia> getHistorial() {
+        return Historial;
+    }
+
     
 //    public void setOcupacion(String ocupacion){
 //        Ocupacion = ocupacion;

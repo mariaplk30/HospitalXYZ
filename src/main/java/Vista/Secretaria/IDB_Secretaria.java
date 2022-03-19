@@ -1,16 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista.Secretaria;
-
 import Vista.I_Inicio;
 
-
-/**
- *
- * @author Hogar
- */
 public class IDB_Secretaria extends javax.swing.JFrame {
 
     /**
