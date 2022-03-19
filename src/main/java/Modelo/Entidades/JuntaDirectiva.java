@@ -6,14 +6,28 @@ public class JuntaDirectiva{
     private ArrayList<Medico> RegistroMedicos;
     private ArrayList<Sucursal> RegistroSucursales;
     
-    private FabricaSucursales fabricaSucursales;
+    private static JuntaDirectiva juntaDirectivaSimpleton;
+    private static FabricaSucursales fabricaSucursales; 
     
-    public JuntaDirectiva(FabricaSucursales fabricaSucursales){
+    
+    private JuntaDirectiva(FabricaSucursales fabricaSucursales2){        
         Directivos = new ArrayList();
         RegistroMedicos = new ArrayList();
         RegistroSucursales = new ArrayList();
-        this.fabricaSucursales = fabricaSucursales;
+        fabricaSucursales = fabricaSucursales2;
     }
+    
+    public JuntaDirectiva getJuntaDirectiva() {
+        if(juntaDirectivaSimpleton == null) {
+            juntaDirectivaSimpleton = new JuntaDirectiva(fabricaSucursales);
+        }
+        return juntaDirectivaSimpleton;
+    }
+
+    //metodo de prueba de instanciacion de la junta directiva
+    public void probarJunta() {
+       System.out.println("Hay una junta.");
+   }
     
     public void addDirectivo(String nombre){
         Directivos.add(nombre);
