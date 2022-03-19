@@ -7,35 +7,35 @@ public class Paciente{
     private ArrayList<Cita> Citas;
     private ArrayList<Historia> Historial;
     
-    public void setCedula(String Ci) {
+    public void setCedula(String Ci){
         Cedula = Ci;
     }
     
-    public String getCedula() {
+    public String getCedula(){
         return Cedula;
     }
     
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre){
         Nombre = nombre;
     }
     
-    public String getNombre() {
+    public String getNombre(){
         return Nombre;
     }
 
-    public void setCitas(ArrayList<Cita> citas) {
+    public void setCitas(ArrayList<Cita> citas){
         Citas = citas;
     }
     
-    public ArrayList<Cita> getCitas() {
+    public ArrayList<Cita> getCitas(){
         return Citas;
     }
     
-    public void setHistorial(ArrayList<Historia> historial) {
+    public void setHistorial(ArrayList<Historia> historial){
         Historial = historial;
     }
     
-    public ArrayList<Historia> getHistorial() {
+    public ArrayList<Historia> getHistorial(){
         return Historial;
     }
 

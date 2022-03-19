@@ -54,15 +54,41 @@ public class JuntaDirectiva{
         addSucursal(sucursal);
     }
     
-    public void RegPacientes(int anio){
-        
-        /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año ingresado*/
+    public ArrayList<Sucursal> getSucursales(){
+        return RegistroSucursales;
     }
     
-    public void RegPacientes(){
-        
-        /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año actual*/
+    public Sucursal getSucursal(int i){
+        return RegistroSucursales.get(i);
     }
+    
+    public int getCantSucursales(){
+        return RegistroSucursales.size();
+    }
+    
+    public int RegPacientes(String sucursal){
+        /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año actual*/
+        int cont = 0; 
+        Date fecha = new Date();
+        String year = Integer.toString(fecha.getYear()+1900); //Año actual
+        for(int i=0; i<RegistroSucursales.size(); i++){
+            if(sucursal.equals(RegistroSucursales.get(i).getNombre())){
+                ArrayList<Paciente> pacientes = RegistroSucursales.get(i).getPacientes();
+                for(int j=0; j<pacientes.size(); j++){
+                    ArrayList<Cita> citas = pacientes.get(j).getCitas();
+                    for(int k=0; k<citas.size(); k++){
+                        if(year.equals(citas.get(k).getFecha().substring(citas.get(k).getFecha().length()-4, citas.get(k).getFecha().length()))){
+                            cont++;
+                            break;
+                        }
+                    }
+                }  
+            }
+        }
+        return cont;
+    }
+    
+    
     
     public void probarSucursales(){
         if(!RegistroSucursales.isEmpty()){
