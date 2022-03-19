@@ -30,80 +30,74 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="registrarPaciente_homeAddress__label" max="32767" attributes="0"/>
-                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="registrarPaciente_names__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="registrarPaciente_names__field" max="32767" attributes="0"/>
+                          <Component id="registrarPaciente_lastNames__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="registrarPaciente_lastNames__field" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="registrarPaciente_id__label" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="registrarPaciente_id__field" min="-2" pref="119" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="registrarPaciente_homeAddress__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="registrarPaciente_gender__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="registrarPaciente_gender__field" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="29" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="registrarPaciente_civilStatus__label" pref="136" max="32767" attributes="0"/>
+                                  <Component id="registrarPaciente_civilStatus__field" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="registrarPaciente_names__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="registrarPaciente_names__field" max="32767" attributes="0"/>
-                              <Component id="registrarPaciente_lastNames__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="registrarPaciente_lastNames__field" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="registrarPaciente_id__label" min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Component id="registrarPaciente_id__field" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="registrarPaciente_birthPlace__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="registrarPaciente_birthPlace__label" max="32767" attributes="0"/>
+                              <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="registrarPaciente_occupation__label" max="32767" attributes="0"/>
+                              <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="registrarPaciente_occupation__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="registrarPaciente_homeAddress__label" max="32767" attributes="0"/>
+                              <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="registrarPaciente_homeAddress__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="registrarPaciente_phone__field" min="-2" pref="190" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="registrarPaciente_gender__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Component id="registrarPaciente_gender__field" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="registrarPaciente_phone__label" min="-2" pref="136" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="29" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="registrarPaciente_civilStatus__label" pref="136" max="32767" attributes="0"/>
-                                      <Component id="registrarPaciente_civilStatus__field" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="registrarPaciente_birthPlace__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="registrarPaciente_birthPlace__label" max="32767" attributes="0"/>
-                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="registrarPaciente_relativePhone__label" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="registrarPaciente_relativePhone__field" min="-2" pref="190" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="registrarPaciente_phone__label" max="32767" attributes="0"/>
-                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="registrarPaciente_phone__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="registrarPaciente_job__label" max="32767" attributes="0"/>
-                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="registrarPaciente_job__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="registrarPaciente_occupation__label" max="32767" attributes="0"/>
-                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="registrarPaciente_occupation__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="registrarPaciente_relativePhone__label" max="32767" attributes="0"/>
-                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="registrarPaciente_relativePhone__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="registrarPaciente_job__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="registrarPaciente_job__label" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="46" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -141,9 +135,15 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="registrarPaciente_homeAddress__field" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="registrarPaciente_phone__label" min="-2" pref="16" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="registrarPaciente_phone__label" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  <Component id="registrarPaciente_relativePhone__label" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="registrarPaciente_phone__field" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="registrarPaciente_phone__field" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="registrarPaciente_relativePhone__field" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="registrarPaciente_job__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -152,16 +152,12 @@
               <Component id="registrarPaciente_occupation__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="registrarPaciente_occupation__field" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="registrarPaciente_relativePhone__label" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="registrarPaciente_relativePhone__field" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="confirm__btn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cancel__btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="confirm__btn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
