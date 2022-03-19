@@ -31,41 +31,59 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="registrarMedico_names__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="registrarMedico_names__field" alignment="0" max="32767" attributes="0"/>
-                          <Component id="registrarMedico_lastNames__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="registrarMedico_lastNames__field" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="registrarMedico_id__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                                  <Component id="registrarMedico_id__field" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="151" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="registrarMedico_gender__field" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="registrarMedico_gender__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="registrarMedico_homeAddress__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                              <Component id="registrarMedico_phone__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="registrarMedico_homeAddress__label" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="registrarMedico_phone__label" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="registrarMedico_birthPlace__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          <Component id="registrarMedico_civilStatus__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="registrarMedico_birthPlace__label" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="registrarMedico_civilStatus__label" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="registrarMedico_homeAddress__label" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="registrarMedico_phone__label" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="registrarMedico_job__label" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="registrarMedico_names__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="registrarMedico_names__field" alignment="0" max="32767" attributes="0"/>
+                              <Component id="registrarMedico_lastNames__label" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="registrarMedico_lastNames__field" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="registrarMedico_id__label" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="registrarMedico_id__field" min="-2" pref="118" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="registrarMedico_gender__label" min="-2" pref="55" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="registrarMedico_civilStatus__label" min="-2" pref="136" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="registrarMedico_gender__field" min="-2" pref="99" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="registrarMedico_civilStatus__field" min="-2" pref="136" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                              <Component id="registrarMedico_birthPlace__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="registrarMedico_birthPlace__label" max="32767" attributes="0"/>
+                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="registrarMedico_homeAddress__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          <Component id="registrarMedico_phone__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          <Component id="registrarMedico_job__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="registrarMedico_job__field" alignment="0" min="-2" pref="423" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="registrarMedico_job__label" max="32767" attributes="0"/>
+                                  <EmptySpace min="287" pref="287" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -91,21 +109,19 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="registrarMedico_id__label" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="registrarMedico_gender__label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="registrarMedico_civilStatus__label" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="registrarMedico_id__field" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="registrarMedico_gender__field" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="registrarMedico_civilStatus__field" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="registrarMedico_birthPlace__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="registrarMedico_birthPlace__field" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="registrarMedico_civilStatus__label" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="registrarMedico_civilStatus__field" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="registrarMedico_homeAddress__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="registrarMedico_homeAddress__field" min="-2" max="-2" attributes="0"/>
@@ -113,16 +129,16 @@
               <Component id="registrarMedico_phone__label" min="-2" pref="16" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="registrarMedico_phone__field" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="registrarMedico_job__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="registrarMedico_job__field" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cancel__btn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="confirm__btn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="42" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
