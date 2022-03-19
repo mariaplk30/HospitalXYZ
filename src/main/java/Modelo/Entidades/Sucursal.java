@@ -5,11 +5,15 @@ public class Sucursal{
     private String Nombre;
     private ArrayList<Medico> Medicos;
     private ArrayList<Paciente> Pacientes;
+
     //private ArrayList<Cita> Citas; //Se guardan todas las citas solicitadas para asignarles un ID único y luego
                                    //poder operar a gusto con las citas
     
     //private ArrayList<Historia> Historias; //Se guardan todas las historias registradas para asignarles un ID
                                            //único y luego ingresarla en su paciente correspondiente.
+
+
+
     public Sucursal(){
         Nombre = "";
         Medicos = new ArrayList();
@@ -27,17 +31,27 @@ public class Sucursal{
         Medicos = medicos;
         Pacientes = pacientes;
     }
+
+
+    public String getNombre(){
+        return Nombre;
+    }
     
     public void setNombre(String nombre){
         Nombre = nombre;
     }
     
-    public String getNombre(){
-        return Nombre;
+    public ArrayList<Medico> getMedicos(){
+        return Medicos;
     }
     
     public void setMedicos(ArrayList<Medico> Medicos) {
         this.Medicos = Medicos;
+    }
+    
+
+    public ArrayList<Paciente> getPacientes(){
+        return Pacientes;
     }
 
     public void setPacientes(ArrayList<Paciente> Pacientes) {
@@ -66,10 +80,7 @@ public class Sucursal{
         return Medicos.get(i);
     }
     
-    public ArrayList<Medico> getMedicos(){
-        return Medicos;
-    }
-    
+
     public int cantPacientes(){
         return Pacientes.size();
     }
@@ -87,32 +98,15 @@ public class Sucursal{
         return Pacientes.get(i);
     }
     
-    public ArrayList<Paciente> getPacientes(){
-        return Pacientes;
-    }
+
     
 //    public int cantHistorias(){
 //        return Historias.size();
 //    }
 //    
 //    //ID_Cita emplea la misma lógica de los métodos ID_X de la clase BDD, cambiando la clase utilizada.
-//    private String ID_Cita(){
-//        String mensaje = "";
-//        int j = 0;
-//        
-//        if(Math.log10(Citas.size())<1) j = 1;
-//        else j = (int) Math.log10(Citas.size()) + 1;
-//        
-//        for(int i=1; i<=8-j; i++) mensaje += "0";
-//        
-//        return mensaje + Integer.toString(Citas.size() - 1);  
-//    }
-//    
-//    public void addCita(Cita cita){
-//        Citas.add(cita);
-//        Citas.get(Citas.size()-1).setID(ID_Cita()); //A cada cita agendada se le genera su ID único.
-//    }
-//    
+
+    
 //    public void addCita(String id){
 //        Cita cita = new Cita(id);
 //        addCita(cita);

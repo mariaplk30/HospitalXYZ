@@ -53,6 +53,24 @@ public class Paciente{
         Historial = historial;
     }
     
+    private String ID_Cita(){
+        String mensaje = "";
+        int j = 0;
+        
+        if(Math.log10(Citas.size())<1) j = 1;
+        else j = (int) Math.log10(Citas.size()) + 1;
+        
+        for(int i=1; i<=8-j; i++) mensaje += "0";
+        
+        return mensaje + Integer.toString(Citas.size() - 1);  
+    }
+    
+    public void addCita(Cita cita){
+        Citas.add(cita);
+        Citas.get(Citas.size()-1).setID(ID_Cita()); //A cada cita agendada se le genera su ID único.
+    }
+
+
 //    public void setOcupacion(String ocupacion){
 //        Ocupacion = ocupacion;
 //    }

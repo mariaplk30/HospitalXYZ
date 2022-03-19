@@ -1,6 +1,7 @@
 package Vista.Secretaria;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import Controlador.Ctrl_Citas;
 
 public class I_SolicitarCita extends javax.swing.JFrame {
 
@@ -124,20 +125,29 @@ public class I_SolicitarCita extends javax.swing.JFrame {
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         //Recibir datos
+        Ctrl_Citas ctrl = new Ctrl_Citas();
         SimpleDateFormat dcn = new SimpleDateFormat("dd-MM-yyyy");
         String paciente = solicitarCita_patient__field.getText();
         //Date date = solicitarCita_date__field.getDate();
         String date = dcn.format(solicitarCita_date__field.getDate() );
         String medico = solicitarCita_doctor__field.getText();
         String sucursal = solicitarCita_branch__field.getText();
-        //Si datos válidos
+
+        if(ctrl.ExistePacienteYMedico(paciente, medico, sucursal) == true){
+            ctrl.Solicitar(date);
+
+
+        }
+
+
+
 //        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
 //        SecretariaDB.setVisible(true);
 //        I_SolicitarCita.this.setVisible(false);
 //        dispose();
 
 
-        solicitarCita_branch__field.setText(date); // Probando agarrar input del usuario y 
+        //solicitarCita_branch__field.setText(date); // Probando agarrar input del usuario y 
                                                                                      // mostrarlo
     }//GEN-LAST:event_confirm__btnActionPerformed
 

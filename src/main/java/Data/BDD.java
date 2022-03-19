@@ -18,12 +18,20 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 
 public class BDD{
+
+    public ArrayList<Sucursal> getArregloSucursales() {
+        return arregloSucursales;
+    }
+
     //private ArrayList<Sucursal> Sucursales; //Al crear o agregar una sucursal, se le asigna un ID único.
-    
     //private ArrayList<Medico> Medicos; //Se guardan todos los medicos registrados para asignarles un ID único
-                                       //para luego ingresarlos o no en una sucursal.
+    //para luego ingresarlos o no en una sucursal.
+    public ArrayList<JuntaDirectiva> getArregloJuntaD() {
+        return arregloJuntaD;
+    }
     
     ArrayList<Sucursal> arregloSucursales;
+    ArrayList<JuntaDirectiva> arregloJuntaD;
 
     public BDD(){
       
@@ -145,10 +153,23 @@ public class BDD{
             Object obj = jsonParser.parse(reader);
             JSONObject jsonObject = (JSONObject) obj;
 
+            JSONArray juntaD = (JSONArray) jsonObject.get("juntaDirectiva");
             JSONArray sucursales = (JSONArray) jsonObject.get("sucursales");
 
             System.out.println("Empieza a iterar por cada sucursal");
             arregloSucursales = new ArrayList();
+            arregloJuntaD = new ArrayList();
+
+
+//            for(int i=0;i<juntaD.size();i++)
+//            {
+//		JSONObject jd =  (JSONObject)juntaD.get(i);
+//                //System.out.println("Dentro del for");
+//                arregloSucursales.add(parseSucursales(suc));
+//                System.out.println(arregloSucursales.get(i));
+//            }
+
+
 
             for(int i=0;i<sucursales.size();i++)
             {
@@ -172,7 +193,7 @@ public class BDD{
 
     public void main(){
 
-        leerArchivoJSON();
+        //leerArchivoJSON();
         String filePath = new File("").getAbsolutePath();
         //System.out.println (filePath);
         try {
