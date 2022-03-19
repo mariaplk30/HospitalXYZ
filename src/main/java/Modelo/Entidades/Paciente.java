@@ -7,20 +7,6 @@ public class Paciente{
     private ArrayList<Cita> Citas;
     private ArrayList<Historia> Historial;
     
-    public Paciente(){
-        Cedula = "";
-        Nombre = "";
-        Citas = new ArrayList();
-        Historial = new ArrayList();
-}
-    
-    public Paciente(String ci, String nombre, ArrayList<Cita> citas, ArrayList<Historia> historial){
-        Cedula = ci;
-        Nombre = nombre;
-        Citas = citas;
-        Historial = historial;
-    }
-    
     public void setCedula(String Ci) {
         Cedula = Ci;
     }
@@ -53,6 +39,19 @@ public class Paciente{
         return Historial;
     }
 
+    public Paciente(){
+        Cedula = "";
+        Nombre = "";
+        Citas = new ArrayList();
+        Historial = new ArrayList();
+}
+    
+    public Paciente(String ci, String nombre, ArrayList<Cita> citas, ArrayList<Historia> historial){
+        Cedula = ci;
+        Nombre = nombre;
+        Citas = citas;
+        Historial = historial;
+    }
     
 //    public void setOcupacion(String ocupacion){
 //        Ocupacion = ocupacion;

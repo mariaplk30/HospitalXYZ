@@ -9,6 +9,13 @@ public class JuntaDirectiva{
     private static FabricaSucursales fabricaSucursales; 
     private static JuntaDirectiva juntaDirectivaSimpleton;
     
+    public static JuntaDirectiva getJuntaDirectiva(FabricaSucursales fabricaSucursales2){
+        if(juntaDirectivaSimpleton == null){
+            juntaDirectivaSimpleton = new JuntaDirectiva(fabricaSucursales);
+        }
+        return juntaDirectivaSimpleton;
+    }
+    
     private JuntaDirectiva(FabricaSucursales fabricaSucursales2){        
         Directivos = new ArrayList();
         RegistroMedicos = new ArrayList();
@@ -16,20 +23,17 @@ public class JuntaDirectiva{
         fabricaSucursales = fabricaSucursales2;
     }
     
-    public JuntaDirectiva getJuntaDirectiva(FabricaSucursales fabricaSucursales2) {
-        if(juntaDirectivaSimpleton == null) {
-            juntaDirectivaSimpleton = new JuntaDirectiva(fabricaSucursales);
-        }
-        return juntaDirectivaSimpleton;
-    }
-
     //metodo de prueba de instanciacion de la junta directiva
-    public void probarJunta() {
-       System.out.println("Hay una junta.");
+    public void probarJunta(){
+       if(juntaDirectivaSimpleton != null) System.out.println("Hay una junta.");
    }
     
     public void addDirectivo(String nombre){
         Directivos.add(nombre);
+    }
+    
+    public ArrayList<String> getDirectivos(){
+        return Directivos;
     }
     
     public void addMedico(Medico medico){
@@ -58,5 +62,11 @@ public class JuntaDirectiva{
     public void RegPacientes(){
         
         /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año actual*/
+    }
+    
+    public void probarSucursales(){
+        if(!RegistroSucursales.isEmpty()){
+            for(int i=0; i<RegistroSucursales.size(); i++) System.out.println(RegistroSucursales.get(i).getNombre());
+        }else System.out.println("No hay sucursales");
     }
 }

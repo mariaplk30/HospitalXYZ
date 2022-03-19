@@ -2,8 +2,6 @@ package Modelo.Entidades;
 import java.util.ArrayList;
 
 public class Sucursal{
-
-
     private String Nombre;
     private ArrayList<Medico> Medicos;
     private ArrayList<Paciente> Pacientes;
@@ -14,6 +12,12 @@ public class Sucursal{
                                            //único y luego ingresarla en su paciente correspondiente.
     public Sucursal(){
         Nombre = "";
+        Medicos = new ArrayList();
+        Pacientes = new ArrayList();
+    }
+    
+    public Sucursal(String nombre){
+        Nombre = nombre;
         Medicos = new ArrayList();
         Pacientes = new ArrayList();
     }
