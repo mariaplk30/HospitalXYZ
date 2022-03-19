@@ -3,6 +3,7 @@ import Modelo.Entidades.Medico;
 import Modelo.Entidades.Sucursal;
 import Modelo.Entidades.FabricaSucursales;
 import Data.BDD;
+import Modelo.Entidades.JuntaDirectiva;
 
 public class Ctrl_JuntaDirectiva {
 
@@ -19,9 +20,11 @@ public class Ctrl_JuntaDirectiva {
     }
 
     public boolean AbrirSucursal(String nombre){
-        if(!ExisteSucursal()) {
+        if(!ExisteSucursal()){
+            //Uso del simpleton y factory method
             FabricaSucursales fabrica = new FabricaSucursales();
             Sucursal sucursal = fabrica.crearSucursal(nombre);
+            JuntaDirectiva junta = JuntaDirectiva.getJuntaDirectiva(fabrica);
             BDD bdd = new BDD();
             bdd.addSucursal(sucursal);
             return true;
