@@ -1,4 +1,10 @@
 package Vista.Secretaria;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+
+import Controlador.Ctrl_Citas;
+import java.util.*;
+
 
 public class I_CancelarCita extends javax.swing.JFrame {
 
@@ -21,11 +27,14 @@ public class I_CancelarCita extends javax.swing.JFrame {
         cancelarCita_title__label = new javax.swing.JLabel();
         cancelarCita_patient__label = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        cancelarCita_appointment__list = new javax.swing.JList<>();
+        list = new javax.swing.JList<>();
         cancelarCita_patient__textField = new javax.swing.JTextField();
         cancelarCita_appointment__label = new javax.swing.JLabel();
         confirm__btn = new javax.swing.JButton();
         cancel__btn = new javax.swing.JButton();
+        cargar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        sucursalT = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -33,12 +42,7 @@ public class I_CancelarCita extends javax.swing.JFrame {
 
         cancelarCita_patient__label.setText("Paciente:");
 
-        cancelarCita_appointment__list.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(cancelarCita_appointment__list);
+        jScrollPane1.setViewportView(list);
 
         cancelarCita_patient__textField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +66,15 @@ public class I_CancelarCita extends javax.swing.JFrame {
             }
         });
 
+        cargar.setText("Cargar");
+        cargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Sucursal:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,20 +82,26 @@ public class I_CancelarCita extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(cancelarCita_title__label))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cancelarCita_patient__label, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cancelarCita_patient__textField, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cancelarCita_appointment__label, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(cancelarCita_patient__textField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cargar))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(cancel__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(confirm__btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(cancelarCita_title__label)
+                            .addComponent(sucursalT, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,14 +110,19 @@ public class I_CancelarCita extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(cancelarCita_title__label)
                 .addGap(18, 18, 18)
-                .addComponent(cancelarCita_patient__label)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelarCita_patient__label)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cancelarCita_patient__textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelarCita_patient__textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cargar)
+                    .addComponent(sucursalT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addComponent(cancelarCita_appointment__label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancel__btn)
                     .addComponent(confirm__btn))
@@ -127,6 +151,19 @@ public class I_CancelarCita extends javax.swing.JFrame {
         I_CancelarCita.this.setVisible(false);
         dispose();
     }//GEN-LAST:event_cancel__btnActionPerformed
+
+    private void cargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarActionPerformed
+        // TODO add your handling code here:
+        Ctrl_Citas ctrl = new Ctrl_Citas();
+        DefaultListModel DLM = new DefaultListModel();
+        ArrayList<String> citas = ctrl.DesplegarCita(cancelarCita_patient__textField.getText(), sucursalT.getText());
+
+        for(int i=0; i<citas.size(); i++){
+           DLM.addElement(citas.get(i));
+        }
+           list.setModel(DLM);
+
+    }//GEN-LAST:event_cargarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,11 +203,14 @@ public class I_CancelarCita extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel__btn;
     private javax.swing.JLabel cancelarCita_appointment__label;
-    private javax.swing.JList<String> cancelarCita_appointment__list;
     private javax.swing.JLabel cancelarCita_patient__label;
     private javax.swing.JTextField cancelarCita_patient__textField;
     private javax.swing.JLabel cancelarCita_title__label;
+    private javax.swing.JButton cargar;
     private javax.swing.JButton confirm__btn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> list;
+    private javax.swing.JTextField sucursalT;
     // End of variables declaration//GEN-END:variables
 }

@@ -61,8 +61,18 @@ public class Ctrl_Citas {
 
     }
 
-    public void Cancelar(Cita datos){
+    public void Cancelar(Paciente datos){
         BDD bd = new BDD();
+        bd.leerArchivoJSON();
+        ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
+        
+        for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
+
+
+        }
+
+        sucursales.get(SucursalI).getPaciente(PacienteI).addCita(cita);
+        bd.main();
        
 
     }
@@ -89,12 +99,13 @@ public class Ctrl_Citas {
         
     }
 
-    public boolean ExistePacienteYMedico(String paciente, String medico, String sucursal){
+    public boolean ExistePacienteYMedico(String paciente, String medico, String sucursal, boolean med){
         BDD bd = new BDD();
         bd.leerArchivoJSON();
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
         boolean existePaciente = false;
         boolean existeMedico = false;
+
         for(int i=0; i<sucursales.size(); i++){
 
             if(sucursal.toLowerCase().equals(sucursales.get(i).getNombre().toLowerCase()) == true){
@@ -130,10 +141,11 @@ public class Ctrl_Citas {
                     System.out.println("no existe medico");
                     return false;
                 } 
+            }else{
+                return false;
             }
      
         }
-
 
 
         return true;
@@ -149,9 +161,16 @@ public class Ctrl_Citas {
 //
 //    }
 
-    public void DesplegarCita(){
-       
+    public ArrayList DesplegarCita(String paciente, String Sucursal){
+        BDD bd = new BDD();
+        bd.leerArchivoJSON();
+        ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
+        ArrayList<String> fechas = new ArrayList();
+        for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
+             fechas.add(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getFecha());
+        }
 
+        return fechas;      
     }
 
 
