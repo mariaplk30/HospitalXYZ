@@ -7,23 +7,26 @@ import Modelo.Entidades.JuntaDirectiva;
 import java.util.ArrayList;
 
 public class Ctrl_JuntaDirectiva {
-    
-    
+    public int SucursalI;
+    public int MedicoI;
+    private FabricaSucursales fabrica = new FabricaSucursales();
+    private JuntaDirectiva junta = JuntaDirectiva.getJuntaDirectiva(fabrica);
+    private BDD bdd = new BDD();
+
     
     public Ctrl_JuntaDirectiva(){}
 
     private Medico RegistroMedicos;
 
-    public void RegistrarMedico(){
-        if(!ExisteMedico()){
-            
+    public void RegistrarMedico(Medico medico){
+        if(!ExisteMedico(medico)){
+            junta.addMedico(medico);
         }else{
-            
+            //INTERFAZ DE ERROR MEDICO YA EXISTE
         }
     }
 
     public boolean ExisteSucursal(String nombre){
-        BDD bdd = new BDD();
         bdd.leerArchivoJSON();
         ArrayList<Sucursal> sucursales = bdd.getArregloSucursales();
         for(int i=0; )
@@ -33,9 +36,7 @@ public class Ctrl_JuntaDirectiva {
     public boolean AbrirSucursal(String nombre){
         if(!ExisteSucursal(nombre)){
             //Uso del singleton y factory method
-            FabricaSucursales fabrica = new FabricaSucursales();
-            Sucursal sucursal = fabrica.crearSucursal(nombre);
-            JuntaDirectiva junta = JuntaDirectiva.getJuntaDirectiva(fabrica);
+
             
             //Esta bdd es local, se necesita una global para poder usarla en verificaciones y registros
             BDD bdd = new BDD();
@@ -50,8 +51,16 @@ public class Ctrl_JuntaDirectiva {
     }
 
     public boolean ExisteMedico(Medico datos){
-        //Se tiene que verificar en bdd si existe el medico a registrar
-        return true;
+        BDD bdd = new BDD();
+        bdd.leerArchivoJSON();
+        FabricaSucursales fabrica = new FabricaSucursales();
+        JuntaDirectiva junta = JuntaDirectiva.getJuntaDirectiva(fabrica);
+        for(int i = 0; i < junta.getCantMedicos(); i++) {
+            if(datos.getNombre().equals(junta.getMedico(i).nombre)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean VerificarDatos(String nombres,String apellidos,String cedula,String sexo,String lugarN,String civil,String direccion,String telefono,String especialidad){
