@@ -3,6 +3,8 @@ import Vista.I_Inicio;
 
 public class IDB_Secretaria extends javax.swing.JFrame {
 
+    String sucursal = "";
+    
     /**
      * Creates new form IDB_Secretaria
      */

@@ -1,7 +1,12 @@
 package Vista.JuntaDirectiva;
+import Controlador.Ctrl_JuntaDirectiva;
 
 public class I_AbrirSucursal extends javax.swing.JFrame {
 
+    IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+    
+    private Ctrl_JuntaDirectiva control = new Ctrl_JuntaDirectiva();
+    
     /**
      * Creates new form I_AbrirSucursal
      */
@@ -95,19 +100,17 @@ public class I_AbrirSucursal extends javax.swing.JFrame {
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         String nombre = abrirSucursal_name__field.getText();
         String ubicacion = abrirSucursal_location__field.getText();
-
-        // Si datos válidos
-        if() {
-            Ctrl_JuntaDirectiva control = new Ctrl_JuntaDirectiva();
+        if(Ctrl_JuntaDirectiva.VerificarDatosSucursal(nombre, ubicacion)) control.AbrirSucursal(nombre);
+        else{
+            //INTERFAZ DE ERROR EN LOS DATOS
+            //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
         }
-        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);
         I_AbrirSucursal.this.setVisible(false);
         dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);
         I_AbrirSucursal.this.setVisible(false);
         dispose();

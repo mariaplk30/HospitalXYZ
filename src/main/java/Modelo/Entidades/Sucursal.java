@@ -49,11 +49,14 @@ public class Sucursal{
         this.Medicos = Medicos;
     }
     
-
     public ArrayList<Paciente> getPacientes(){
         return Pacientes;
     }
 
+    public void setPaciente(Paciente paciente){
+        
+    }
+    
     public void setPacientes(ArrayList<Paciente> Pacientes) {
         this.Pacientes = Pacientes;
     }    
@@ -80,7 +83,6 @@ public class Sucursal{
         return Medicos.get(i);
     }
     
-
     public int cantPacientes(){
         return Pacientes.size();
     }

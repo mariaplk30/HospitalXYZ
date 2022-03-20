@@ -31,6 +31,10 @@ public class Paciente{
         return Citas;
     }
     
+    public void setHistorial(Historia historial){
+        Historial.add(historial);
+    }
+    
     public void setHistorial(ArrayList<Historia> historial){
         Historial = historial;
     }

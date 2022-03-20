@@ -3,6 +3,8 @@ import Vista.I_Inicio;
 
 public class IDB_Medico extends javax.swing.JFrame {
 
+    String sucursal = "";
+    
     /**
      * Creates new form IDB_Medico
      */
@@ -88,6 +90,7 @@ public class IDB_Medico extends javax.swing.JFrame {
 
     private void crearHistoria__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearHistoria__btnActionPerformed
         I_CrearHistoria crearHistoria = new I_CrearHistoria();
+        crearHistoria.sucursal = sucursal;
         crearHistoria.setVisible(true);
         IDB_Medico.this.setVisible(false);
         dispose();
@@ -95,6 +98,7 @@ public class IDB_Medico extends javax.swing.JFrame {
 
     private void modificarHistoria__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarHistoria__btnActionPerformed
         I_ModificarHistoria modificarHistoria = new I_ModificarHistoria();
+        modificarHistoria.sucursal = sucursal;
         modificarHistoria.setVisible(true);
         IDB_Medico.this.setVisible(false);
         dispose();

@@ -45,6 +45,14 @@ public class JuntaDirectiva{
         addMedico(medico);
     }
     
+    public Medico getMedico(int i){
+        return RegistroMedicos.get(i);
+    }
+    
+    public int getCantMedicos(){
+        return RegistroMedicos.size();
+    }
+    
     public void addSucursal(Sucursal sucursal){
         RegistroSucursales.add(sucursal);
     }
@@ -65,7 +73,7 @@ public class JuntaDirectiva{
     public int getCantSucursales(){
         return RegistroSucursales.size();
     }
-    
+     
     public int RegPacientes(String sucursal){
         /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año actual*/
         int cont = 0; 

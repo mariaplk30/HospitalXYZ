@@ -2,10 +2,11 @@ package Vista.JuntaDirectiva;
 import Controlador.Ctrl_JuntaDirectiva;
 import java.util.ArrayList;
 
-
-
 public class I_ReporteAnual extends javax.swing.JFrame {
 
+    IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+    Ctrl_JuntaDirectiva control = new Ctrl_JuntaDirectiva();
+    
     /**
      * Creates new form I_ReporteAnual
      */
@@ -90,7 +91,6 @@ public class I_ReporteAnual extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirm_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_btnActionPerformed
-        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);
         I_ReporteAnual.this.setVisible(false);
         dispose();
@@ -98,16 +98,10 @@ public class I_ReporteAnual extends javax.swing.JFrame {
 
     private void generarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporteActionPerformed
         // TODO add your handling code here:
-        Ctrl_JuntaDirectiva ctrl = new Ctrl_JuntaDirectiva();
-        ArrayList<String> reporte = ctrl.ReporteAnual();
+        ArrayList<String> reporte = control.ReporteAnual();
         String texto = "";
-
-        for(int i=0; i<reporte.size(); i++){
-           texto += reporte.get(i) + "\n";
-        }
-
+        for(int i=0; i < reporte.size(); i++) texto += reporte.get(i) + "\n";
         reporte__textArea.setText(texto);
-
     }//GEN-LAST:event_generarReporteActionPerformed
 
     /**

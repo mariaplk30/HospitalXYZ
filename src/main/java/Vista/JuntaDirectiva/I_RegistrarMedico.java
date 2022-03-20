@@ -1,7 +1,11 @@
 package Vista.JuntaDirectiva;
+import Controlador.Ctrl_JuntaDirectiva;
 
 public class I_RegistrarMedico extends javax.swing.JFrame {
-
+    
+    IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+    Ctrl_JuntaDirectiva control = new Ctrl_JuntaDirectiva();
+    
     /**
      * Creates new form I_RegistrarMedico
      */
@@ -210,7 +214,6 @@ public class I_RegistrarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarMedico_gender__fieldActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);
         I_RegistrarMedico.this.setVisible(false);
         dispose();
@@ -227,8 +230,12 @@ public class I_RegistrarMedico extends javax.swing.JFrame {
         String telefono = registrarMedico_phone__field.getText();
         String especialidad = registrarMedico_job__field.getText();
         
-        // Si datos válidos     
-        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+        if(Ctrl_JuntaDirectiva.VerificarDatosMedico(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, especialidad)){
+            control.RegistrarMedico(civil, nombres, especialidad);
+        }else{
+            //INTERFAZ DE ERROR EN LOS DATOS
+            //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
+        }
         JuntaDB.setVisible(true);
         I_RegistrarMedico.this.setVisible(false);
         dispose();

@@ -1,20 +1,16 @@
 package Vista.Medico;
+import Controlador.Ctrl_Historia;
 
-public class I_CrearHistoria extends javax.swing.JFrame {
-    public String paciente;
-    public String peso;
-    public String talla;
-    public String IMC;
-    public String PPM;
-    public String tensionMax;
-    public String tensionMin;
-    public String evolucion;
-    public String control;
-
+public class I_CrearHistoria extends javax.swing.JFrame{
+    
+    public String sucursal = "";
+    private IDB_Medico MedicoDB = new IDB_Medico();
+    private Ctrl_Historia control = new Ctrl_Historia();
+    
     /**
      * Creates new form I_CrearHistoria
      */
-    public I_CrearHistoria() {
+    public I_CrearHistoria(){
         initComponents();
     }
 
@@ -269,15 +265,17 @@ public class I_CrearHistoria extends javax.swing.JFrame {
         String tensionMin = crearHistoria_tMin__field.getText();
         String evolucion = crearHistoria_evolution__textArea.getText();
         String control = crearHistoria_apptControl__textArea.getText();
-
-        IDB_Medico MedicoDB = new IDB_Medico();
+        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control)) this.control.CrearHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin);
+        else{
+            //INTERFAZ DE ERROR EN LOS DATOS
+            //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
+        }
         MedicoDB.setVisible(true);
         I_CrearHistoria.this.setVisible(false);
         dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        IDB_Medico MedicoDB = new IDB_Medico();
         MedicoDB.setVisible(true);
         I_CrearHistoria.this.setVisible(false);
         dispose();

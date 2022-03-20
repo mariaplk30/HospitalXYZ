@@ -25,13 +25,10 @@ import java.io.IOException;
 import java.io.File;
 import java.util.*;
 
-
-
 public class Ctrl_Citas {
     public int SucursalI;
     public int MedicoI;
     public int PacienteI;
-
 
     public Ctrl_Citas(){}
     
@@ -211,7 +208,4 @@ public class Ctrl_Citas {
 
         return fechas;      
     }
-
-
-
 }

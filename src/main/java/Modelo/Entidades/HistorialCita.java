@@ -11,8 +11,10 @@ public class HistorialCita {
     private int[] Tension;
     private int Pulso;
 
+    public HistorialCita(){}
+    
     public HistorialCita(String id){
-     ID= id;
+        ID= id;
     }
 
     public HistorialCita(String id, double peso, double talla, double pesoTalla, JSONObject tension, int pulso){
@@ -24,7 +26,15 @@ public class HistorialCita {
         Tension[1] = (int)tension.get("minima");
         Pulso = pulso;
     }
-
+    
+    public void setID(String id){
+        ID = id;
+    }
+    
+    public String getId(){
+        return ID;
+    }
+    
     public double getPeso() {
         return Peso;
     }

@@ -4,7 +4,7 @@ import Vista.JuntaDirectiva.IDB_JuntaDirectiva;
 import Vista.Medico.IDB_Medico;
 import Controlador.Ctrl_Citas;
 
-public class I_Inicio extends javax.swing.JFrame {
+public class I_Inicio extends javax.swing.JFrame{
 
     /**
      * Creates new form I_Inicio
@@ -103,8 +103,6 @@ public class I_Inicio extends javax.swing.JFrame {
 
     private void JuntaDirectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuntaDirectivaActionPerformed
         // TODO add your handling code here:
-        Ctrl_Citas a = new Ctrl_Citas();
-        a.Solicitar();
         IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);
         I_Inicio.this.setVisible(false);

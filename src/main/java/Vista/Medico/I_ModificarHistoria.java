@@ -1,11 +1,16 @@
 package Vista.Medico;
+import Controlador.Ctrl_Historia;
 
 public class I_ModificarHistoria extends javax.swing.JFrame {
 
+    public String sucursal = "";
+    private IDB_Medico MedicoDB = new IDB_Medico();
+    public Ctrl_Historia control = new Ctrl_Historia();
+            
     /**
      * Creates new form I_ModificarHistoria
      */
-    public I_ModificarHistoria() {
+    public I_ModificarHistoria(){
         initComponents();
     }
 
@@ -250,7 +255,6 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
     }//GEN-LAST:event_modificarHistoria_tMin__fieldActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
-        IDB_Medico MedicoDB = new IDB_Medico();
         MedicoDB.setVisible(true);
         I_ModificarHistoria.this.setVisible(false);
         dispose();
@@ -267,7 +271,11 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
         String tensionMin = modificarHistoria_tMin__field.getText();
         String evolucion = modificarHistoria_evolution__textArea.getText();
         String control = modificarHistoria_apptControl__textArea.getText();
-        IDB_Medico MedicoDB = new IDB_Medico();
+        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control)) this.control.ModificarHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin);
+        else{
+            //INTERFAZ DE ERROR EN LOS DATOS
+            //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
+        }
         MedicoDB.setVisible(true);
         I_ModificarHistoria.this.setVisible(false);
         dispose();

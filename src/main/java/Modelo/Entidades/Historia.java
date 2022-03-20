@@ -11,19 +11,29 @@ public class Historia{
     public Historia(){
         ID = "";
         Paciente = "";
-        Citas = new ArrayList(); 
+        Citas = new ArrayList();
+        Historial = new ArrayList();
     }
     
     public Historia(String ci){
         ID = "";
         Paciente = ci;
         Citas = new ArrayList();
+        Historial = new ArrayList();
     }
     
     public Historia(String id, String ci, ArrayList citas){
         ID = id;
         Paciente = ci;
         Citas = citas; 
+        Historial = new ArrayList();
+    }
+    
+    public Historia(String id, String ci, ArrayList citas, ArrayList historial){
+        ID = id;
+        Paciente = ci;
+        Citas = citas; 
+        Historial = historial;
     }
     
     public void setID(String id){
@@ -53,7 +63,23 @@ public class Historia{
         Historial.add(historial);
     }
     
+    public int cantCitas(){
+        return Citas.size();
+    }
+    
     public Cita getCita(int nCita){
         return Citas.get(nCita);
+    }
+    
+    public int cantHistorial(){
+        return Historial.size();
+    }
+    
+    public void setHistorial(HistorialCita historial){
+        Historial.set(Historial.size()-1, historial);
+    }
+    
+    public HistorialCita getHistorial(){
+        return Historial.get(Historial.size()-1);
     }
 }
