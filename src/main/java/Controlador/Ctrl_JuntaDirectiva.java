@@ -18,7 +18,7 @@ public class Ctrl_JuntaDirectiva {
 
     private Medico RegistroMedicos;
 
-    public void RegistrarMedico(Medico medico){
+    public void RegistrarMedico(Medico medico, String id, String nombre, String especialidad){
         if(!ExisteMedico(medico)){
             junta.addMedico(medico);
         }else{
@@ -50,7 +50,7 @@ public class Ctrl_JuntaDirectiva {
         }
     }
 
-    public boolean ExisteMedico(Medico datos){
+    public boolean ExisteMedico(Medico datos, String id, String nombre, String especialidad){
         BDD bdd = new BDD();
         bdd.leerArchivoJSON();
         FabricaSucursales fabrica = new FabricaSucursales();
