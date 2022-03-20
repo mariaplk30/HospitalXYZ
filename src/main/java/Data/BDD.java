@@ -30,7 +30,7 @@ public class BDD{
         return arregloJuntaD;
     }
     
-    
+    //AAAAAAAAAAAAAAAAAYUDAAAAAAAAAAAAAAAAAAAA
     ArrayList<Sucursal> arregloSucursales;
     ArrayList<JuntaDirectiva> arregloJuntaD;
 
@@ -44,7 +44,7 @@ public class BDD{
 	JSONArray pacientes = (JSONArray)obj.get("pacientes");
         
         ArrayList<Medico> arregloMedicosSucursal = new ArrayList();
-
+ //AÑADIENDO PARA PUSHEAR
         for(int i=0; i<medicos.size(); i++){
             arregloMedicosSucursal.add(parseMedicos((JSONObject) medicos.get(i)));
         }                
