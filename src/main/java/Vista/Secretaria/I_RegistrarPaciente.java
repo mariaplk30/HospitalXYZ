@@ -263,11 +263,11 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
         String profesion = registrarPaciente_job__field.getText();
         String ocupacion = registrarPaciente_occupation__field.getText();
         String relativo = registrarPaciente_relativePhone__field.getText();
-        //Falta SUCURSAL
+        String sucursal = registrarPaciente_branch__field.getText();
         Ctrl_Citas ctrlCita = new Ctrl_Citas();
-
+        //ESTE PROYECTO E SUNA PORQUERÍA NO SIRVE PARA NADA     
         if(ctrlCita.VerificarDatos(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo) == true){
-            //RegistrarPaciente();
+            ctrlCita.Registrar(cedula, nombres, apellidos, sucursal);
             IDB_Secretaria SecretariaDB = new IDB_Secretaria();
             SecretariaDB.setVisible(true);
             I_RegistrarPaciente.this.setVisible(false);

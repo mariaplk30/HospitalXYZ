@@ -50,31 +50,60 @@ public class Ctrl_Citas {
 
     }
 
-    public void DesplegarFechas(){
-       
-
-    }
-
-    public void Modificar(Cita datos){
+    public void Modificar(String paciente, String FechaID, String fechaNueva, String medicoNuevo, String sucursal){
         BDD bd = new BDD();
+        bd.leerArchivoJSON();
+        ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
        
+        for(int i=0; i<sucursales.size(); i++){
+
+            if(sucursal.toLowerCase().equals(sucursales.get(i).getNombre().toLowerCase()) == true){
+                
+                for(int j=0; j<sucursales.get(i).getPacientes().size(); j++){
+                
+                    if(paciente.toLowerCase().equals(sucursales.get(i).getPacientes().get(j).getNombre().toLowerCase()) == true){
+
+                        for(int h=0; h<sucursales.get(i).getPacientes().get(j).getCitas().size(); h++){
+
+                            if(FechaID.substring(11).equals(sucursales.get(i).getPaciente(j).getCitas().get(h).getID()) == true){
+                                System.out.println(FechaID.substring(11) + "  " + sucursales.get(i).getPaciente(j).getCitas().get(h).getID());
+                                sucursales.get(i).getPaciente(j).getCitas().get(h).setFecha(fechaNueva);
+                                
+                                for(int s=0; s<sucursales.get(i).getMedicos().size(); s++){
+                                    if(medicoNuevo.equals(sucursales.get(i).getMedicos().get(s).getNombre()) == true){
+                                        sucursales.get(i).getPaciente(j).getCitas().get(h).setMedico(medicoNuevo);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+
+            }
+     
+        }
+
+
+
+        bd.main();
 
     }
 
-    public void Cancelar(Paciente datos){
+    public void Cancelar(String Paciente, String FechaID){
         BDD bd = new BDD();
         bd.leerArchivoJSON();
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
         
+
         for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
-
-
+            if(FechaID.substring(11).equals(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID()) == true )
+                sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().remove(i);
         }
 
-        sucursales.get(SucursalI).getPaciente(PacienteI).addCita(cita);
         bd.main();
-       
-
     }
 
 
@@ -105,10 +134,12 @@ public class Ctrl_Citas {
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
         boolean existePaciente = false;
         boolean existeMedico = false;
+        boolean existeSucursal = false;
 
         for(int i=0; i<sucursales.size(); i++){
 
             if(sucursal.toLowerCase().equals(sucursales.get(i).getNombre().toLowerCase()) == true){
+                existeSucursal = true;
                 SucursalI = i;
                 
                 ArrayList<Paciente> pacientes = sucursales.get(i).getPacientes();
@@ -126,40 +157,48 @@ public class Ctrl_Citas {
                     return false;
                 } 
   
+                if(med == true){
+                    ArrayList<Medico> medicos = sucursales.get(i).getMedicos();
+                    for(int j=0; j<medicos.size(); j++){
+                        if(medico.toLowerCase().equals(medicos.get(j).getNombre().toLowerCase()) == true){
+                            MedicoI = j;
+                            existeMedico = true;
+                        System.out.println("existe medico");
 
-                ArrayList<Medico> medicos = sucursales.get(i).getMedicos();
-                for(int j=0; j<medicos.size(); j++){
-                    if(medico.toLowerCase().equals(medicos.get(j).getNombre().toLowerCase()) == true){
-                        MedicoI = j;
-                        existeMedico = true;
-                    System.out.println("existe medico");
+                        }
+                    }
 
+                    if(existeMedico == false){
+                        System.out.println("no existe medico");
+                        return false;
                     }
                 }
 
-                if(existeMedico == false){
-                    System.out.println("no existe medico");
-                    return false;
-                } 
-            }else{
-                return false;
             }
-     
+    
         }
 
-
-        return true;
+        if(existeSucursal == true){
+            return true;
+        }else{
+            return false;
+        }
     }
-//
-//    public void Registrar(Paciente datos){
-//       
-//
-//    }
-//
-//    public boolean ExisteCita(Cita datos){
-//       
-//
-//    }
+
+    public void Registrar(String cedula, String nombre, String apellido, String sucursal){
+        BDD bd = new BDD();
+        bd.leerArchivoJSON();
+        ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
+        for(int i=0; i< sucursales.size(); i++){
+            if(sucursal.equals(sucursales.get(i).getNombre()) == true){
+                Paciente paciente = new Paciente();
+                paciente.setNombre(nombre + " " + apellido);
+                sucursales.get(i).getPacientes().add(paciente);
+            }
+        }
+
+        bd.main();
+    }
 
     public ArrayList DesplegarCita(String paciente, String Sucursal){
         BDD bd = new BDD();
@@ -167,7 +206,7 @@ public class Ctrl_Citas {
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
         ArrayList<String> fechas = new ArrayList();
         for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
-             fechas.add(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getFecha());
+            fechas.add(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getFecha() + " " + sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID());
         }
 
         return fechas;      

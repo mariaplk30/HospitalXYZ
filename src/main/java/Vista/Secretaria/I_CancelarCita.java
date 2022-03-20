@@ -4,6 +4,7 @@ import javax.swing.JList;
 
 import Controlador.Ctrl_Citas;
 import java.util.*;
+import Vista.Errores.I_Error2;
 
 
 public class I_CancelarCita extends javax.swing.JFrame {
@@ -42,6 +43,11 @@ public class I_CancelarCita extends javax.swing.JFrame {
 
         cancelarCita_patient__label.setText("Paciente:");
 
+        list.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(list);
 
         cancelarCita_patient__textField.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +145,10 @@ public class I_CancelarCita extends javax.swing.JFrame {
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         // TODO add your handling code here:
         //Si datos válidos
+        Ctrl_Citas ctrl = new Ctrl_Citas();
+        String Seleccion = list.getSelectedValue();
+        ctrl.Cancelar(cancelarCita_patient__textField.getText(), Seleccion);
+
         IDB_Secretaria SecretariaDB = new IDB_Secretaria();
         SecretariaDB.setVisible(true);
         I_CancelarCita.this.setVisible(false);
@@ -156,14 +166,24 @@ public class I_CancelarCita extends javax.swing.JFrame {
         // TODO add your handling code here:
         Ctrl_Citas ctrl = new Ctrl_Citas();
         DefaultListModel DLM = new DefaultListModel();
-        ArrayList<String> citas = ctrl.DesplegarCita(cancelarCita_patient__textField.getText(), sucursalT.getText());
 
-        for(int i=0; i<citas.size(); i++){
-           DLM.addElement(citas.get(i));
+        if(ctrl.ExistePacienteYMedico(cancelarCita_patient__textField.getText(), " ", sucursalT.getText(), false) == true){
+            ArrayList<String> citas = ctrl.DesplegarCita(cancelarCita_patient__textField.getText(), sucursalT.getText());
+
+            for(int i=0; i<citas.size(); i++){
+               DLM.addElement(citas.get(i));
+            }
+               list.setModel(DLM);
+        }else{
+            I_Error2 DatosInvalidos = new I_Error2();
+            DatosInvalidos.setVisible(true);
         }
-           list.setModel(DLM);
 
     }//GEN-LAST:event_cargarActionPerformed
+
+    private void listValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listValueChanged
 
     /**
      * @param args the command line arguments

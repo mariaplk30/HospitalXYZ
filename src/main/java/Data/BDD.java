@@ -30,6 +30,7 @@ public class BDD{
         return arregloJuntaD;
     }
     
+    
     ArrayList<Sucursal> arregloSucursales;
     ArrayList<JuntaDirectiva> arregloJuntaD;
 
@@ -133,10 +134,8 @@ public class BDD{
         JSONObject valores = (JSONObject)obj.get("valores");
 
 
-            HistorialCita val = new HistorialCita(id);
+        HistorialCita val = new HistorialCita(id);
         
-
-
         //HistorialCita val = new HistorialCita();
   
         return val;

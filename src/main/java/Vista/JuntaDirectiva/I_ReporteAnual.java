@@ -1,4 +1,8 @@
 package Vista.JuntaDirectiva;
+import Controlador.Ctrl_JuntaDirectiva;
+import java.util.ArrayList;
+
+
 
 public class I_ReporteAnual extends javax.swing.JFrame {
 
@@ -7,6 +11,7 @@ public class I_ReporteAnual extends javax.swing.JFrame {
      */
     public I_ReporteAnual() {
         initComponents();
+        
     }
 
     /**
@@ -22,6 +27,7 @@ public class I_ReporteAnual extends javax.swing.JFrame {
         confirm_btn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         reporte__textArea = new javax.swing.JTextArea();
+        generarReporte = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -34,9 +40,17 @@ public class I_ReporteAnual extends javax.swing.JFrame {
             }
         });
 
+        reporte__textArea.setEditable(false);
         reporte__textArea.setColumns(20);
         reporte__textArea.setRows(5);
         jScrollPane2.setViewportView(reporte__textArea);
+
+        generarReporte.setText("Generar");
+        generarReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generarReporteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -45,26 +59,31 @@ public class I_ReporteAnual extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(reporte_title__label))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(214, 214, 214)
                         .addComponent(confirm_btn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(216, 216, 216)
+                            .addComponent(reporte_title__label)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(generarReporte))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(reporte_title__label)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(reporte_title__label)
+                    .addComponent(generarReporte))
+                .addGap(22, 22, 22)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(confirm_btn)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -76,6 +95,20 @@ public class I_ReporteAnual extends javax.swing.JFrame {
         I_ReporteAnual.this.setVisible(false);
         dispose();
     }//GEN-LAST:event_confirm_btnActionPerformed
+
+    private void generarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporteActionPerformed
+        // TODO add your handling code here:
+        Ctrl_JuntaDirectiva ctrl = new Ctrl_JuntaDirectiva();
+        ArrayList<String> reporte = ctrl.ReporteAnual();
+        String texto = "";
+
+        for(int i=0; i<reporte.size(); i++){
+           texto += reporte.get(i) + "\n";
+        }
+
+        reporte__textArea.setText(texto);
+
+    }//GEN-LAST:event_generarReporteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,6 +147,7 @@ public class I_ReporteAnual extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirm_btn;
+    private javax.swing.JButton generarReporte;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea reporte__textArea;
     private javax.swing.JLabel reporte_title__label;
