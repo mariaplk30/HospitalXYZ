@@ -1,6 +1,15 @@
 package Vista.Medico;
 
 public class I_CrearHistoria extends javax.swing.JFrame {
+    public String paciente;
+    public String peso;
+    public String talla;
+    public String IMC;
+    public String PPM;
+    public String tensionMax;
+    public String tensionMin;
+    public String evolucion;
+    public String control;
 
     /**
      * Creates new form I_CrearHistoria
