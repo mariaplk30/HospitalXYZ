@@ -11,12 +11,9 @@ public class HistorialCita {
     private int[] Tension;
     private int Pulso;
 
-
     public HistorialCita(String id){
      ID= id;
-
-}
-
+    }
 
     public HistorialCita(String id, double peso, double talla, double pesoTalla, JSONObject tension, int pulso){
         ID = id;
@@ -52,6 +49,12 @@ public class HistorialCita {
         this.PesoTalla = PesoTalla;
     }
 
+//    public float getIMC(){
+//        IMC = Math.round((int) Peso/Math.pow(Talla, 2) * 100d) /100d; // Sacar IMC limitando sus decimales a 2
+//        return (float) IMC;
+//    }
+    
+    
     public int getTensionMax() {
         return TensionMax;
     }
@@ -75,7 +78,22 @@ public class HistorialCita {
     public void setTension(int[] Tension) {
         this.Tension = Tension;
     }
-
+    
+//    public void setTensionMax(int tmax){
+//        TensionMax = tmax;
+//        Tension[0] = tmax;
+//    }
+//    
+//    public  int getTensionMax(){
+//        return TensionMax;
+//    }
+//    
+//    public void setTensionMin(int tmin){
+//        TensionMin = tmin;
+//        Tension[1] = tmin;
+//    }
+    
+    
     public int getPulso() {
         return Pulso;
     }

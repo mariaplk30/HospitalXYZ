@@ -4,9 +4,12 @@ import Modelo.Entidades.Sucursal;
 import Modelo.Entidades.FabricaSucursales;
 import Data.BDD;
 import Modelo.Entidades.JuntaDirectiva;
+import java.util.ArrayList;
 
 public class Ctrl_JuntaDirectiva {
-
+    
+    
+    
     public Ctrl_JuntaDirectiva(){}
 
     private Medico RegistroMedicos;
@@ -20,13 +23,16 @@ public class Ctrl_JuntaDirectiva {
     }
 
     public boolean ExisteSucursal(String nombre){
-        //Se tiene que verificar en bdd si existe la sucursal a crear
+        BDD bdd = new BDD();
+        bdd.leerArchivoJSON();
+        ArrayList<Sucursal> sucursales = bdd.getArregloSucursales();
+        for(int i=0; )
         return true;
     }
 
     public boolean AbrirSucursal(String nombre){
         if(!ExisteSucursal(nombre)){
-            //Uso del simpleton y factory method
+            //Uso del singleton y factory method
             FabricaSucursales fabrica = new FabricaSucursales();
             Sucursal sucursal = fabrica.crearSucursal(nombre);
             JuntaDirectiva junta = JuntaDirectiva.getJuntaDirectiva(fabrica);
@@ -34,6 +40,8 @@ public class Ctrl_JuntaDirectiva {
             //Esta bdd es local, se necesita una global para poder usarla en verificaciones y registros
             BDD bdd = new BDD();
             bdd.addSucursal(sucursal);
+            
+            //Garantizar que la sucursal esté en el json pls, no sabemos cómo hacerlo
             return true;
         } else {
             //console.log(marico);
