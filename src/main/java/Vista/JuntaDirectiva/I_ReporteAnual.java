@@ -27,7 +27,7 @@ public class I_ReporteAnual extends javax.swing.JFrame {
 
         reporte_title__label.setText("Reporte Anual");
 
-        confirm_btn.setText("Aceptar");
+        confirm_btn.setText("Volver");
         confirm_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirm_btnActionPerformed(evt);
@@ -71,7 +71,10 @@ public class I_ReporteAnual extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirm_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_btnActionPerformed
-        // TODO add your handling code here:
+        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
+        JuntaDB.setVisible(true);
+        I_ReporteAnual.this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_confirm_btnActionPerformed
 
     /**
