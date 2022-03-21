@@ -10,6 +10,7 @@ import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.json.*;
+import org.apache.commons.lang.StringUtils;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -42,35 +43,29 @@ public class Ctrl_Citas {
         BDD bd = new BDD();
         bd.leerArchivoJSON();
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
-       
-        for(int i=0; i<sucursales.size(); i++){
 
-            if(sucursal.toLowerCase().equals(sucursales.get(i).getNombre().toLowerCase()) == true){
-                
-                for(int j=0; j<sucursales.get(i).getPacientes().size(); j++){
-                
-                    if(paciente.toLowerCase().equals(sucursales.get(i).getPacientes().get(j).getNombre().toLowerCase()) == true){
+        if(ExistePacienteYMedico(paciente, "", sucursal, false)){
+        
+            for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
+                if(FechaID.substring(11).equals(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID()) == true ){
 
-                        for(int h=0; h<sucursales.get(i).getPacientes().get(j).getCitas().size(); h++){
-
-                            if(FechaID.substring(11).equals(sucursales.get(i).getPaciente(j).getCitas().get(h).getID()) == true){
-                                System.out.println(FechaID.substring(11) + "  " + sucursales.get(i).getPaciente(j).getCitas().get(h).getID());
-                                sucursales.get(i).getPaciente(j).getCitas().get(h).setFecha(fechaNueva);
+                    for(int h=0; h<sucursales.get(SucursalI).getPacientes().get(PacienteI).getCitas().size(); h++){                    
+                        System.out.println(FechaID.substring(11) + "  " + sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(h).getID());
+                        sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(h).setFecha(fechaNueva);
                                 
-                                for(int s=0; s<sucursales.get(i).getMedicos().size(); s++){
-                                    if(medicoNuevo.equals(sucursales.get(i).getMedicos().get(s).getNombre()) == true){
-                                        sucursales.get(i).getPaciente(j).getCitas().get(h).setMedico(medicoNuevo);
-                                        break;
-                                    }
-                                }
+                        for(int s=0; s<sucursales.get(i).getMedicos().size(); s++){
+                            if(medicoNuevo.equals(sucursales.get(SucursalI).getMedicos().get(s).getNombre()) == true){
+                                sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(h).setMedico(medicoNuevo);
+                                break;
                             }
                         }
-
-                    }
+                   } 
                 }
+               
             }
         }
         bd.main();
+
     }
 
     public void Cancelar(String Paciente, String FechaID, String sucursal){
@@ -111,7 +106,7 @@ public class Ctrl_Citas {
            ocupacion.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
            cedula.matches("\\d*")&& 
            telefono.matches("\\d*") &&
-           relativo.matches("\\d*") &&
+           relativo.matches("\\d*");
            !isEmpty(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo);
     }
      
@@ -175,6 +170,7 @@ public class Ctrl_Citas {
             if(sucursal.equals(sucursales.get(i).getNombre()) == true){
                 Paciente paciente = new Paciente();
                 paciente.setNombre(nombre + " " + apellido);
+                paciente.setCedula(cedula);
                 sucursales.get(i).getPacientes().add(paciente);
             }
         }
