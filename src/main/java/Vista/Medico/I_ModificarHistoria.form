@@ -27,64 +27,77 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="modificarHistoria_patient__label" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="modificarHistoria_patient__field" alignment="1" min="-2" pref="405" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="modificarHistoria_weight__label" min="-2" pref="92" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                                  <Component id="modificarHistoria_height__label" min="-2" pref="92" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="modificarHistoria_weight__field" min="-2" pref="170" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="modificarHistoria_height__field" min="-2" pref="170" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="modificarHistoria_bmi__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="modificarHistoria_bmi__label" min="-2" pref="92" max="-2" attributes="0"/>
-                                          <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="modificarHistoria_bpm__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="modificarHistoria_bpm__label" min="-2" pref="92" max="-2" attributes="0"/>
-                                          <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
-                                      </Group>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="cancel__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="confirm__btn" min="-2" pref="147" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="modificarHistoria_weight__label" min="-2" pref="92" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                              <Component id="modificarHistoria_height__label" min="-2" pref="92" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="modificarHistoria_bmi__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="modificarHistoria_bmi__label" min="-2" pref="92" max="-2" attributes="0"/>
+                                      <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="modificarHistoria_tMax__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="modificarHistoria_tMax__label" min="-2" pref="92" max="-2" attributes="0"/>
-                                          <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="modificarHistoria_tMin__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="modificarHistoria_tMin__label" min="-2" pref="92" max="-2" attributes="0"/>
-                                          <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
-                                      </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="modificarHistoria_bpm__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="modificarHistoria_bpm__label" min="-2" pref="92" max="-2" attributes="0"/>
+                                      <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="modificarHistoria_evolution__label" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="modificarHistoria_apptControl__label" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="modificarHistoria_tMax__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="modificarHistoria_tMax__label" min="-2" pref="92" max="-2" attributes="0"/>
+                                      <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="modificarHistoria_tMin__field" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="modificarHistoria_tMin__label" min="-2" pref="92" max="-2" attributes="0"/>
+                                      <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="modificarHistoria_evolution__label" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="modificarHistoria_apptControl__label" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="modificarHistoria_weight__field" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <Component id="modificarHistoria_patient__label" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="modificarHistoria_height__field" min="-2" pref="170" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                      <Component id="modificarHistoria_branch__label" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="modificarHistoria_patient__field" min="-2" pref="196" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="modificarHistoria_branch__field" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -103,9 +116,18 @@
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="modificarHistoria_title__label" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="modificarHistoria_patient__label" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="modificarHistoria_patient__field" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="modificarHistoria_patient__label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="modificarHistoria_patient__field" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="modificarHistoria_branch__label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="modificarHistoria_branch__field" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="modificarHistoria_weight__label" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -284,6 +306,16 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirm__btnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="modificarHistoria_branch__label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sucursal:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="modificarHistoria_branch__field">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarHistoria_branch__fieldActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

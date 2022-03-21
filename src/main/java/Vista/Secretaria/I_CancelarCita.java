@@ -34,7 +34,7 @@ public class I_CancelarCita extends javax.swing.JFrame {
         confirm__btn = new javax.swing.JButton();
         cancel__btn = new javax.swing.JButton();
         cargar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        cancelarCita_branch__label = new javax.swing.JLabel();
         sucursalT = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,7 +79,7 @@ public class I_CancelarCita extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Sucursal:");
+        cancelarCita_branch__label.setText("Sucursal:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +105,7 @@ public class I_CancelarCita extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(218, 218, 218)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(cancelarCita_branch__label)
                             .addComponent(cancelarCita_title__label)
                             .addComponent(sucursalT, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(44, Short.MAX_VALUE))
@@ -118,7 +118,7 @@ public class I_CancelarCita extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarCita_patient__label)
-                    .addComponent(jLabel1))
+                    .addComponent(cancelarCita_branch__label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarCita_patient__textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,12 +223,12 @@ public class I_CancelarCita extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel__btn;
     private javax.swing.JLabel cancelarCita_appointment__label;
+    private javax.swing.JLabel cancelarCita_branch__label;
     private javax.swing.JLabel cancelarCita_patient__label;
     private javax.swing.JTextField cancelarCita_patient__textField;
     private javax.swing.JLabel cancelarCita_title__label;
     private javax.swing.JButton cargar;
     private javax.swing.JButton confirm__btn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> list;
     private javax.swing.JTextField sucursalT;
