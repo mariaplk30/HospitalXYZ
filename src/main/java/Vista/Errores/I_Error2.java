@@ -37,7 +37,7 @@ public class I_Error2 extends javax.swing.JFrame {
 
         jLabel1.setText("NO EXISTE PACIENTE O SUCURSAL");
 
-        Aceptar.setText("Volver");
+        Aceptar.setText("Aceptar");
         Aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarActionPerformed(evt);

@@ -36,7 +36,7 @@ public class I_Error1 extends javax.swing.JFrame {
 
         jLabel2.setText("DATOS INVÁLIDOS");
 
-        confirm__btn.setText("Volver");
+        confirm__btn.setText("Aceptar");
         confirm__btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirm__btnActionPerformed(evt);

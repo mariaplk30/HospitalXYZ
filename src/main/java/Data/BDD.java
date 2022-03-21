@@ -33,10 +33,23 @@ public class BDD{
     //AAAAAAAAAAAAAAAAAYUDAAAAAAAAAAAAAAAAAAAA
     ArrayList<Sucursal> arregloSucursales;
     ArrayList<JuntaDirectiva> arregloJuntaD;
+    private ArrayList<Object> jsonCompleto;
+
+    public ArrayList<Object> getJsonCompleto() {
+        return jsonCompleto;
+    }
+
+    public void setJsonCompleto(ArrayList<Sucursal> suck, ArrayList<JuntaDirectiva> di) {
+
+        this.jsonCompleto = jsonCompleto;
+    }
 
     public BDD(){
       
     }
+
+    
+
 
     private Sucursal parseSucursales(JSONObject obj) {
 	String nombre = (String)obj.get("nombre");
@@ -44,7 +57,7 @@ public class BDD{
 	JSONArray pacientes = (JSONArray)obj.get("pacientes");
         
         ArrayList<Medico> arregloMedicosSucursal = new ArrayList();
- //AÑADIENDO PARA PUSHEAR
+
         for(int i=0; i<medicos.size(); i++){
             arregloMedicosSucursal.add(parseMedicos((JSONObject) medicos.get(i)));
         }                
@@ -57,10 +70,6 @@ public class BDD{
 
         Sucursal sucursal = new Sucursal(nombre, arregloMedicosSucursal, arregloPacientesSucursal);
 
-//	System.out.println("Nombre: "+nombre);
-//	System.out.println("Medicos: "+medicos);
-//	System.out.println("Pacientes: "+pacientes);
-
         return sucursal;
         
     }
@@ -72,11 +81,6 @@ public class BDD{
         
         Medico medico = new Medico(id,nombre,especialidad);
 
-
-//	System.out.println("id: "+id);
-//	System.out.println("nombre: "+nombre);
-//	System.out.println("especialidad: "+especialidad);
-
         return medico;
     }
     
@@ -85,10 +89,6 @@ public class BDD{
 	String nombre = (String)obj.get("nombre");
 	JSONArray citas = (JSONArray)obj.get("citas");
         JSONArray historial = (JSONArray)obj.get("historial");
-
-//	System.out.println("cedula: "+cedula);
-//	System.out.println("nombre: "+nombre);
-//	System.out.println("citas: "+citas);
 
         ArrayList<Cita> arregloCitasDePaciente = new ArrayList();
         ArrayList<Historia> arregloHistoriasDePaciente = new ArrayList();
@@ -130,15 +130,50 @@ public class BDD{
 
     private HistorialCita pacienteCitasHistorial(JSONObject obj) {
 	String id = (String)obj.get("id");
-	String pulso = (String)obj.get("pulso");
         JSONObject valores = (JSONObject)obj.get("valores");
 
+        System.out.println("1");
+        Valores value = parseValores(valores);
 
-        HistorialCita val = new HistorialCita(id);
-        
-        //HistorialCita val = new HistorialCita();
-  
+            HistorialCita val = new HistorialCita(id, value);
+        System.out.println("puto ricardo");
+
+            return val;
+
+     
+
+
+         
+    }
+
+
+    private Valores parseValores(JSONObject obj) {
+	String peso = (String)obj.get("peso");
+	String talla = (String)obj.get("pulso");
+        String pesoTalla = (String) obj.get("pesoTalla");
+        JSONObject tension = (JSONObject) obj.get("tension");
+        String pulso = (String) obj.get("pulso");
+
+
+        System.out.println("4");
+
+        Tension tet = new Tension(Integer.parseInt((String)tension.get("maxima")), Integer.parseInt((String)tension.get("minima")));
+        System.out.println("5");
+
+        Valores val = new Valores(Double.parseDouble(peso), Double.parseDouble(talla), Double.parseDouble(pesoTalla), tet, Integer.parseInt(pulso));
+        System.out.println("6");
+
+          
         return val;
+    }
+
+
+    private JuntaDirectiva parseJuntaD(JSONObject obj) {
+	String nombre = (String)obj.get("nombre");
+        FabricaSucursales fab = new FabricaSucursales();
+        JuntaDirectiva j = JuntaDirectiva.getJuntaDirectiva(fab);
+        j.addDirectivo(nombre);
+        return j;
     }    
 
     public void leerArchivoJSON(){
@@ -160,13 +195,13 @@ public class BDD{
             arregloJuntaD = new ArrayList();
 
 
-//            for(int i=0;i<juntaD.size();i++)
-//            {
-//		JSONObject jd =  (JSONObject)juntaD.get(i);
-//                //System.out.println("Dentro del for");
-//                arregloSucursales.add(parseSucursales(suc));
-//                System.out.println(arregloSucursales.get(i));
-//            }
+            for(int i=0;i<juntaD.size();i++)
+            {
+		JSONObject jd =  (JSONObject)juntaD.get(i);
+                //System.out.println("Dentro del for");
+                arregloJuntaD.add(parseJuntaD(jd));
+                //System.out.println(arregloSucursales.get(i));
+            }
 
 
 
@@ -175,7 +210,7 @@ public class BDD{
 		JSONObject suc =  (JSONObject)sucursales.get(i);
                 //System.out.println("Dentro del for");
                 arregloSucursales.add(parseSucursales(suc));
-                System.out.println(arregloSucursales.get(i));
+                //System.out.println(arregloSucursales.get(i));
             }
            
 
@@ -196,9 +231,11 @@ public class BDD{
         String filePath = new File("").getAbsolutePath();
         //System.out.println (filePath);
         try {
-
+            this.jsonCompleto = new ArrayList();
+            this.jsonCompleto.add(arregloSucursales);
+            this.jsonCompleto.add(arregloJuntaD);
             ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(new File(filePath + "/src/main/java/Data/formato1.json"), arregloSucursales);
+            mapper.writeValue(new File(filePath + "/src/main/java/Data/formato1.json"), jsonCompleto);
             //FileWriter writer = new FileWriter(filePath + "/src/main/java/Data/formato1.json");
             
          } catch (FileNotFoundException e) {
