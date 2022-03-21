@@ -27,24 +27,24 @@ public class Valores {
 
     }
 
-    public double getPeso() {
-        return Peso;
+    public String getPeso() {
+        return String.valueOf(Peso);
     }
 
     public void setPeso(double Peso) {
         this.Peso = Peso;
     }
 
-    public double getTalla() {
-        return Talla;
+    public String getTalla() {
+        return String.valueOf(Talla);
     }
 
     public void setTalla(double Talla) {
         this.Talla = Talla;
     }
 
-    public double getPesoTalla() {
-        return PesoTalla;
+    public String getPesoTalla() {
+        return String.valueOf(PesoTalla);
     }
 
     public void setPesoTalla(double PesoTalla) {
@@ -59,8 +59,8 @@ public class Valores {
         this.tension = tension;
     }
 
-    public int getPulso() {
-        return Pulso;
+    public String getPulso() {
+        return String.valueOf(Pulso);
     }
 
     public void setPulso(int Pulso) {

@@ -19,23 +19,24 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class BDD{
 
+    ArrayList<Sucursal> arregloSucursales;
+    ArrayList<Directivo> arregloJuntaD;
+
+    public BDD(){
+      
+    }
+
+    public void setArregloSucursales(ArrayList<Sucursal> arregloS) {
+        arregloSucursales = arregloS;
+    }
+
+
     public ArrayList<Sucursal> getArregloSucursales() {
         return arregloSucursales;
     }
 
-    //private ArrayList<Sucursal> Sucursales; //Al crear o agregar una sucursal, se le asigna un ID único.
-    //private ArrayList<Medico> Medicos; //Se guardan todos los medicos registrados para asignarles un ID único
-    //para luego ingresarlos o no en una sucursal.
-    public ArrayList<JuntaDirectiva> getArregloJuntaD() {
+    public ArrayList getArregloJuntaD() {
         return arregloJuntaD;
-    }
-    
-    
-    ArrayList<Sucursal> arregloSucursales;
-    ArrayList<JuntaDirectiva> arregloJuntaD;
-
-    public BDD(){
-      
     }
 
     private Sucursal parseSucursales(JSONObject obj) {
@@ -57,10 +58,6 @@ public class BDD{
 
         Sucursal sucursal = new Sucursal(nombre, arregloMedicosSucursal, arregloPacientesSucursal);
 
-//	System.out.println("Nombre: "+nombre);
-//	System.out.println("Medicos: "+medicos);
-//	System.out.println("Pacientes: "+pacientes);
-
         return sucursal;
         
     }
@@ -72,11 +69,6 @@ public class BDD{
         
         Medico medico = new Medico(id,nombre,especialidad);
 
-
-//	System.out.println("id: "+id);
-//	System.out.println("nombre: "+nombre);
-//	System.out.println("especialidad: "+especialidad);
-
         return medico;
     }
     
@@ -86,9 +78,7 @@ public class BDD{
 	JSONArray citas = (JSONArray)obj.get("citas");
         JSONArray historial = (JSONArray)obj.get("historial");
 
-//	System.out.println("cedula: "+cedula);
-//	System.out.println("nombre: "+nombre);
-//	System.out.println("citas: "+citas);
+//	System.out.println("cedula: "+cedula); odio este proyectp
 
         ArrayList<Cita> arregloCitasDePaciente = new ArrayList();
         ArrayList<Historia> arregloHistoriasDePaciente = new ArrayList();
@@ -130,65 +120,39 @@ public class BDD{
 
     private HistorialCita pacienteCitasHistorial(JSONObject obj) {
 	String id = (String)obj.get("id");
-        JSONObject valores = (JSONObject)obj.get("valores");
+        JSONObject valore = (JSONObject)obj.get("valores");
 
-        System.out.println("1");
-        Valores value = parseValores(valores);
+        Valores value = parseValores(valore);
 
-            HistorialCita val = new HistorialCita(id, value);
-        System.out.println("puto ricardo");
+        HistorialCita valores = new HistorialCita(id, value);
 
-            return val;
-        
+        return valores;     
     }
 
 
     private Valores parseValores(JSONObject obj) {
 	String peso = (String)obj.get("peso");
-	String talla = (String)obj.get("pulso");
+	String talla = (String)obj.get("talla");
         String pesoTalla = (String) obj.get("pesoTalla");
         JSONObject tension = (JSONObject) obj.get("tension");
         String pulso = (String) obj.get("pulso");
 
-
-        System.out.println("4");
-
         Tension tet = new Tension(Integer.parseInt((String)tension.get("maxima")), Integer.parseInt((String)tension.get("minima")));
-        System.out.println("5");
+        System.out.println("TENEMOS UNE COMPAÑARE QUE NO TRABAJo EN NADA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
-        Valores val = new Valores(Double.parseDouble(peso), Double.parseDouble(talla), Double.parseDouble(pesoTalla), tet, Integer.parseInt(pulso));
-        System.out.println("6");
+        Valores valores = new Valores(Double.parseDouble(peso), Double.parseDouble(talla), Double.parseDouble(pesoTalla), tet, Integer.parseInt(pulso));
 
           
-        return val;
+        return valores;
     }
     
-//    private Historia parsePacienteHistorial(JSONObject obj) {
-//	String id = (String)obj.get("id");
-//	String paciente = (String)obj.get("paciente");
-//        JSONArray citas = (JSONArray)obj.get("citas");
-//
-//        ArrayList<HistorialCita> citasP = new ArrayList();
-//        for(int i=0; i<citas.size(); i++){
-//            citasP.add(pacienteCitasHistorial((JSONObject) citas.get(i)));
-//        }
-//
-//        Historia historia = new Historia(id, paciente, citasP);
-//        return historia;
-//    }
-//
-//    private HistorialCita pacienteCitasHistorial(JSONObject obj) {
-//	String id = (String)obj.get("id");
-//	String pulso = (String)obj.get("pulso");
-//        JSONObject valores = (JSONObject)obj.get("valores");
-//
-//
-//        HistorialCita val = new HistorialCita(id);
-//        
-//        //HistorialCita val = new HistorialCita();
-//  
-//        return val;
-//    }    
+    public Directivo parseJuntaDirectiva(JSONObject obj){
+	String nombre = (String)obj.get("nombre");
+        Directivo dick = new Directivo();
+        dick.setNombre(nombre);        
+        return dick;
+    }
+   
 
     public void leerArchivoJSON(){
 
@@ -204,26 +168,24 @@ public class BDD{
             JSONArray juntaD = (JSONArray) jsonObject.get("juntaDirectiva");
             JSONArray sucursales = (JSONArray) jsonObject.get("sucursales");
 
-            System.out.println("Empieza a iterar por cada sucursal");
             arregloSucursales = new ArrayList();
             arregloJuntaD = new ArrayList();
+            FabricaSucursales fabrica = new FabricaSucursales();
+            JuntaDirectiva juntaDirectiva = JuntaDirectiva.getJuntaDirectiva(fabrica); //Aplicación de Singleton             
 
 
             for(int i=0;i<juntaD.size();i++)
             {
-		JSONObject jd =  (JSONObject)juntaD.get(i);
-                //System.out.println("Dentro del for");
+		JSONObject jd = (JSONObject)juntaD.get(i);
                 arregloJuntaD.add(parseJuntaDirectiva(jd));
+                juntaDirectiva.addNombre(arregloJuntaD.get(i).getNombre());
             }
-
 
 
             for(int i=0;i<sucursales.size();i++)
             {
 		JSONObject suc =  (JSONObject)sucursales.get(i);
-                //System.out.println("Dentro del for");
                 arregloSucursales.add(parseSucursales(suc));
-                System.out.println(arregloSucursales.get(i));
             }
            
 
@@ -245,8 +207,9 @@ public class BDD{
         //System.out.println (filePath);
         try {
 
+            Programa todo = new Programa(arregloJuntaD, arregloSucursales);
             ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(new File(filePath + "/src/main/java/Data/formato1.json"), arregloSucursales);
+            mapper.writeValue(new File(filePath + "/src/main/java/Data/formato.json"), todo);
             //FileWriter writer = new FileWriter(filePath + "/src/main/java/Data/formato1.json");
             
          } catch (FileNotFoundException e) {
@@ -261,57 +224,5 @@ public class BDD{
     public int cantSucursales(){
         return arregloSucursales.size();
     }
-    
-
-    public void addSucursal(Sucursal sucursal){
-        arregloSucursales.add(sucursal);
-    }
-    
-//    public void addSucursal(String nombre){
-//        Sucursal sucursal = new Sucursal(nombre);
-//        addSucursal(sucursal);
-//    }
-//    
-//    public Sucursal getSucursal(int i){
-//        return arregloSucursales.get(i);
-//    }
-//    
-//    public ArrayList<Sucursal> getSucursales(){
-//        return arregloSucursales;
-//    }
-//    
-//    //ID_Medico emplea la misma lógica de ID_Sucursal, cambiando la clase utilizada.
-//    private String ID_Medico(){
-//        String mensaje = "M";
-//        int j = 0;
-//        
-//        if(Math.log10(Medicos.size())<1) j = 1;
-//        else j = (int) Math.log10(Medicos.size()) + 1;
-//        
-//        for(int i=1; i<=8-j; i++) mensaje += "0";
-//        
-//        return mensaje + Integer.toString(Medicos.size() - 1);  
-//    }
-//    
-//    public void addMedico(Medico medico){
-//        Medicos.add(medico);
-//        Medicos.get(Medicos.size()-1).setID(ID_Medico()); //A cada médico agendado se le genera su ID único.
-//    }
-//    
-//    public void addMedico(String nombre, String especialidad){
-//        Medico medico = new Medico(nombre, especialidad);
-//        addMedico(medico);
-//    }
-//    
-//    public Medico getMedico(int i){
-//        return Medicos.get(i);
-//    }
-//    
-//    public ArrayList<Medico> getMedicos(){
-//        return Medicos;
-//    }
-
-
-
 
 }

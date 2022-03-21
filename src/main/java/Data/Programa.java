@@ -3,18 +3,26 @@ import java.util.*;
 import Modelo.Entidades.*;
 
 public class Programa {
+    private ArrayList<Directivo> juntaDirectiva;
     public ArrayList<Sucursal> sucursales;
     //Singleton y Factory Method
-    private FabricaSucursales fabrica = new FabricaSucursales();
-    private JuntaDirectiva junta = JuntaDirectiva.getJuntaDirectiva(fabrica); //Aplicación de Singleton
-    
+
     public Programa(){
+        juntaDirectiva = new ArrayList();
         sucursales = new ArrayList();
     }
     
-    public Programa(ArrayList<Sucursal> sucursales, JuntaDirectiva junta){
+    public Programa(ArrayList<Directivo> junta, ArrayList<Sucursal> sucursales){
+        this.juntaDirectiva = junta;
         this.sucursales = sucursales;
-        this.junta = junta;
+    }
+
+    public ArrayList getJuntaDirectiva() {
+        return juntaDirectiva;
+    }
+
+    public void setJuntaDirectiva(ArrayList junta) {
+        this.juntaDirectiva = junta;
     }
 
     public ArrayList<Sucursal> getSucursales() {
@@ -25,11 +33,4 @@ public class Programa {
         this.sucursales = sucursales;
     }
 
-    public ArrayList getJunta() {
-        return junta.getDirectivos();
-    }
-
-    public void setJunta(JuntaDirectiva junta) {
-        this.junta = junta;
-    }
 }

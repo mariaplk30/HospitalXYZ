@@ -73,15 +73,20 @@ public class Ctrl_Citas {
         bd.main();
     }
 
-    public void Cancelar(String Paciente, String FechaID){
+    public void Cancelar(String Paciente, String FechaID, String sucursal){
         bd.leerArchivoJSON();
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
-        
-        for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
-            if(FechaID.substring(11).equals(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID()) == true )
-                sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().remove(i);
-        }
 
+        if(ExistePacienteYMedico(Paciente, "", sucursal, false)){
+        
+            for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
+                if(FechaID.substring(11).equals(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID()) == true ){
+                    sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().remove(i);
+                    System.out.println("borre algo");
+                    break;
+               }
+            }
+        }
         bd.main();
     }
 

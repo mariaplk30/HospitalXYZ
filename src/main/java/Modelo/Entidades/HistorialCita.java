@@ -16,11 +16,11 @@ public class HistorialCita {
         
     }
 
-    public Valores getVal() {
+    public Valores getValores() {
         return valores;
     }
 
-    public void setVal(Valores val) {
+    public void setValores(Valores val) {
         valores = val;
     }
 

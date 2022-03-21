@@ -20,16 +20,16 @@ public class Tension {
         this.minima = minima;
     }
 
-    public int getMaxima() {
-        return maxima;
+    public String getMaxima() {
+        return String.valueOf(maxima);
     }
 
     public void setMaxima(int maxima) {
         this.maxima = maxima;
     }
 
-    public int getMinima() {
-        return minima;
+    public String getMinima() {
+        return String.valueOf(minima);
     }
 
     public void setMinima(int minima) {

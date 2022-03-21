@@ -1,28 +1,28 @@
 package Modelo.Entidades;
 import java.util.ArrayList;
-import org.json.simple.JSONArray;
 
 public class Historia{
     private String ID;
     private String Paciente;
-    private ArrayList<HistorialCita> Historial;
-    
+    private ArrayList<HistorialCita> citas;
+
+
     public Historia(){
         ID = "";
         Paciente = "";
-        Historial = new ArrayList();
+        citas = new ArrayList();
     }
     
     public Historia(String ci){
         ID = "";
         Paciente = ci;
-        Historial = new ArrayList();
+        citas = new ArrayList();
     }
     
-    public Historia(String id, String ci, ArrayList historial){
+    public Historia(String id, String ci, ArrayList<HistorialCita> historial){
         ID = id;
         Paciente = ci;
-        Historial = historial;
+        citas = historial;
     }
     
     public void setID(String id){
@@ -43,14 +43,23 @@ public class Historia{
 
     
     public int cantHistorial(){
-        return Historial.size();
+        return citas.size();
     }
     
-    public void setHistorial(HistorialCita historial){
-        Historial.set(Historial.size()-1, historial);
+    public ArrayList<HistorialCita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(ArrayList<HistorialCita> citas) {
+        this.citas = citas;
     }
     
-    public HistorialCita getHistorial(){
-        return Historial.get(Historial.size()-1);
-    }
+
+//    public void setCitas(HistorialCita historial){
+//        citas.set(citas.size()-1, historial);
+//    }
+//    
+//    public HistorialCita getCitas(){
+//        return citas.get(citas.size()-1);
+//    }
 }

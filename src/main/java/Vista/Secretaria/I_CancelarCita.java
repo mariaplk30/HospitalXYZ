@@ -147,7 +147,7 @@ public class I_CancelarCita extends javax.swing.JFrame {
         //Si datos válidos
         Ctrl_Citas ctrl = new Ctrl_Citas();
         String Seleccion = list.getSelectedValue();
-        ctrl.Cancelar(cancelarCita_patient__textField.getText(), Seleccion);
+        ctrl.Cancelar(cancelarCita_patient__textField.getText(), Seleccion, sucursalT.getText());
 
         IDB_Secretaria SecretariaDB = new IDB_Secretaria();
         SecretariaDB.setVisible(true);

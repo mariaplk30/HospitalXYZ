@@ -2,7 +2,7 @@ package Modelo.Entidades;
 import java.util.*;
 
 public class JuntaDirectiva{
-    private ArrayList<String> nombre;
+    private ArrayList<Directivo> Directivos;
     private ArrayList<Medico> RegistroMedicos;
     private ArrayList<Sucursal> RegistroSucursales;
     
@@ -28,16 +28,18 @@ public class JuntaDirectiva{
        if(juntaDirectivaSimpleton != null) System.out.println("Hay una junta.");
    }
     
-    public void addDirectivo(String nombre){
-        Directivos.add(nombre);
+    public void addNombre(String nombre){
+        Directivo dick = new Directivo();
+        dick.setNombre(nombre);
+        this.Directivos.add(dick);
     }
     
-    public ArrayList<String> getDirectivos(){
+    public ArrayList<Directivo> getDirectivos(){
         return Directivos;
     }
     
     public String getDirectivo(int i){
-        return Directivos.get(i);
+        return Directivos.get(i).getNombre();
     }
     
     public void addMedico(Medico medico){

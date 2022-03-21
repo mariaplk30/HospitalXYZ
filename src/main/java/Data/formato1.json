@@ -1,1 +1,120 @@
-[{"medicos":[{"id":"M00000000","especialidad":"internista","nombre":"Jhon doe"}],"pacientes":[{"citas":[{"id":"00000000","fecha":"01-01-2022","medico":"M00000000"}],"nombre":"luis lopes","historial":[{"id":"H00000000","paciente":"1234567","historial":{"id":"00000000","val":{"tension":{"maxima":200,"minima":180},"talla":50.0,"pesoTalla":0.9,"peso":80.0,"pulso":50}}}],"cedula":"1234567"},{"citas":[{"id":"0000123000","fecha":"01-01-2022","medico":"M0000000"},{"id":"00000001","fecha":"30-03-2022","medico":"M00000000"}],"nombre":"maria paula","historial":[{"id":"H00000000","paciente":"30001499","historial":{"id":"004400000","val":{"tension":{"maxima":232323,"minima":1233280},"talla":123323.0,"pesoTalla":0.9,"peso":8044.0,"pulso":123323}}}],"cedula":"30001499"}],"nombre":"sucursal uno"},{"medicos":[],"pacientes":[],"nombre":"sucursal dos"},{"medicos":[{"id":"M00000000","especialidad":"internista","nombre":"Jhon doe"}],"pacientes":[],"nombre":"XYZ ciudad universitaria"}]
+{
+  "juntaDirectiva": [
+    {
+      "nombre": "directivo 1"
+    },
+    {
+      "nombre": "directivo 2"
+    }
+  ],
+  "sucursales": [
+    {
+      "nombre": "sucursal uno",
+      "medicos": [
+        {
+          "id": "M00000000",
+          "nombre": "Jhon doe",
+          "especialidad": "internista"
+        }
+      ],
+      "pacientes": [
+        {
+          "cedula": "1234567",
+          "nombre": "luis lopes",
+          "citas": [
+            {
+              "id": "00000000",
+              "medico": "M00000000",
+              "fecha": "01-01-2022"
+            },
+            {
+              "id": "00000001",
+              "medico": "M00000000",
+              "fecha": "30-03-2022"
+            }
+          ],
+          "historial": [
+            {
+              "id": "H00000000",
+              "paciente": "1234567",
+              "citas": [
+                {
+                  "id": "00000000",
+                  "valores": {
+                    "peso": "80",
+                    "talla": "85",
+                    "pesoTalla": "0.9",
+                    "tension": {
+                      "maxima": "200",
+                      "minima": "180"
+                    },
+                    "pulso": "50"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cedula": "30001499",
+          "nombre": "maria paula",
+          "citas": [
+            {
+              "id": "0000123000",
+              "medico": "M0000000",
+              "fecha": "01-01-2022"
+            },
+            {
+              "id": "00000001",
+              "medico": "M00000000",
+              "fecha": "30-03-2022"
+            }
+          ],
+          "historial": [
+            {
+              "id": "H00000000",
+              "paciente": "30001499",
+              "citas": [
+                {
+                  "id": "004400000",
+                  "valores": {
+                    "peso": "8044",
+                    "talla": "8445",
+                    "pesoTalla": "0.9",
+                    "tension": {
+                      "maxima": "232323",
+                      "minima": "1233280"
+                    },
+                    "pulso": "123323"
+                  }
+                }
+              ]
+            }
+          ]
+        }        
+      ]
+    },
+    {
+      "nombre": "sucursal dos",
+      "medicos": [
+        
+      ],
+      "pacientes": [
+        
+      ]
+    },
+    {
+      "nombre": "XYZ ciudad universitaria",
+      "medicos": [
+        {
+          "id": "M00000000",
+          "nombre": "Jhon doe",
+          "especialidad": "internista"
+        }
+      ],
+      "pacientes": [
+        
+      ]
+    }
+  ]
+}
