@@ -2,7 +2,7 @@ package Controlador;
 import Modelo.Entidades.*;
 import Data.BDD;
 import java.util.*;
-
+/**/
 public class Ctrl_Historia{
     
     public String sucursal = "";
