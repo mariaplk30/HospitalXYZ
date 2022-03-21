@@ -39,10 +39,10 @@ public class BDD{
         return jsonCompleto;
     }
 
-    public void setJsonCompleto(ArrayList<Sucursal> suck, ArrayList<JuntaDirectiva> di) {
-
-        this.jsonCompleto = jsonCompleto;
-    }
+//    public void setJsonCompleto(ArrayList<Sucursal> suck, ArrayList<JuntaDirectiva> di) {
+//
+//        this.jsonCompleto = jsonCompleto;
+//    }
 
     public BDD(){
       
@@ -149,16 +149,22 @@ public class BDD{
 
     private Valores parseValores(JSONObject obj) {
 	String peso = (String)obj.get("peso");
-	String talla = (String)obj.get("pulso");
+	String talla = (String)obj.get("talla");
         String pesoTalla = (String) obj.get("pesoTalla");
         JSONObject tension = (JSONObject) obj.get("tension");
         String pulso = (String) obj.get("pulso");
 
-
+        System.out.println("peso " +peso);
+        System.out.println("pulso " +pulso);
+        System.out.println("Talla " +talla);
+        System.out.println("pesotalla " +pesoTalla);
+        
         System.out.println("4");
 
         Tension tet = new Tension(Integer.parseInt((String)tension.get("maxima")), Integer.parseInt((String)tension.get("minima")));
         System.out.println("5");
+        System.out.println(tet.getMaxima());
+        System.out.println(tet.getMinima());
 
         Valores val = new Valores(Double.parseDouble(peso), Double.parseDouble(talla), Double.parseDouble(pesoTalla), tet, Integer.parseInt(pulso));
         System.out.println("6");
