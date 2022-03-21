@@ -34,29 +34,44 @@ public class JuntaDirectiva{
         this.Directivos.add(dick);
     }
     
+    public void addNombre(Directivo nombre){
+        this.Directivos.add(nombre);
+    }
+    
     public ArrayList<Directivo> getDirectivos(){
         return Directivos;
     }
     
-    public String getDirectivo(int i){
-        return Directivos.get(i).getNombre();
+    public Directivo getDirectivo(int i){
+        return Directivos.get(i);
     }
     
     private String ID_Medico(){
         String mensaje = "M";
-        int j = 0;
+        int j = 0;int aux = RegistroMedicos.size() - 1;
         
         if(Math.log10(RegistroMedicos.size())<1) j = 1;
         else j = (int) Math.log10(RegistroMedicos.size()) + 1;
         
         for(int i=1; i<=8-j; i++) mensaje += "0";
         
-        return mensaje + Integer.toString(RegistroMedicos.size() - 1);  
+        return mensaje + Integer.toString(aux);  
+    }
+    
+    private boolean registrado(Medico medico){
+        if(!RegistroMedicos.isEmpty()){
+            for(int i=0; i < RegistroMedicos.size(); i++){
+                if(RegistroMedicos.get(i).getNombre().toLowerCase().equals(medico.getNombre().toLowerCase())) return true;
+            }
+        }
+        return false;
     }
     
     public void addMedico(Medico medico){
-        RegistroMedicos.add(medico);
-        RegistroMedicos.get(RegistroMedicos.size()-1).setID(ID_Medico()); //A cada médico registrado se le genera su ID único.
+        if((!registrado(medico))){
+            RegistroMedicos.add(medico);
+            medico.setID(ID_Medico()); //A cada médico registrado se le genera
+        }
     }
  
     public void addMedico(String id, String nombre, String especialidad){
@@ -66,6 +81,16 @@ public class JuntaDirectiva{
     
     public Medico getMedico(int i){
         return RegistroMedicos.get(i);
+    }
+    
+    public Medico searchMedico(Medico medico){
+        if(registrado(medico)){
+            for(int i=0; i < RegistroMedicos.size(); i++){
+                if(RegistroMedicos.get(i).getNombre().toLowerCase().equals(medico.getNombre().toLowerCase()))
+                        return RegistroMedicos.get(i);
+            }
+        }
+        return null;
     }
     
     public int getCantMedicos(){
@@ -91,11 +116,5 @@ public class JuntaDirectiva{
     
     public int getCantSucursales(){
         return RegistroSucursales.size();
-    }
-    
-    public void probarSucursales(){
-        if(!RegistroSucursales.isEmpty()){
-            for(int i=0; i<RegistroSucursales.size(); i++) System.out.println(RegistroSucursales.get(i).getNombre());
-        }else System.out.println("No hay sucursales");
     }
 }

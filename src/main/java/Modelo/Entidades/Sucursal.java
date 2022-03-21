@@ -2,17 +2,20 @@ package Modelo.Entidades;
 import java.util.ArrayList;
 
 public class Sucursal{
+    int cont;
     private ArrayList<Paciente> Pacientes;
     private String Nombre;
     private ArrayList<Medico> Medicos;
 
     public Sucursal(){
+        cont = 0;
         Nombre = "";
         Medicos = new ArrayList();
         Pacientes = new ArrayList();
     }
     
     public Sucursal(String nombre){
+        cont = 0;
         Nombre = nombre;
         Medicos = new ArrayList();
         Medicos.clear();
@@ -21,6 +24,7 @@ public class Sucursal{
     }
     
     public Sucursal(String nombre, ArrayList<Medico> medicos, ArrayList<Paciente> pacientes){
+        cont = 0;
         Nombre = nombre;
         Medicos = medicos;
         Pacientes = pacientes;

@@ -18,12 +18,15 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 
 public class BDD{
-
+    
+    //Aplicación de Singleton y Factory Method
+    FabricaSucursales fabrica = new FabricaSucursales();
+    JuntaDirectiva juntaDirectiva = JuntaDirectiva.getJuntaDirectiva(fabrica);
+    
     ArrayList<Sucursal> arregloSucursales;
     ArrayList<Directivo> arregloJuntaD;
 
     public BDD(){
-      
     }
 
     public void setArregloSucursales(ArrayList<Sucursal> arregloS) {
@@ -47,7 +50,10 @@ public class BDD{
         ArrayList<Medico> arregloMedicosSucursal = new ArrayList();
 
         for(int i=0; i<medicos.size(); i++){
-            arregloMedicosSucursal.add(parseMedicos((JSONObject) medicos.get(i)));
+            Medico medico = parseMedicos((JSONObject) medicos.get(i));
+            juntaDirectiva.addMedico(medico);
+            medico = juntaDirectiva.searchMedico(medico);
+            arregloMedicosSucursal.add(medico);
         }                
 
         ArrayList<Paciente> arregloPacientesSucursal = new ArrayList();
@@ -163,17 +169,16 @@ public class BDD{
 
             arregloSucursales = new ArrayList();
             arregloJuntaD = new ArrayList();
-            FabricaSucursales fabrica = new FabricaSucursales();
-            JuntaDirectiva juntaDirectiva = JuntaDirectiva.getJuntaDirectiva(fabrica); //Aplicación de Singleton             
 
             for(int i=0;i<juntaD.size();i++){
 		JSONObject jd = (JSONObject)juntaD.get(i);
+                juntaDirectiva.addNombre(parseJuntaDirectiva(jd));
                 arregloJuntaD.add(parseJuntaDirectiva(jd));
-                juntaDirectiva.addNombre(arregloJuntaD.get(i).getNombre());
             }
-
+            
             for(int i=0;i<sucursales.size();i++){
 		JSONObject suc =  (JSONObject)sucursales.get(i);
+                juntaDirectiva.addSucursal(parseSucursales(suc));
                 arregloSucursales.add(parseSucursales(suc));
             }
 
@@ -207,4 +212,5 @@ public class BDD{
     public int cantSucursales(){
         return arregloSucursales.size();
     }
+
 }
