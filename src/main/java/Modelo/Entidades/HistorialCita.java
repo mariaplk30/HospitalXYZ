@@ -30,6 +30,5 @@ public class HistorialCita {
     
     public String getId(){
         return ID;
-    }   
-    
+    }
 }

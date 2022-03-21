@@ -1,10 +1,10 @@
 package Vista.JuntaDirectiva;
 import Controlador.Ctrl_JuntaDirectiva;
+import Vista.Errores.*;
+import Vista.Exito.I_OperacionOK;
 
 public class I_AbrirSucursal extends javax.swing.JFrame {
 
-    IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
-    
     private Ctrl_JuntaDirectiva control = new Ctrl_JuntaDirectiva();
     
     /**
@@ -100,17 +100,23 @@ public class I_AbrirSucursal extends javax.swing.JFrame {
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
         String nombre = abrirSucursal_name__field.getText();
         String ubicacion = abrirSucursal_location__field.getText();
-        if(Ctrl_JuntaDirectiva.VerificarDatosSucursal(nombre, ubicacion)) control.AbrirSucursal(nombre);
-        else{
-            //INTERFAZ DE ERROR EN LOS DATOS
-            //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
+        if(Ctrl_JuntaDirectiva.VerificarDatosSucursal(nombre, ubicacion)){
+            if(control.AbrirSucursal(nombre)){
+                I_OperacionOK OK = new I_OperacionOK("IDB_JuntaDirectiva");
+                OK.setVisible(true);
+                dispose();
+            }else{
+                I_Error3 error = new I_Error3();
+                error.setVisible(true);
+            }
+        }else{
+            I_Error1 DatosInvalidos = new I_Error1();
+            DatosInvalidos.setVisible(true);
         }
-        JuntaDB.setVisible(true);
-        I_AbrirSucursal.this.setVisible(false);
-        dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed
+        IDB_JuntaDirectiva JuntaDB = new IDB_JuntaDirectiva();
         JuntaDB.setVisible(true);
         I_AbrirSucursal.this.setVisible(false);
         dispose();

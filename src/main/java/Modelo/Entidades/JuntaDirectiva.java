@@ -42,8 +42,21 @@ public class JuntaDirectiva{
         return Directivos.get(i).getNombre();
     }
     
+    private String ID_Medico(){
+        String mensaje = "M";
+        int j = 0;
+        
+        if(Math.log10(RegistroMedicos.size())<1) j = 1;
+        else j = (int) Math.log10(RegistroMedicos.size()) + 1;
+        
+        for(int i=1; i<=8-j; i++) mensaje += "0";
+        
+        return mensaje + Integer.toString(RegistroMedicos.size() - 1);  
+    }
+    
     public void addMedico(Medico medico){
         RegistroMedicos.add(medico);
+        RegistroMedicos.get(RegistroMedicos.size()-1).setID(ID_Medico()); //A cada médico registrado se le genera su ID único.
     }
  
     public void addMedico(String id, String nombre, String especialidad){
@@ -79,30 +92,6 @@ public class JuntaDirectiva{
     public int getCantSucursales(){
         return RegistroSucursales.size();
     }
-     
-    public int RegPacientes(String sucursal){
-        /*Busca en las sucursales a los pacientes desde el 1º de Enero hasta el 31 de Diciembre del año actual*/
-        int cont = 0; 
-        Date fecha = new Date();
-        String year = Integer.toString(fecha.getYear()+1900); //Año actual
-        for(int i=0; i<RegistroSucursales.size(); i++){
-            if(sucursal.equals(RegistroSucursales.get(i).getNombre())){
-                ArrayList<Paciente> pacientes = RegistroSucursales.get(i).getPacientes();
-                for(int j=0; j<pacientes.size(); j++){
-                    ArrayList<Cita> citas = pacientes.get(j).getCitas();
-                    for(int k=0; k<citas.size(); k++){
-                        if(year.equals(citas.get(k).getFecha().substring(citas.get(k).getFecha().length()-4, citas.get(k).getFecha().length()))){
-                            cont++;
-                            break;
-                        }
-                    }
-                }  
-            }
-        }
-        return cont;
-    }
-    
-    
     
     public void probarSucursales(){
         if(!RegistroSucursales.isEmpty()){

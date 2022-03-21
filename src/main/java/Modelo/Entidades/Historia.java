@@ -53,13 +53,4 @@ public class Historia{
     public void setCitas(ArrayList<HistorialCita> citas) {
         this.citas = citas;
     }
-    
-
-//    public void setCitas(HistorialCita historial){
-//        citas.set(citas.size()-1, historial);
-//    }
-//    
-//    public HistorialCita getCitas(){
-//        return citas.get(citas.size()-1);
-//    }
 }

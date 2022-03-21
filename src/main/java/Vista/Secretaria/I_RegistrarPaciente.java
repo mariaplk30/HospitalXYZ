@@ -264,8 +264,7 @@ public class I_RegistrarPaciente extends javax.swing.JFrame {
         String ocupacion = registrarPaciente_occupation__field.getText();
         String relativo = registrarPaciente_relativePhone__field.getText();
         String sucursal = registrarPaciente_branch__field.getText();
-        Ctrl_Citas ctrlCita = new Ctrl_Citas();
-        //ESTE PROYECTO E SUNA PORQUERÍA NO SIRVE PARA NADA     
+        Ctrl_Citas ctrlCita = new Ctrl_Citas();   
         if(ctrlCita.VerificarDatos(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo) == true){
             ctrlCita.Registrar(cedula, nombres, apellidos, sucursal);
             IDB_Secretaria SecretariaDB = new IDB_Secretaria();

@@ -5,7 +5,6 @@ import Modelo.Entidades.*;
 public class Programa {
     private ArrayList<Directivo> juntaDirectiva;
     public ArrayList<Sucursal> sucursales;
-    //Singleton y Factory Method
 
     public Programa(){
         juntaDirectiva = new ArrayList();
@@ -32,5 +31,4 @@ public class Programa {
     public void setSucursales(ArrayList<Sucursal> sucursales) {
         this.sucursales = sucursales;
     }
-
 }

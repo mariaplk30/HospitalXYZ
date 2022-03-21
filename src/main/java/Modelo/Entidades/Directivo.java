@@ -1,6 +1,5 @@
 package Modelo.Entidades;
 
-
 public class Directivo {
     String nombre;
 
@@ -13,5 +12,4 @@ public class Directivo {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
 }

@@ -150,7 +150,6 @@ public class I_ModificarCita extends javax.swing.JFrame {
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        //Si datos válidos
         SimpleDateFormat dcn = new SimpleDateFormat("dd-MM-yyyy");
 
         String paciente = modificarCita_patient__field.getText();

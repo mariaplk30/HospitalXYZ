@@ -42,7 +42,7 @@ public class BDD{
     private Sucursal parseSucursales(JSONObject obj) {
 	String nombre = (String)obj.get("nombre");
 	JSONArray medicos = (JSONArray)obj.get("medicos");
-	JSONArray pacientes = (JSONArray)obj.get("pacientes");
+	JSONArray pacientes = (JSONArray)obj.get("pacientes");        
         
         ArrayList<Medico> arregloMedicosSucursal = new ArrayList();
 
@@ -59,7 +59,6 @@ public class BDD{
         Sucursal sucursal = new Sucursal(nombre, arregloMedicosSucursal, arregloPacientesSucursal);
 
         return sucursal;
-        
     }
     
     private Medico parseMedicos(JSONObject obj) {
@@ -77,8 +76,6 @@ public class BDD{
 	String nombre = (String)obj.get("nombre");
 	JSONArray citas = (JSONArray)obj.get("citas");
         JSONArray historial = (JSONArray)obj.get("historial");
-
-//	System.out.println("cedula: "+cedula); odio este proyectp
 
         ArrayList<Cita> arregloCitasDePaciente = new ArrayList();
         ArrayList<Historia> arregloHistoriasDePaciente = new ArrayList();
@@ -138,11 +135,9 @@ public class BDD{
         String pulso = (String) obj.get("pulso");
 
         Tension tet = new Tension(Integer.parseInt((String)tension.get("maxima")), Integer.parseInt((String)tension.get("minima")));
-        System.out.println("TENEMOS UNE COMPAÑARE QUE NO TRABAJo EN NADA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         Valores valores = new Valores(Double.parseDouble(peso), Double.parseDouble(talla), Double.parseDouble(pesoTalla), tet, Integer.parseInt(pulso));
 
-          
         return valores;
     }
     
@@ -152,13 +147,11 @@ public class BDD{
         dick.setNombre(nombre);        
         return dick;
     }
-   
 
     public void leerArchivoJSON(){
 
         JSONParser jsonParser = new JSONParser();
         String filePath = new File("").getAbsolutePath();
-        //System.out.println (filePath);
 
         try {
             FileReader reader = new FileReader(filePath + "/src/main/java/Data/formato.json");
@@ -173,21 +166,16 @@ public class BDD{
             FabricaSucursales fabrica = new FabricaSucursales();
             JuntaDirectiva juntaDirectiva = JuntaDirectiva.getJuntaDirectiva(fabrica); //Aplicación de Singleton             
 
-
-            for(int i=0;i<juntaD.size();i++)
-            {
+            for(int i=0;i<juntaD.size();i++){
 		JSONObject jd = (JSONObject)juntaD.get(i);
                 arregloJuntaD.add(parseJuntaDirectiva(jd));
                 juntaDirectiva.addNombre(arregloJuntaD.get(i).getNombre());
             }
 
-
-            for(int i=0;i<sucursales.size();i++)
-            {
+            for(int i=0;i<sucursales.size();i++){
 		JSONObject suc =  (JSONObject)sucursales.get(i);
                 arregloSucursales.add(parseSucursales(suc));
             }
-           
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -196,15 +184,12 @@ public class BDD{
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
     }
-
 
     public void main(){
 
         //leerArchivoJSON();
         String filePath = new File("").getAbsolutePath();
-        //System.out.println (filePath);
         try {
 
             Programa todo = new Programa(arregloJuntaD, arregloSucursales);
@@ -217,12 +202,9 @@ public class BDD{
         } catch (IOException e) {
             e.printStackTrace();
         }       
-         
-
     }
     
     public int cantSucursales(){
         return arregloSucursales.size();
     }
-
 }

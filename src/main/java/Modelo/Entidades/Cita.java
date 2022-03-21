@@ -53,7 +53,4 @@ public class Cita{
     public String getFecha(){
         return Fecha;
     }
-
-
-
 }

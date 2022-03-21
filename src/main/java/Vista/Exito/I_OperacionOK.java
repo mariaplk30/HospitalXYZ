@@ -1,16 +1,26 @@
-package Vista.Errores;
+package Vista.Exito;
 import javax.swing.JFrame;
+import Vista.JuntaDirectiva.*;
+import Vista.Secretaria.*;
+import Vista.Medico.*;
 
-public class I_Error2 extends javax.swing.JFrame {
-
+public class I_OperacionOK extends javax.swing.JFrame {
+    private String Vista;
     /**
      * Creates new form I_Error2
      */
-    public I_Error2() {
+    public I_OperacionOK(String vista){
+        Vista = vista;
         initComponents();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
-
+    
+    public I_OperacionOK(){
+        Vista = "";
+        initComponents();
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,7 +36,7 @@ public class I_Error2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("NO EXISTE PACIENTE O SUCURSAL");
+        jLabel1.setText("OPERACION EXITOSA");
 
         Aceptar.setText("Aceptar");
         Aceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -35,8 +45,6 @@ public class I_Error2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("¡ERROR!");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -44,26 +52,26 @@ public class I_Error2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(Aceptar))
+                        .addGap(138, 138, 138)
+                        .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
+                        .addGap(115, 115, 115)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel2)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                        .addGap(133, 133, 133)
+                        .addComponent(Aceptar)))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(Aceptar)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -71,8 +79,26 @@ public class I_Error2 extends javax.swing.JFrame {
 
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
         // TODO add your handling code here:
-        I_Error2.this.setVisible(false);
-        dispose();
+        switch(Vista){
+            case "IDB_JuntaDirectiva":
+                IDB_JuntaDirectiva jd = new IDB_JuntaDirectiva();
+                jd.setVisible(true);
+                I_OperacionOK.this.setVisible(false);
+                dispose();
+            break;
+            case "IDB_Medico":
+                IDB_Medico m = new IDB_Medico();
+                m.setVisible(true);
+                I_OperacionOK.this.setVisible(false);
+                dispose();
+            break;
+            case "IDB_Secretaria":
+                IDB_Secretaria s = new IDB_Secretaria();
+                s.setVisible(true);
+                I_OperacionOK.this.setVisible(false);
+                dispose();
+            break;
+        }
     }//GEN-LAST:event_AceptarActionPerformed
 
     /**
@@ -92,20 +118,23 @@ public class I_Error2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(I_Error2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(I_OperacionOK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(I_Error2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(I_OperacionOK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(I_Error2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(I_OperacionOK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(I_Error2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(I_OperacionOK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new I_Error2().setVisible(true);
+                new I_OperacionOK().setVisible(true);
             }
         });
     }

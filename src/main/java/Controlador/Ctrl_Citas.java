@@ -90,6 +90,15 @@ public class Ctrl_Citas {
         bd.main();
     }
 
+    public boolean isEmpty(String nombres, String apellidos, String cedula, String sexo, String lugarN, String civil, String direccion, String telefono, String profesion, String ocupacion, String relativo){
+        return nombres.isEmpty() || nombres.isBlank() || apellidos.isEmpty() || apellidos.isBlank() ||
+               cedula.isEmpty() || cedula.isBlank() || sexo.isEmpty() || sexo.isBlank() ||
+               lugarN.isEmpty() || lugarN.isBlank() || civil.isEmpty() || civil.isBlank() ||
+               direccion.isEmpty() || direccion.isBlank() || telefono.isEmpty() || telefono.isBlank() ||
+               profesion.isEmpty() || profesion.isBlank() || ocupacion.isEmpty() || ocupacion.isBlank() ||
+               relativo.isEmpty() || relativo.isBlank();
+    }
+    
     public boolean VerificarDatos(String nombres,String apellidos,String cedula,String sexo,String lugarN,String civil,String direccion,String telefono,String profesion,String ocupacion,String relativo){
        
         return nombres.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
@@ -102,7 +111,7 @@ public class Ctrl_Citas {
            ocupacion.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
            cedula.matches("\\d*")&& 
            telefono.matches("\\d*") &&
-           relativo.matches("\\d*");
+           relativo.matches("\\d*") && !isEmpty(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo);
     }
      
     public boolean ExistePacienteYMedico(String paciente, String medico, String sucursal, boolean med){
@@ -152,13 +161,9 @@ public class Ctrl_Citas {
                 }
 
             }
-    
         }
-        if(existeSucursal == true){
-            return true;
-        }else{
-            return false;
-        }
+        if(existeSucursal == true) return true;
+        else return false;
     }
 
     public void Registrar(String cedula, String nombre, String apellido, String sucursal){

@@ -1,5 +1,6 @@
 package Vista.Medico;
 import Controlador.Ctrl_Historia;
+import Vista.Errores.I_Error1;
 
 public class I_CrearHistoria extends javax.swing.JFrame{
     
@@ -281,7 +282,6 @@ public class I_CrearHistoria extends javax.swing.JFrame{
     }//GEN-LAST:event_crearHistoria_tMin__fieldActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        //Si datos válidos
         String paciente = crearHistoria_patient__field.getText();
         String peso = crearHistoria_weight__field.getText();
         String talla = crearHistoria_height__field.getText();
@@ -294,8 +294,8 @@ public class I_CrearHistoria extends javax.swing.JFrame{
         String sucursal = crearHistoria_branch__field.getText();
         if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)) this.control.CrearHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal);
         else{
-            //INTERFAZ DE ERROR EN LOS DATOS
-            //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
+            I_Error1 error = new I_Error1();
+            error.setVisible(true);
         }
         MedicoDB.setVisible(true);
         I_CrearHistoria.this.setVisible(false);

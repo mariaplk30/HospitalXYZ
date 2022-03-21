@@ -15,7 +15,9 @@ public class Sucursal{
     public Sucursal(String nombre){
         Nombre = nombre;
         Medicos = new ArrayList();
+        Medicos.clear();
         Pacientes = new ArrayList();
+        Pacientes.clear();
     }
     
     public Sucursal(String nombre, ArrayList<Medico> medicos, ArrayList<Paciente> pacientes){
@@ -81,5 +83,4 @@ public class Sucursal{
     public Paciente getPaciente(int i){
         return Pacientes.get(i);
     }
-    
 }

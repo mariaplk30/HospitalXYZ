@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo.Entidades;
 
-/**
- *
- * @author Hogar
- */
 public class Valores {
     private double Peso;
     private double Talla;
     private double PesoTalla;
     private Tension tension;
     private int Pulso;
-
 
     public Valores(){}
 
@@ -66,7 +57,4 @@ public class Valores {
     public void setPulso(int Pulso) {
         this.Pulso = Pulso;
     }
-
-
-
 }

@@ -143,8 +143,6 @@ public class I_CancelarCita extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarCita_patient__textFieldActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        // TODO add your handling code here:
-        //Si datos válidos
         Ctrl_Citas ctrl = new Ctrl_Citas();
         String Seleccion = list.getSelectedValue();
         ctrl.Cancelar(cancelarCita_patient__textField.getText(), Seleccion, sucursalT.getText());

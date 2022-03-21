@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import Controlador.Ctrl_Citas;
 import Vista.Errores.I_Error1;
 
-
 public class I_SolicitarCita extends javax.swing.JFrame {
 
     /**
@@ -126,14 +125,12 @@ public class I_SolicitarCita extends javax.swing.JFrame {
     }//GEN-LAST:event_cancel__btnActionPerformed
 
     private void confirm__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm__btnActionPerformed
-        //Recibir datos
         Ctrl_Citas ctrl = new Ctrl_Citas();
         SimpleDateFormat dcn = new SimpleDateFormat("dd-MM-yyyy");
         String paciente = solicitarCita_patient__field.getText();
         String date = dcn.format(solicitarCita_date__field.getDate() );
         String medico = solicitarCita_doctor__field.getText();
         String sucursal = solicitarCita_branch__field.getText();
-
         if(ctrl.ExistePacienteYMedico(paciente, medico, sucursal, true) == true){
             ctrl.Solicitar(date);
             IDB_Secretaria SecretariaDB = new IDB_Secretaria();
@@ -141,18 +138,9 @@ public class I_SolicitarCita extends javax.swing.JFrame {
             I_SolicitarCita.this.setVisible(false);
             dispose();
         }else{
-        //error
             I_Error1 DatosInvalidos = new I_Error1();
             DatosInvalidos.setVisible(true);
         }
-
-
-
-
-
-
-        //solicitarCita_branch__field.setText(date); // Probando agarrar input del usuario y 
-                                                                                     // mostrarlo
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**

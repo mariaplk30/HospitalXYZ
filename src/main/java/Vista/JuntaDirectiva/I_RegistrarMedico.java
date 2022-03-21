@@ -1,5 +1,7 @@
 package Vista.JuntaDirectiva;
 import Controlador.Ctrl_JuntaDirectiva;
+import Vista.Errores.*;
+import Vista.Exito.I_OperacionOK;
 
 public class I_RegistrarMedico extends javax.swing.JFrame {
     
@@ -229,16 +231,19 @@ public class I_RegistrarMedico extends javax.swing.JFrame {
         String direccion = registrarMedico_homeAddress__field.getText();
         String telefono = registrarMedico_phone__field.getText();
         String especialidad = registrarMedico_job__field.getText();
-        
         if(Ctrl_JuntaDirectiva.VerificarDatosMedico(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, especialidad)){
-            control.RegistrarMedico(civil, nombres, especialidad);
+            if(control.RegistrarMedico("", nombres, especialidad)){
+                I_OperacionOK OK = new I_OperacionOK("IDB_JuntaDirectiva");
+                OK.setVisible(true);
+                dispose();
+            }else{
+                I_Error4 error = new I_Error4();
+                error.setVisible(true);
+            }
         }else{
-            //INTERFAZ DE ERROR EN LOS DATOS
-            //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
+            I_Error1 DatosInvalidos = new I_Error1();
+            DatosInvalidos.setVisible(true);
         }
-        JuntaDB.setVisible(true);
-        I_RegistrarMedico.this.setVisible(false);
-        dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     /**
