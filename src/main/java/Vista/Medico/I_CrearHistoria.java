@@ -1,6 +1,8 @@
 package Vista.Medico;
 import Controlador.Ctrl_Historia;
 import Vista.Errores.I_Error1;
+import Vista.Errores.I_Error6;
+import Vista.Exito.I_OperacionOK;
 
 public class I_CrearHistoria extends javax.swing.JFrame{
     
@@ -292,14 +294,19 @@ public class I_CrearHistoria extends javax.swing.JFrame{
         String evolucion = crearHistoria_evolution__textArea.getText();
         String control = crearHistoria_apptControl__textArea.getText();
         String sucursal = crearHistoria_branch__field.getText();
-        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)) this.control.CrearHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal);
-        else{
+        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)){
+            if(this.control.CrearHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal)){
+                I_OperacionOK OK = new I_OperacionOK("IDB_Medico");
+                OK.setVisible(true);
+                dispose();
+            }else{
+                I_Error6 error = new I_Error6();
+                error.setVisible(true);
+            }
+        }else{
             I_Error1 error = new I_Error1();
             error.setVisible(true);
         }
-        MedicoDB.setVisible(true);
-        I_CrearHistoria.this.setVisible(false);
-        dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     private void cancel__btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel__btnActionPerformed

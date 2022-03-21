@@ -1,6 +1,8 @@
 package Vista.Medico;
 import Controlador.Ctrl_Historia;
 import Vista.Errores.I_Error1;
+import Vista.Errores.I_Error5;
+import Vista.Exito.I_OperacionOK;
 
 public class I_ModificarHistoria extends javax.swing.JFrame {
 
@@ -297,7 +299,15 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
         String evolucion = modificarHistoria_evolution__textArea.getText();
         String control = modificarHistoria_apptControl__textArea.getText();
         String sucursal = modificarHistoria_branch__field.getText();
-        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)) this.control.ModificarHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal);
+        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)) 
+            if(this.control.ModificarHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal)){
+                I_OperacionOK OK = new I_OperacionOK("IDB_Medico");
+                OK.setVisible(true);
+                dispose();
+            }else{
+                I_Error5 error = new I_Error5();
+                error.setVisible(true);
+            }
         else{
             I_Error1 error = new I_Error1();
             error.setVisible(true);

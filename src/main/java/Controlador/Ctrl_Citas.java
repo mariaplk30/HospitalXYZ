@@ -111,7 +111,8 @@ public class Ctrl_Citas {
            ocupacion.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
            cedula.matches("\\d*")&& 
            telefono.matches("\\d*") &&
-           relativo.matches("\\d*") && !isEmpty(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo);
+           relativo.matches("\\d*") &&
+           !isEmpty(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo);
     }
      
     public boolean ExistePacienteYMedico(String paciente, String medico, String sucursal, boolean med){

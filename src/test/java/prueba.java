@@ -52,15 +52,5 @@ public class prueba {
             pacientes.add(cuatro);
             
             j.getSucursal(1).setPacientes(pacientes);
-            
-            
-            for(int i=0; i<j.getCantSucursales(); i++){
-                System.out.print(j.getSucursal(i).getNombre() + ": ");
-                System.out.println(j.RegPacientes(j.getSucursal(i).getNombre()) + " pacientes");
-            }
-            
-            
-            
-            
     }
 }

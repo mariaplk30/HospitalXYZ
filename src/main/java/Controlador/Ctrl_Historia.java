@@ -2,7 +2,7 @@ package Controlador;
 import Modelo.Entidades.*;
 import Data.BDD;
 import java.util.*;
-/**/
+
 public class Ctrl_Historia{
     
     public String sucursal = "";
@@ -10,8 +10,24 @@ public class Ctrl_Historia{
     
     public Ctrl_Historia(){}
     
+    public static boolean isEmpty(String paciente, String peso, String talla, String IMC, String PPM, String tensionMax, String tensionMin, String evolucion, String control, String sucursal){
+        return paciente.isEmpty() || paciente.isBlank() || peso.isEmpty() || peso.isBlank() ||
+               talla.isEmpty() || talla.isBlank() || IMC.isEmpty() || IMC.isBlank() ||
+               tensionMax.isEmpty() || tensionMax.isBlank() || tensionMin.isEmpty() || tensionMin.isBlank() ||
+               evolucion.isEmpty() || evolucion.isBlank() || control.isEmpty() || control.isBlank() ||
+               sucursal.isEmpty() || sucursal.isBlank();
+    }
+    
     public static boolean VerificarDatosHistoria(String paciente, String peso, String talla, String IMC, String PPM, String tensionMax, String tensionMin, String evolucion, String control, String sucursal){
-        return  paciente.matches("\\d*"); //HACER VERIFICACION PARA LAS DEMAS PLS
+        return  paciente.matches("\\d*") && 
+                peso.matches("\\d*") && 
+                talla.matches("\\d*") && 
+                IMC.matches("\\d*") && 
+                PPM.matches("\\d*") && 
+                tensionMax.matches("\\d*") && 
+                tensionMin.matches("\\d*") && 
+                sucursal.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
+                !isEmpty(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal);
     }
     
     public Sucursal getSucursal(){
@@ -21,28 +37,34 @@ public class Ctrl_Historia{
         return null;
     }
     
-    public void CrearHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
+    public boolean CrearHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
         this.sucursal = sucursal;
-        if(ExistePaciente(paciente) && getPaciente(paciente).getHistorial().isEmpty()){
+        if(ExistePaciente(paciente)){
                 Paciente Paciente = getPaciente(paciente);
                 Historia historia = new Historia(paciente);
-                    HistorialCita historial = historia.getHistorial();
-                    historial.setPeso(Double.parseDouble(peso));
-                    historial.setTalla(Double.parseDouble(peso));
-                    historial.setPesoTalla(Double.parseDouble(IMC));
-                    historial.setTensionMax(Integer.parseInt(tensionMax));
-                    historial.setTensionMin(Integer.parseInt(tensionMin));
-                    int tension[] = {historial.getTensionMax(), historial.getTensionMin()};
-                    historial.setTension(tension);
-                    historial.setID(Paciente.getCitas().get(0).getID());                   
-                historia.setHistorial(historial);
+                    ArrayList<HistorialCita> historial = historia.getCitas();
+                        Valores valores = new Valores();
+                        valores.setPeso(Double.parseDouble(peso));
+                        valores.setTalla(Double.parseDouble(talla));
+                        valores.setPesoTalla(Double.parseDouble(IMC));
+                            Tension tension = new Tension();
+                            tension.setMaxima(Integer.parseInt(tensionMax));
+                            tension.setMinima(Integer.parseInt(tensionMin));
+                        valores.setTension(tension);
+                        valores.setPulso(0); //NUNCA SE LEE PULSO EN NINGUNA INTERFAZ
+                    if(historial.size()-1 >= 0){
+                        historial.get(historial.size()-1).setValores(valores);
+                        historial.get(historial.size()-1).setID(Paciente.getCitas().get(0).getID());
+                    }else{
+                        historial.get(0).setValores(valores);
+                        historial.get(0).setID(Paciente.getCitas().get(0).getID());
+                    }
+                historia.setCitas(historial);
                 Paciente.getHistorial().add(historia);
-                setHistoria(Paciente);        
+                setHistoria(Paciente);
+                return true;
         }else{
-            //Interfaz que diga "PACIENTE NO REGISTRADO" o algo parecido
-            //con botón para volver (>>LLAMADO VOLVER<<) a la interfaz de crear historia
-            
-            //¿Por qué?, no puedes crearle una historia a un paciente no registrado
+            return false;
         }
     }
 
@@ -65,6 +87,7 @@ public class Ctrl_Historia{
                 }
             }
         }
+        bdd.main();
     }
     
     public Paciente getPaciente(String cedula){
@@ -76,28 +99,36 @@ public class Ctrl_Historia{
         return null;
     }
     
-    public void ModificarHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
+    public boolean ModificarHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
         this.sucursal = sucursal;
         if(ExistePaciente(paciente) && !getPaciente(paciente).getHistorial().isEmpty()){
             Paciente Paciente = getPaciente(paciente);
-                Historia historia = Paciente.getHistorial().get(Paciente.getHistorial().size()-1);
-                    HistorialCita historial = historia.getHistorial();
-                    historial.setPeso(Double.parseDouble(peso));
-                    historial.setTalla(Double.parseDouble(peso));
-                    historial.setPesoTalla(Double.parseDouble(IMC));
-                    historial.setTensionMax(Integer.parseInt(tensionMax));
-                    historial.setTensionMin(Integer.parseInt(tensionMin));
-                    int tession[]= {historial.getTensionMax(),historial.getTensionMin()};
-                    historial.setTension(tession);
-                historia.setHistorial(historial);
-            Paciente.setHistorial(historia);
-            setHistoria(Paciente);
-            //Abrir interfaz de operación realizada exitosamente
+                Historia historia = new Historia();
+                if(Paciente.getHistorial().size()-1 >= 0) historia = Paciente.getHistorial().get(Paciente.getHistorial().size()-1);
+                else historia = Paciente.getHistorial().get(0);
+                    ArrayList<HistorialCita> historial = historia.getCitas();
+                        Valores valores = new Valores();
+                        valores.setPeso(Double.parseDouble(peso));
+                        valores.setTalla(Double.parseDouble(talla));
+                        valores.setPesoTalla(Double.parseDouble(IMC));
+                            Tension tension = new Tension();
+                            tension.setMaxima(Integer.parseInt(tensionMax));
+                            tension.setMinima(Integer.parseInt(tensionMin));
+                        valores.setTension(tension);
+                        valores.setPulso(0); //NUNCA SE LEE PULSO EN NINGUNA INTERFAZ
+                    if(historial.size()-1 >= 0){
+                        historial.get(historial.size()-1).setValores(valores);
+                        historial.get(historial.size()-1).setID(Paciente.getCitas().get(0).getID());
+                    }else{
+                        historial.get(0).setValores(valores);
+                        historial.get(0).setID(Paciente.getCitas().get(0).getID());
+                    }
+                historia.setCitas(historial);
+                Paciente.getHistorial().add(historia);
+                setHistoria(Paciente);
+            return true;
         }else{
-            //Interfaz que diga "PACIENTE NO REGISTRADO" o algo parecido
-            //con botón para volver (>>LLAMADO VOLVER<<) a la interfaz de modificar historia
-            
-            //¿Por qué?, no puedes modificarle una historia a un paciente no registrado
+            return false;
         }
     }
 }

@@ -19,7 +19,8 @@ public class Ctrl_JuntaDirectiva{
     
     public static boolean VerificarDatosSucursal(String nombre, String ubicacion){
         return nombre.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
-                ubicacion.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") && !isEmpty(nombre, ubicacion);
+               ubicacion.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
+               !isEmpty(nombre, ubicacion);
     }
     
     public boolean ExisteSucursal(String nombre){
