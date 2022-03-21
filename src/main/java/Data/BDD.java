@@ -159,7 +159,7 @@ public class BDD{
         System.out.println("Talla " +talla);
         System.out.println("pesotalla " +pesoTalla);
         
-        System.out.println("4");
+        System.out.println("culo");
 
         Tension tet = new Tension(Integer.parseInt((String)tension.get("maxima")), Integer.parseInt((String)tension.get("minima")));
         System.out.println("5");
