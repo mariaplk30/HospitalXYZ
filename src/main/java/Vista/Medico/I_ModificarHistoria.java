@@ -296,7 +296,8 @@ public class I_ModificarHistoria extends javax.swing.JFrame {
         String tensionMin = modificarHistoria_tMin__field.getText();
         String evolucion = modificarHistoria_evolution__textArea.getText();
         String control = modificarHistoria_apptControl__textArea.getText();
-        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control)) this.control.ModificarHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin);
+        String sucursal = modificarHistoria_branch__field.getText();
+        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)) this.control.ModificarHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal);
         else{
             //INTERFAZ DE ERROR EN LOS DATOS
             //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz

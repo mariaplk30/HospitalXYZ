@@ -3,7 +3,6 @@ import Controlador.Ctrl_Historia;
 
 public class I_CrearHistoria extends javax.swing.JFrame{
     
-    public String sucursal = "";
     private IDB_Medico MedicoDB = new IDB_Medico();
     private Ctrl_Historia control = new Ctrl_Historia();
     
@@ -124,6 +123,12 @@ public class I_CrearHistoria extends javax.swing.JFrame{
         jScrollPane2.setViewportView(crearHistoria_apptControl__textArea);
 
         crearHistoria_branch__label.setText("Sucursal:");
+
+        crearHistoria_branch__field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearHistoria_branch__fieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -286,7 +291,8 @@ public class I_CrearHistoria extends javax.swing.JFrame{
         String tensionMin = crearHistoria_tMin__field.getText();
         String evolucion = crearHistoria_evolution__textArea.getText();
         String control = crearHistoria_apptControl__textArea.getText();
-        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control)) this.control.CrearHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin);
+        String sucursal = crearHistoria_branch__field.getText();
+        if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)) this.control.CrearHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal);
         else{
             //INTERFAZ DE ERROR EN LOS DATOS
             //con botón para volver (>>LLAMADO VOLVER<<) a la misma interfaz
@@ -301,6 +307,10 @@ public class I_CrearHistoria extends javax.swing.JFrame{
         I_CrearHistoria.this.setVisible(false);
         dispose();
     }//GEN-LAST:event_cancel__btnActionPerformed
+
+    private void crearHistoria_branch__fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearHistoria_branch__fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearHistoria_branch__fieldActionPerformed
 
     /**
      * @param args the command line arguments
