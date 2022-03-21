@@ -10,7 +10,7 @@ public class Ctrl_Historia{
     
     public Ctrl_Historia(){}
     
-    public static boolean VerificarDatosHistoria(String paciente, String peso, String talla, String IMC, String PPM, String tensionMax, String tensionMin, String evolucion, String control){
+    public static boolean VerificarDatosHistoria(String paciente, String peso, String talla, String IMC, String PPM, String tensionMax, String tensionMin, String evolucion, String control, String sucursal){
         return  paciente.matches("\\d*"); //HACER VERIFICACION PARA LAS DEMAS PLS
     }
     
@@ -21,7 +21,8 @@ public class Ctrl_Historia{
         return null;
     }
     
-    public void CrearHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin){
+    public void CrearHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
+        this.sucursal = sucursal;
         if(ExistePaciente(paciente) && getPaciente(paciente).getHistorial().isEmpty()){
                 Paciente Paciente = getPaciente(paciente);
                 Historia historia = new Historia(paciente);
@@ -75,7 +76,8 @@ public class Ctrl_Historia{
         return null;
     }
     
-    public void ModificarHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin){
+    public void ModificarHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
+        this.sucursal = sucursal;
         if(ExistePaciente(paciente) && !getPaciente(paciente).getHistorial().isEmpty()){
             Paciente Paciente = getPaciente(paciente);
                 Historia historia = Paciente.getHistorial().get(Paciente.getHistorial().size()-1);
