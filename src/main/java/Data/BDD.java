@@ -209,13 +209,12 @@ public class BDD{
             arregloJuntaD = new ArrayList();
 
 
-//            for(int i=0;i<juntaD.size();i++)
-//            {
-//		JSONObject jd =  (JSONObject)juntaD.get(i);
-//                //System.out.println("Dentro del for");
-//                arregloSucursales.add(parseSucursales(suc));
-//                System.out.println(arregloSucursales.get(i));
-//            }
+            for(int i=0;i<juntaD.size();i++)
+            {
+		JSONObject jd =  (JSONObject)juntaD.get(i);
+                //System.out.println("Dentro del for");
+                arregloJuntaD.add(parseJuntaDirectiva(jd));
+            }
 
 
 

@@ -2,7 +2,7 @@ package Modelo.Entidades;
 import java.util.*;
 
 public class JuntaDirectiva{
-    private ArrayList<String> Directivos;
+    private ArrayList<String> nombre;
     private ArrayList<Medico> RegistroMedicos;
     private ArrayList<Sucursal> RegistroSucursales;
     
@@ -34,6 +34,10 @@ public class JuntaDirectiva{
     
     public ArrayList<String> getDirectivos(){
         return Directivos;
+    }
+    
+    public String getDirectivo(int i){
+        return Directivos.get(i);
     }
     
     public void addMedico(Medico medico){
