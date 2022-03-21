@@ -53,9 +53,9 @@ public class Sucursal{
         return Pacientes;
     }
 
-    public void setPaciente(Paciente paciente){
-        
-    }
+//    public void setPaciente(Paciente paciente){
+//        
+//    }
     
     public void setPacientes(ArrayList<Paciente> Pacientes) {
         this.Pacientes = Pacientes;

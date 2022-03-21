@@ -1,9 +1,8 @@
 package Modelo.Entidades;
 
-
 public class HistorialCita {
     private String ID;
-    private Valores val;
+    private Valores valores;
 
     public HistorialCita(){}
     
@@ -13,20 +12,18 @@ public class HistorialCita {
 
     public HistorialCita(String id, Valores val){
         ID= id;
-        this.val = val;
+        valores = val;
         
     }
 
     public Valores getVal() {
-        return val;
+        return valores;
     }
 
     public void setVal(Valores val) {
-        this.val = val;
+        valores = val;
     }
 
-
-    
     public void setID(String id){
         ID = id;
     }

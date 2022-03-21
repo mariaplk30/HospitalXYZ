@@ -32,6 +32,7 @@ public class Ctrl_JuntaDirectiva{
             Sucursal sucursal = fabrica.crearSucursal(nombre);
             junta.addSucursal(sucursal);
             bdd.addSucursal(sucursal);
+            bdd.main();
             //Abrir interfaz de operación realizada exitosamente
         }else{
             //INTERFAZ DE ERROR SUCURSAL YA EXISTE (PREFERIBLEMENTE SOLO MENSAJE DE "SUCURSAL YA EXISTE")
@@ -67,6 +68,7 @@ public class Ctrl_JuntaDirectiva{
                     break;
                 }               
             }
+            bdd.main();
             //Abrir interfaz de operación realizada exitosamente
         }else{
             //INTERFAZ DE ERROR MEDICO YA EXISTE (PREFERIBLEMENTE SOLO MENSAJE DE "MEDICO YA EXISTE")

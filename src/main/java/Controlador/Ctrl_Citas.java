@@ -1,13 +1,5 @@
 package Controlador;
 
-//import java.io.FileReader;
-//import java.util.Iterator;
-//import java.util.Map;
-//  
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
-//import org.json.simple.parser.*;
-
 import Modelo.Entidades.*;
 import Data.BDD;
 
@@ -29,10 +21,10 @@ public class Ctrl_Citas {
     public int SucursalI;
     public int MedicoI;
     public int PacienteI;
-
+    private BDD bd = new BDD();
+        
     public Ctrl_Citas(){}
     
-
     public void Solicitar(String fecha){
         BDD bd = new BDD();
         bd.leerArchivoJSON();
@@ -44,7 +36,6 @@ public class Ctrl_Citas {
 
         sucursales.get(SucursalI).getPaciente(PacienteI).addCita(cita);
         bd.main();
-
     }
 
     public void Modificar(String paciente, String FechaID, String fechaNueva, String medicoNuevo, String sucursal){
@@ -77,24 +68,15 @@ public class Ctrl_Citas {
 
                     }
                 }
-
-
             }
-     
         }
-
-
-
         bd.main();
-
     }
 
     public void Cancelar(String Paciente, String FechaID){
-        BDD bd = new BDD();
         bd.leerArchivoJSON();
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
         
-
         for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
             if(FechaID.substring(11).equals(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID()) == true )
                 sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().remove(i);
@@ -103,11 +85,9 @@ public class Ctrl_Citas {
         bd.main();
     }
 
-
-
     public boolean VerificarDatos(String nombres,String apellidos,String cedula,String sexo,String lugarN,String civil,String direccion,String telefono,String profesion,String ocupacion,String relativo){
        
-        if(nombres.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
+        return nombres.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
            apellidos.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") && 
            sexo.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") && 
            lugarN.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
@@ -117,14 +97,9 @@ public class Ctrl_Citas {
            ocupacion.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
            cedula.matches("\\d*")&& 
            telefono.matches("\\d*") &&
-           relativo.matches("\\d*") ){
-           return true;
-        }else{
-           return false;
-        }
-        
+           relativo.matches("\\d*");
     }
-
+     
     public boolean ExistePacienteYMedico(String paciente, String medico, String sucursal, boolean med){
         BDD bd = new BDD();
         bd.leerArchivoJSON();
@@ -174,7 +149,6 @@ public class Ctrl_Citas {
             }
     
         }
-
         if(existeSucursal == true){
             return true;
         }else{
@@ -193,7 +167,6 @@ public class Ctrl_Citas {
                 sucursales.get(i).getPacientes().add(paciente);
             }
         }
-
         bd.main();
     }
 
@@ -205,7 +178,6 @@ public class Ctrl_Citas {
         for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
             fechas.add(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getFecha() + " " + sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID());
         }
-
         return fechas;      
     }
 }
