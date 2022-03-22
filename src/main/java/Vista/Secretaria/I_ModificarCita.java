@@ -1,5 +1,6 @@
 package Vista.Secretaria;
 import Controlador.Ctrl_Citas;
+import Vista.Errores.I_Error7;
 import Vista.Errores.I_Error2;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -160,15 +161,17 @@ public class I_ModificarCita extends javax.swing.JFrame {
         Ctrl_Citas ctrl = new Ctrl_Citas();
 
         String Seleccion = list.getSelectedValue();
-        ctrl.Modificar(paciente, Seleccion, date, medico, sucursal);
+        if(ctrl.ExistePacienteYMedico(paciente, medico, sucursal, true) == true){
+            ctrl.Modificar(paciente, Seleccion, date, medico, sucursal);
+            IDB_Secretaria SecretariaDB = new IDB_Secretaria();
+            SecretariaDB.setVisible(true);
+            I_ModificarCita.this.setVisible(false);
+            dispose();
+        }else{
+            I_Error7 DatosInvalidos = new I_Error7();
+            DatosInvalidos.setVisible(true);
+        }
 
-        
-
-
-        IDB_Secretaria SecretariaDB = new IDB_Secretaria();
-        SecretariaDB.setVisible(true);
-        I_ModificarCita.this.setVisible(false);
-        dispose();
     }//GEN-LAST:event_confirm__btnActionPerformed
 
     private void cargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarActionPerformed
