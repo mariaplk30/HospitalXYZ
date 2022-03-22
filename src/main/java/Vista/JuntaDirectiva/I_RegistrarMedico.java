@@ -232,7 +232,7 @@ public class I_RegistrarMedico extends javax.swing.JFrame {
         String telefono = registrarMedico_phone__field.getText();
         String especialidad = registrarMedico_job__field.getText();
         if(Ctrl_JuntaDirectiva.VerificarDatosMedico(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, especialidad)){
-            if(control.RegistrarMedico("", nombres, especialidad)){
+            if(control.RegistrarMedico("", nombres+" "+apellidos, especialidad)){
                 I_OperacionOK OK = new I_OperacionOK("IDB_JuntaDirectiva");
                 OK.setVisible(true);
                 dispose();
