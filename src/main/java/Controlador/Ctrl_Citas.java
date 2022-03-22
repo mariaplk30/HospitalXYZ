@@ -10,7 +10,6 @@ import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.json.*;
-import org.apache.commons.lang.StringUtils;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -49,17 +48,16 @@ public class Ctrl_Citas {
             for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
                 if(FechaID.substring(11).equals(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID()) == true ){
 
-                    for(int h=0; h<sucursales.get(SucursalI).getPacientes().get(PacienteI).getCitas().size(); h++){                    
                         System.out.println(FechaID.substring(11) + "  " + sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(h).getID());
-                        sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(h).setFecha(fechaNueva);
+                        sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).setFecha(fechaNueva);
                                 
                         for(int s=0; s<sucursales.get(i).getMedicos().size(); s++){
                             if(medicoNuevo.equals(sucursales.get(SucursalI).getMedicos().get(s).getNombre()) == true){
-                                sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(h).setMedico(medicoNuevo);
+                                sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).setMedico(medicoNuevo);
                                 break;
                             }
                         }
-                   } 
+                    
                 }
                
             }
@@ -106,7 +104,7 @@ public class Ctrl_Citas {
            ocupacion.matches("^(?![\\s.]+$)[a-zA-Z\\u00C0-\\u017F\\s.]*") &&
            cedula.matches("\\d*")&& 
            telefono.matches("\\d*") &&
-           relativo.matches("\\d*");
+           relativo.matches("\\d*") &&
            !isEmpty(nombres, apellidos, cedula, sexo, lugarN, civil, direccion, telefono, profesion, ocupacion, relativo);
     }
      

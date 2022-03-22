@@ -3,7 +3,6 @@ import java.util.Date;
 import java.util.ArrayList;
 import Data.BDD;
 import Modelo.Entidades.*;
-import org.apache.commons.lang.StringUtils;
 
 
 public class Ctrl_JuntaDirectiva{
