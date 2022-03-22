@@ -8,6 +8,9 @@ public class Ctrl_Historia{
     
     public String sucursal = "";
     private BDD bdd = new BDD();
+    public int SucursalI;
+    public int PacienteI;
+    public int MedicoI;
     
     public Ctrl_Historia(){}
     
@@ -77,8 +80,19 @@ public class Ctrl_Historia{
                     }
                 historia.setCitas(historial);
                 Paciente.getHistorial().add(historia);
-                setHistoria(Paciente);
-                return true;
+                
+                if(ExistePacienteYMedico(paciente, " ", sucursal, false) == true){
+                    BDD bd = new BDD();
+                    ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
+
+                    for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
+                        sucursales.get(SucursalI).getPaciente(PacienteI).getHistorial().add(historia);           
+                    }
+                }else{
+                    return false;
+                }
+
+            return true;
         }else{
             return false;
         }
@@ -147,4 +161,61 @@ public class Ctrl_Historia{
             return false;
         }
     }
+
+
+    public boolean ExistePacienteYMedico(String paciente, String medico, String sucursal, boolean med){
+        BDD bd = new BDD();
+        bd.leerArchivoJSON();
+        ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
+        boolean existePaciente = false;
+        boolean existeMedico = false;
+        boolean existeSucursal = false;
+
+        for(int i=0; i<sucursales.size(); i++){
+
+            if(sucursal.toLowerCase().equals(sucursales.get(i).getNombre().toLowerCase()) == true){
+                existeSucursal = true;
+                SucursalI = i;
+                
+                ArrayList<Paciente> pacientes = sucursales.get(i).getPacientes();
+                for(int j=0; j<pacientes.size(); j++){
+                    if(paciente.toLowerCase().equals(pacientes.get(j).getNombre().toLowerCase()) == true){
+                        PacienteI = j;
+                        existePaciente = true;
+                    System.out.println("existe paciente");
+
+                    }
+                }
+                
+                if(existePaciente == false){
+                    System.out.println("no existe paciente");
+                    return false;
+                } 
+  
+                if(med == true){
+                    ArrayList<Medico> medicos = sucursales.get(i).getMedicos();
+                    for(int j=0; j<medicos.size(); j++){
+                        if(medico.toLowerCase().equals(medicos.get(j).getNombre().toLowerCase()) == true){
+                            MedicoI = j;
+                            existeMedico = true;
+                        System.out.println("existe medico");
+
+                        }
+                    }
+
+                    if(existeMedico == false){
+                        System.out.println("no existe medico");
+                        return false;
+                    }
+                }
+
+            }
+        }
+        if(existeSucursal == true) return true;
+        else return false;
+    }
+
+
+
 }
+
