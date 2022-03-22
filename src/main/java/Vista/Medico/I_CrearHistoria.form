@@ -82,16 +82,15 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="crearHistoria_patient__label" min="-2" pref="100" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="crearHistoria_weight__field" min="-2" pref="170" max="-2" attributes="0"/>
-                                              <EmptySpace min="53" pref="53" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
                                               <Component id="crearHistoria_patient__field" min="-2" pref="197" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="crearHistoria_weight__field" min="-2" pref="170" max="-2" attributes="0"/>
+                                                  <Component id="crearHistoria_patient__label" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -194,7 +193,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="crearHistoria_patient__label">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Paciente:"/>
+        <Property name="text" type="java.lang.String" value="Cedula del paciente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="crearHistoria_patient__field">

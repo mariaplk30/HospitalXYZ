@@ -55,7 +55,7 @@ public class I_CrearHistoria extends javax.swing.JFrame{
 
         crearHistoria_title__label.setText("Crear Historia");
 
-        crearHistoria_patient__label.setText("Paciente:");
+        crearHistoria_patient__label.setText("Cedula del paciente:");
 
         crearHistoria_weight__label.setText("Peso:");
 
@@ -184,14 +184,13 @@ public class I_CrearHistoria extends javax.swing.JFrame{
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(crearHistoria_patient__label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(135, 135, 135))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(crearHistoria_weight__field, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(53, 53, 53))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addComponent(crearHistoria_patient__field, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(38, 38, 38)))
+                                                .addGap(38, 38, 38))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(crearHistoria_weight__field, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(crearHistoria_patient__label, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(crearHistoria_branch__label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(crearHistoria_height__field, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
@@ -295,8 +294,9 @@ public class I_CrearHistoria extends javax.swing.JFrame{
         String control = crearHistoria_apptControl__textArea.getText();
         String sucursal = crearHistoria_branch__field.getText();
         if(Ctrl_Historia.VerificarDatosHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, evolucion, control, sucursal)){
-            if(this.control.CrearHistoria(paciente, peso, talla, IMC, tensionMax, tensionMin, sucursal)){
+            if(this.control.CrearHistoria(paciente, peso, talla, IMC, PPM, tensionMax, tensionMin, sucursal)){
                 I_OperacionOK OK = new I_OperacionOK("IDB_Medico");
+                System.out.print("a");
                 OK.setVisible(true);
                 dispose();
             }else{

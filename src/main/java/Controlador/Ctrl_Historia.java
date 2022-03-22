@@ -33,12 +33,27 @@ public class Ctrl_Historia{
     
     public Sucursal getSucursal(){
         if(bdd.cantSucursales() > 0){
-            for(int i=0; i < bdd.cantSucursales(); i++) if(bdd.getArregloSucursales().get(i).getNombre().equals(sucursal)) return bdd.getArregloSucursales().get(i);
+            for(int i=0; i < bdd.cantSucursales(); i++){
+                if(bdd.getArregloSucursales().get(i).getNombre().equals(sucursal)){
+                    return bdd.getArregloSucursales().get(i);
+                }
+            }
         }
         return null;
     }
     
-    public boolean CrearHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
+    public Paciente getPaciente(String cedula){
+        bdd.leerArchivoJSON();
+        Sucursal sucursal = getSucursal();
+        for(int j=0; j < sucursal.cantPacientes(); j++){
+            if(sucursal.getPaciente(j).getCedula().equals(cedula)){
+                return sucursal.getPaciente(j);
+            }
+        }
+        return null;
+    }
+    
+    public boolean CrearHistoria(String paciente, String peso, String talla, String IMC, String pulso, String tensionMax, String tensionMin, String sucursal){
         this.sucursal = sucursal;
         if(ExistePaciente(paciente)){
                 Paciente Paciente = getPaciente(paciente);
@@ -51,8 +66,8 @@ public class Ctrl_Historia{
                             Tension tension = new Tension();
                             tension.setMaxima(Integer.parseInt(tensionMax));
                             tension.setMinima(Integer.parseInt(tensionMin));
-                        valores.setTension(tension);
-                        valores.setPulso(0); //NUNCA SE LEE PULSO EN NINGUNA INTERFAZ
+                        valores.setTension(tension); 
+                        valores.setPulso(Integer.parseInt(pulso));
                     if(historial.size()-1 >= 0){
                         historial.get(historial.size()-1).setValores(valores);
                         historial.get(historial.size()-1).setID(Paciente.getCitas().get(0).getID());
@@ -79,26 +94,26 @@ public class Ctrl_Historia{
     }
     
     public void setHistoria(Paciente paciente){
-        for(int i=0; i < bdd.cantSucursales(); i++){
-            if(bdd.getArregloSucursales().get(i).getNombre().equals(sucursal)){
-                for(int j=0; j < bdd.getArregloSucursales().get(i).getPacientes().size(); j++){
-                    if(bdd.getArregloSucursales().get(i).getPaciente(j).getCedula().equals(paciente.getCedula())){
-                        bdd.getArregloSucursales().get(i).getPaciente(j).setHistorial(paciente.getHistorial());
-                    }
-                }
-            }
+        Sucursal sucursal = getSucursal();
+        for(int i=0; i < sucursal.cantPacientes(); i++){
+                System.out.println("peo");
         }
+        
+        
+//        for(int i=0; i < bdd.cantSucursales(); i++){
+//            if(bdd.getArregloSucursales().get(i).getNombre().equals(sucursal)){
+//                for(int j=0; j < bdd.getArregloSucursales().get(i).getPacientes().size(); j++){
+//                    if(bdd.getArregloSucursales().get(i).getPaciente(j).getCedula().equals(paciente.getCedula())){
+//                        bdd.getArregloSucursales().get(i).getPaciente(j).setHistorial(paciente.getHistorial());
+//                        System.out.println(paciente.getHistorial());
+//                    }
+//                }
+//            }
+//        }
         bdd.main();
     }
     
-    public Paciente getPaciente(String cedula){
-        bdd.leerArchivoJSON();
-        Sucursal sucursal = getSucursal();
-        for(int j=0; j < sucursal.cantPacientes(); j++){
-            if(sucursal.getPaciente(j).getCedula().equals(cedula)) return sucursal.getPaciente(j);
-        }
-        return null;
-    }
+    
     
     public boolean ModificarHistoria(String paciente, String peso, String talla, String IMC, String tensionMax, String tensionMin, String sucursal){
         this.sucursal = sucursal;
