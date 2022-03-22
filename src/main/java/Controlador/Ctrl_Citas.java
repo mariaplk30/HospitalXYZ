@@ -43,12 +43,12 @@ public class Ctrl_Citas {
         bd.leerArchivoJSON();
         ArrayList<Sucursal> sucursales = bd.getArregloSucursales();
 
-        if(ExistePacienteYMedico(paciente, "", sucursal, false)){
+        if(ExistePacienteYMedico(paciente, medicoNuevo, sucursal, true)){
         
             for(int i=0; i< sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().size(); i++){
                 if(FechaID.substring(11).equals(sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID()) == true ){
 
-                        System.out.println(FechaID.substring(11) + "  " + sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(h).getID());
+                        System.out.println(FechaID.substring(11) + "  " + sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).getID());
                         sucursales.get(SucursalI).getPaciente(PacienteI).getCitas().get(i).setFecha(fechaNueva);
                                 
                         for(int s=0; s<sucursales.get(i).getMedicos().size(); s++){
